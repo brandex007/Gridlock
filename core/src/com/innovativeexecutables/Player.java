@@ -8,7 +8,7 @@ import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 
 import static com.innovativeexecutables.Gridlock.*;
 
-
+// Player
 public class Player{
     private float x, y;
     private Texture ship, ship_up, ship_middle, ship_down;
