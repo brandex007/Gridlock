@@ -3,6 +3,7 @@ package com.innovativeexecutables;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 
@@ -11,19 +12,17 @@ import static com.innovativeexecutables.Gridlock.*;
 // Player
 public class Player{
     private float x, y;
-    private Texture ship, ship_up, ship_middle, ship_down;
+    private Texture playerTexture;
     private float speed = 60;
     public static boolean UP_TOUCHED, DOWN_TOUCHED, LEFT_TOUCHED, RIGHT_TOUCHED;
     private float width, height;
     private TiledMapTileLayer collisionLayer;
-    private float delta;
-    boolean collisionUp = false;
 
     public Player(TiledMapTileLayer collisionLayer) {
         this.collisionLayer = collisionLayer;
 
-        x = VIEWPORT_WIDTH / 2;
-        y = VIEWPORT_HEIGHT / 2;
+        x = 10;
+        y = 10;
 
         loadPlayerTextures();
     }
@@ -34,8 +33,6 @@ public class Player{
         DOWN_TOUCHED = false;
         LEFT_TOUCHED = false;
         RIGHT_TOUCHED = false;
-
-        this.delta = delta;
 
         // update player movement
         if(Gdx.input.isKeyPressed(Input.Keys.LEFT) && x > 0){
@@ -55,29 +52,31 @@ public class Player{
             DOWN_TOUCHED = true;
         }
 
-        // set ship texture:
+        /*// set ship texture:
         if (UP_TOUCHED == true && DOWN_TOUCHED == false) {
             ship = ship_up;
         } else if (DOWN_TOUCHED == true && UP_TOUCHED == false) {
             ship = ship_down;
         } else {
             ship = ship_middle;
-        }
+        }*/
 
         checkCollisionMap();
     }
 
-    public void render (SpriteBatch sb){
-        sb.draw(ship_middle,x,y);
+    public void render (Batch sb){
+
+        sb.draw(playerTexture,x,y);
     }
 
     public void loadPlayerTextures(){
-        ship_middle = new Texture("ship_middle.png");
-        ship_up = new Texture("ship_up.png");
-        ship_down = new Texture("ship_down.png");
+        playerTexture = new Texture("knight.png");
+        //ship_up = new Texture("ship_up.png");
+        //ship_down = new Texture("ship_down.png");
 
-        width = ship_middle.getWidth();
-        height = ship_middle.getHeight();
+
+        width = playerTexture.getWidth();
+        height = playerTexture.getHeight();
     }
 
     public float getSpeed() {
@@ -85,15 +84,14 @@ public class Player{
     }
 
     public void checkCollisionMap(){
-        float xWorld = x + SCROLLTRACKER_X;
-        float yWorld = y + SCROLLTRACKER_Y;
 
-        ////////////////// Check For Collision
+        // Check For Collision
         boolean collisionWithMap = false;
-        // check right side middle
-        collisionWithMap = isCellBLocked(xWorld, yWorld);
 
-        // //////////////// React to Collision
+        collisionWithMap = isCellBLocked(x + width,y) || isCellBLocked(x + width / 2, y)|| isCellBLocked(x, y);
+
+
+        // React to Collision
         if (collisionWithMap) {
             System.out.println("player-map collision!!!");
             if(UP_TOUCHED){

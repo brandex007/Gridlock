@@ -11,6 +11,7 @@ public class DesktopLauncher {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		config.width = VIEWPORT_WIDTH;
 		config.height = VIEWPORT_HEIGHT;
+		config.resizable = false;
 		new LwjglApplication(new Gridlock(), config);
 	}
 }
