@@ -16,10 +16,11 @@ public class Player{
     private float speed = 60;
     public static boolean UP_TOUCHED, DOWN_TOUCHED, LEFT_TOUCHED, RIGHT_TOUCHED;
     private float width, height;
-    private TiledMapTileLayer collisionLayer;
+    private TiledMapTileLayer hazardsLayer, obstaclesLayer;
 
-    public Player(TiledMapTileLayer collisionLayer) {
-        this.collisionLayer = collisionLayer;
+    public Player(TiledMapTileLayer obstaclesLayer,TiledMapTileLayer hazardsLayer) {
+        this.obstaclesLayer = obstaclesLayer;
+        this.hazardsLayer = hazardsLayer;
 
         x = 10;
         y = 10;
@@ -61,7 +62,30 @@ public class Player{
             ship = ship_middle;
         }*/
 
-        checkCollisionMap();
+    }
+
+    public void setY(float value){
+        y = value;
+    }
+
+    public void setX(float value){
+        x = value;
+    }
+
+    public float getX(){
+        return x;
+    }
+
+    public float getY(){
+        return y;
+    }
+
+    public float getWidth(){
+        return width;
+    }
+
+    public float getHeight(){
+        return height;
     }
 
     public void render (Batch sb){
@@ -83,39 +107,6 @@ public class Player{
         return speed;
     }
 
-    public void checkCollisionMap(){
 
-        // Check For Collision
-        boolean collisionWithMap = false;
-
-        collisionWithMap = isCellBLocked(x + width,y) || isCellBLocked(x + width / 2, y)|| isCellBLocked(x, y);
-
-
-        // React to Collision
-        if (collisionWithMap) {
-            System.out.println("player-map collision!!!");
-            if(UP_TOUCHED){
-                y -= 1;
-            }
-            if(DOWN_TOUCHED){
-                y += 1;
-            }
-            if(LEFT_TOUCHED){
-                x += 1;
-            }
-            if(RIGHT_TOUCHED){
-                x -= 1;
-            }
-        }
-    }
-
-    public boolean isCellBLocked(float x, float y) {
-        TiledMapTileLayer.Cell cell = collisionLayer.getCell(
-                (int) (x / collisionLayer.getTileWidth()),
-                (int) (y / collisionLayer.getTileHeight()));
-
-        return cell != null && cell.getTile() != null
-                && cell.getTile().getProperties().containsKey("collision");
-    }
 
 }

@@ -3,8 +3,10 @@ package com.innovativeexecutables;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 
+import java.util.Timer;
+
 public class Enemy {
-    int x, y, width, height;
+    private int x, y, width, height;
     private Texture enemyTexture;
 
     public Enemy(int x, int y) {
@@ -24,4 +26,13 @@ public class Enemy {
         width = enemyTexture.getWidth();
         height = enemyTexture.getHeight();
     }
+
+    public int getX(){
+        return x;
+    }
+
+    public int getY(){
+        return y;
+    }
+
 }

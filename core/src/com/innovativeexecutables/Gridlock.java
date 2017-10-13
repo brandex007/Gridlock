@@ -33,7 +33,7 @@ public class Gridlock extends ApplicationAdapter {
 	private OrthogonalTiledMapRenderer tileMapRenderer;
 
 	// Collision
-	private TiledMapTileLayer collisionLayer;
+	private TiledMapTileLayer obstaclesCollisionLayer, hazardsCollisionLayer;
 
 	// Tile
 	Tile[][] tileList = new Tile[32][32];
@@ -51,8 +51,9 @@ public class Gridlock extends ApplicationAdapter {
 		sb = tileMapRenderer.getBatch();
 		sb.setProjectionMatrix(cam.combined);
 
-		collisionLayer = (TiledMapTileLayer) tileMap.getLayers().get("Tile Layer 2");
-		player = new Player(collisionLayer);
+		obstaclesCollisionLayer = (TiledMapTileLayer) tileMap.getLayers().get("Obstacles");
+		hazardsCollisionLayer = (TiledMapTileLayer) tileMap.getLayers().get("Hazards");
+		player = new Player(obstaclesCollisionLayer, hazardsCollisionLayer);
 
 		enemies = new ArrayList<Enemy>();
 
@@ -71,7 +72,7 @@ public class Gridlock extends ApplicationAdapter {
 			}
 		}*/
 
-		// spawn enemy at tile 5,5
+		// spawn enemy at tile 20,20
 		enemies.add(new Enemy(tileList[20][20].getX(), tileList[20][20].getY()));
 	}
 
@@ -84,6 +85,9 @@ public class Gridlock extends ApplicationAdapter {
 
 		// updates
 		player.update(delta);
+		checkPlayerCollisionMap();
+
+		checkForCharCollisions();
 		cam.update();
 
 		// rendering
@@ -105,6 +109,64 @@ public class Gridlock extends ApplicationAdapter {
 	@Override
 	public void dispose () {
 
+	}
+
+	public void checkForCharCollisions(){
+		for(Enemy enemy : enemies) {
+			if (player.getX() > enemy.getX() - 150 && player.getX() < enemy.getX() + 150){
+				if (player.getY() > enemy.getY() - 150 && player.getY() < enemy.getY() + 150){
+					System.out.print("Met boss");
+				}
+			}
+		}
+
+
+	}
+
+	public void checkPlayerCollisionMap(){
+
+		boolean collisionWithObstacles = false;
+		boolean collisionWithHazards = false;
+
+		collisionWithObstacles = isCellBLocked(player.getX() + player.getWidth(),player.getY()) || isCellBLocked(player.getX() + player.getWidth()/ 2, player.getY())|| isCellBLocked(player.getX(), player.getY());
+
+		// React to Collision
+		if (collisionWithObstacles) {
+			if(UP_TOUCHED){
+				player.setY(player.getY() - 1);
+			}
+			if(DOWN_TOUCHED){
+				player.setY(player.getY() + 1);
+			}
+			if(LEFT_TOUCHED){
+				player.setX(player.getX() + 1);
+			}
+			if(RIGHT_TOUCHED){
+				player.setX(player.getX() - 1);
+			}
+		}
+
+		TiledMapTileLayer.Cell cell = hazardsCollisionLayer.getCell(
+				(int) (player.getX() / hazardsCollisionLayer.getTileWidth()),
+				(int) (player.getY() / hazardsCollisionLayer.getTileHeight()));
+
+		if(collisionWithHazards){
+			if(cell.getTile().getProperties().containsKey("fire")){
+
+			}
+			if(cell.getTile().getProperties().containsKey("lava")){
+
+			}
+		}
+	}
+
+	public boolean isCellBLocked(float x, float y) {
+		TiledMapTileLayer.Cell cell = obstaclesCollisionLayer.getCell(
+				(int) (x / obstaclesCollisionLayer.getTileWidth()),
+				(int) (y / obstaclesCollisionLayer.getTileHeight()));
+
+		return cell != null && cell.getTile() != null
+				&& cell.getTile().getProperties().containsKey("collision");
 	}
 
 }
