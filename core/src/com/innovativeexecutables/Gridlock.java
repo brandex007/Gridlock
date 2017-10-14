@@ -39,6 +39,9 @@ public class Gridlock extends ApplicationAdapter {
 	Tile[][] tileList = new Tile[32][32];
 	List<Enemy> enemies;
 
+
+
+
 	@Override
 	public void create () {
 		cam = new OrthographicCamera();
@@ -54,6 +57,10 @@ public class Gridlock extends ApplicationAdapter {
 		obstaclesCollisionLayer = (TiledMapTileLayer) tileMap.getLayers().get("Obstacles");
 		hazardsCollisionLayer = (TiledMapTileLayer) tileMap.getLayers().get("Hazards");
 		player = new Player(obstaclesCollisionLayer, hazardsCollisionLayer);
+
+
+
+
 
 		enemies = new ArrayList<Enemy>();
 
@@ -82,7 +89,8 @@ public class Gridlock extends ApplicationAdapter {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
 		delta = Gdx.graphics.getRawDeltaTime();
-
+		//creates play button object
+		Texture playButton=new Texture("play.png");
 		// updates
 		player.update(delta);
 		checkPlayerCollisionMap();
@@ -98,6 +106,8 @@ public class Gridlock extends ApplicationAdapter {
 
 		sb.begin();
 		player.render(sb);
+		//draws play button object
+		sb.draw(playButton,100,976);
 
 		for(Enemy enemy : enemies){
 			enemy.render(sb);
@@ -119,7 +129,6 @@ public class Gridlock extends ApplicationAdapter {
 				}
 			}
 		}
-
 
 	}
 
