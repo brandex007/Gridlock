@@ -14,16 +14,15 @@ public class Player{
     private float x, y;
     private Texture playerTexture;
     private float speed = 60;
-    public static boolean UP_TOUCHED, DOWN_TOUCHED, LEFT_TOUCHED, RIGHT_TOUCHED;
+    public boolean UP_TOUCHED, DOWN_TOUCHED, LEFT_TOUCHED, RIGHT_TOUCHED;
     private float width, height;
-    private TiledMapTileLayer hazardsLayer, obstaclesLayer;
+    private int health = 100;
+    public boolean isDead = false;
 
-    public Player(TiledMapTileLayer obstaclesLayer,TiledMapTileLayer hazardsLayer) {
-        this.obstaclesLayer = obstaclesLayer;
-        this.hazardsLayer = hazardsLayer;
+    public Player(int x, int y) {
 
-        x = 10;
-        y = 10;
+        this.x = x;
+        this.y = y;
 
         loadPlayerTextures();
     }
@@ -90,6 +89,11 @@ public class Player{
 
     public void render (Batch sb){
 
+        if(health <= 0){
+            isDead = true;
+            System.out.print("game over");
+        }
+
         sb.draw(playerTexture,x,y);
     }
 
@@ -107,6 +111,13 @@ public class Player{
         return speed;
     }
 
+    public void setHealth(int health){
+        if(health >= 0)
+            this.health = health;
+    }
 
+    public int getHealth(){
+        return health;
+    }
 
 }

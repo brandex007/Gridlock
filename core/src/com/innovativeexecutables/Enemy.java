@@ -8,6 +8,8 @@ import java.util.Timer;
 public class Enemy {
     private int x, y, width, height;
     private Texture enemyTexture;
+    private int health = 100;
+    private boolean isActive = false;
 
     public Enemy(int x, int y) {
         loadEnemyTextures();
@@ -16,8 +18,9 @@ public class Enemy {
     }
 
     public void render (Batch sb){
-
-        sb.draw(enemyTexture,x,y);
+        // render if active
+        if(isActive)
+            sb.draw(enemyTexture,x,y);
     }
 
     public void loadEnemyTextures(){
@@ -33,6 +36,10 @@ public class Enemy {
 
     public int getY(){
         return y;
+    }
+
+    public void setActive(boolean isActive){
+        this.isActive = isActive;
     }
 
 }
