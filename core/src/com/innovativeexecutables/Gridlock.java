@@ -2,7 +2,11 @@ package com.innovativeexecutables;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+<<<<<<< HEAD
 import com.badlogic.gdx.graphics.Color;
+=======
+import com.badlogic.gdx.Input;
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -30,7 +34,9 @@ public class Gridlock extends ApplicationAdapter {
 	public static OrthographicCamera cam;
 	private Player player;
 	private float delta;
-
+	private int mouseClickX,mouseClickY;
+	private Texture playButton;
+	private boolean playFlag;
 	// TiledMap
 	private TiledMap tileMap;
 	private OrthogonalTiledMapRenderer tileMapRenderer;
@@ -52,7 +58,8 @@ public class Gridlock extends ApplicationAdapter {
 	public void create () {
 		cam = new OrthographicCamera();
 		cam.setToOrtho(false, VIEWPORT_WIDTH, VIEWPORT_HEIGHT);
-
+		//creates play button object
+		 playButton=new Texture("play.png");
 
 		tileMap = new TmxMapLoader().load("tiledmap1.tmx");
 		tileMapRenderer = new OrthogonalTiledMapRenderer(tileMap);
@@ -112,9 +119,11 @@ public class Gridlock extends ApplicationAdapter {
 
 	@Override
 	public void render () {
-		Gdx.gl.glClearColor(0, 0, 0, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		/*if left mouse button is clicked game will begin
+		 * when mouse clicked location of click is saved and
+		  * click location is checked to see if the play button was clicked*/
 
+<<<<<<< HEAD
 		delta = Gdx.graphics.getRawDeltaTime();
 		//creates play button object
 		Texture playButton=new Texture("play.png");
@@ -124,13 +133,17 @@ public class Gridlock extends ApplicationAdapter {
 		checkPlayerCollisionMap();
 		checkForCharCollisions();
 		cam.update();
+=======
 
-		// rendering
-		tileMapRenderer.setView(cam);
-		tileMapRenderer.render();
+		if(Gdx.input.isButtonPressed(Input.Buttons.LEFT))
+		{
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
 
-		sb = tileMapRenderer.getBatch();
+			mouseClickX=Gdx.input.getX();
+			mouseClickY=Gdx.input.getY();
 
+
+<<<<<<< HEAD
 		// draw text
 		sb.begin();
 		scoreFont.setColor(Color.WHITE);
@@ -159,8 +172,58 @@ public class Gridlock extends ApplicationAdapter {
 		}
 
 		sb.end();
+=======
+			if ((mouseClickX<=702&&mouseClickX>=383)&&(mouseClickY<=501&&mouseClickY>=406))
+			{
+				playFlag=true;
+			}
+
+		}
+
+
+
+		// provides updates if play has been pressed
+		if(playFlag){
+			Gdx.gl.glClearColor(0, 0, 0, 1);
+			Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+			delta = Gdx.graphics.getRawDeltaTime();
+
+			// updates
+			player.update(delta);
+			checkPlayerCollisionMap();
+
+			checkForCharCollisions();
+			cam.update();
+
+		}
+
+			// rendering
+			tileMapRenderer.setView(cam);
+			tileMapRenderer.render();
+
+			sb = tileMapRenderer.getBatch();
+
+			sb.begin();
+			player.render(sb);
+			// draws play button at start or when game is stopped
+			if(playFlag==false) {
+				//draws play button object
+				sb.draw(playButton, 384, 512);
+			}
+			for (Enemy enemy : enemies) {
+				enemy.render(sb);
+			}
+
+			sb.end();
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
 
 	}
+
+
+
+
+
+
 	
 	@Override
 	public void dispose () {

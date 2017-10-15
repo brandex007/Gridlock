@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3431d95c-4708-4ee6-9c86-6e5da7fcd6d5" name="Default" comment="">
+<<<<<<< HEAD
       <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/modules/Gridlock.iml" afterPath="$PROJECT_DIR$/.idea/modules/gridlock.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/core/core.iml" afterPath="$PROJECT_DIR$/.idea/modules/core/core.iml" />
@@ -10,6 +11,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/desktop/desktop.iml" afterPath="$PROJECT_DIR$/.idea/modules/desktop/desktop.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/desktop/desktop_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/desktop/desktop_main.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/desktop/desktop_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/desktop/desktop_test.iml" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/assets/play.png" afterPath="$PROJECT_DIR$/core/assets/play.png" />
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/assets/tiledmap1.tmx" afterPath="$PROJECT_DIR$/core/assets/tiledmap1.tmx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/innovativeexecutables/Enemy.java" afterPath="$PROJECT_DIR$/core/src/com/innovativeexecutables/Enemy.java" />
@@ -42,6 +46,7 @@
       <file leaf-file-name="Gridlock.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="158">
               <caret line="225" column="47" lean-forward="false" selection-start-line="225" selection-start-column="47" selection-end-line="225" selection-end-column="47" />
               <folding>
@@ -50,6 +55,13 @@
                 <element signature="e#2823#2824#0" expanded="true" />
                 <element signature="e#2916#2917#0" expanded="true" />
                 <element signature="e#2938#2939#0" expanded="true" />
+=======
+            <state relative-caret-position="408">
+              <caret line="108" column="9" lean-forward="true" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1508103174756" expanded="true" signature="5298:5301" ph="{}" />
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
               </folding>
             </state>
           </provider>
@@ -58,8 +70,13 @@
       <file leaf-file-name="Enemy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Enemy.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="271">
               <caret line="32" column="18" lean-forward="false" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+=======
+            <state relative-caret-position="340">
+              <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#894#895#0" expanded="true" />
@@ -102,12 +119,18 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Player.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="475">
               <caret line="103" column="0" lean-forward="true" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
               <folding>
                 <element signature="e#2815#2816#0" expanded="true" />
                 <element signature="e#2844#2845#0" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="1241">
+              <caret line="92" column="5" lean-forward="false" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
+              <folding />
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
             </state>
           </provider>
         </entry>
@@ -131,8 +154,13 @@
       <find>check</find>
       <find>load</find>
       <find>en</find>
+<<<<<<< HEAD
       <find>health</find>
       <find>healthStr</find>
+=======
+      <find>render</find>
+      <find>.render</find>
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
     </findStrings>
     <replaceStrings>
       <replace>player</replace>
@@ -871,10 +899,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scratches" />
+=======
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -904,6 +935,13 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -912,12 +950,12 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\paulj_000\Documents\GitHub\Gridlock\core\assets" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\paulj_000\Documents\GitHub\Gridlock\core\assets" />
       <recent name="$PROJECT_DIR$/core/assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\paulj_000\Documents\GitHub\Gridlock\core\assets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1016,6 +1054,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15703125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1028,7 +1067,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1097,10 +1135,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#2714#2824#0" expanded="true" />
             <element signature="e#2823#2824#0" expanded="true" />
             <element signature="e#2916#2917#0" expanded="true" />
             <element signature="e#2938#2939#0" expanded="true" />
+=======
+            <marker date="1508103174756" expanded="true" signature="5298:5301" ph="{}" />
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
           </folding>
         </state>
       </provider>
@@ -1158,10 +1200,14 @@
           <caret line="74" column="69" lean-forward="false" selection-start-line="74" selection-start-column="69" selection-end-line="74" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#2714#2824#0" expanded="true" />
             <element signature="e#2823#2824#0" expanded="true" />
             <element signature="e#2916#2917#0" expanded="true" />
             <element signature="e#2938#2939#0" expanded="true" />
+=======
+            <marker date="1508103174756" expanded="true" signature="5298:5301" ph="{}" />
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
           </folding>
         </state>
       </provider>
@@ -1219,10 +1265,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#2714#2824#0" expanded="true" />
             <element signature="e#2823#2824#0" expanded="true" />
             <element signature="e#2916#2917#0" expanded="true" />
             <element signature="e#2938#2939#0" expanded="true" />
+=======
+            <marker date="1508103174756" expanded="true" signature="5298:5301" ph="{}" />
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
           </folding>
         </state>
       </provider>
@@ -1260,10 +1310,14 @@
           <caret line="71" column="28" lean-forward="false" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#2714#2824#0" expanded="true" />
             <element signature="e#2823#2824#0" expanded="true" />
             <element signature="e#2916#2917#0" expanded="true" />
             <element signature="e#2938#2939#0" expanded="true" />
+=======
+            <marker date="1508103174756" expanded="true" signature="5298:5301" ph="{}" />
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
           </folding>
         </state>
       </provider>
@@ -1301,10 +1355,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#2714#2824#0" expanded="true" />
             <element signature="e#2823#2824#0" expanded="true" />
             <element signature="e#2916#2917#0" expanded="true" />
             <element signature="e#2938#2939#0" expanded="true" />
+=======
+            <marker date="1508103174756" expanded="true" signature="5298:5301" ph="{}" />
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
           </folding>
         </state>
       </provider>
@@ -1343,10 +1401,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#2714#2824#0" expanded="true" />
             <element signature="e#2823#2824#0" expanded="true" />
             <element signature="e#2916#2917#0" expanded="true" />
             <element signature="e#2938#2939#0" expanded="true" />
+=======
+            <marker date="1508103174756" expanded="true" signature="5298:5301" ph="{}" />
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
           </folding>
         </state>
       </provider>
@@ -1385,10 +1447,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#2714#2824#0" expanded="true" />
             <element signature="e#2823#2824#0" expanded="true" />
             <element signature="e#2916#2917#0" expanded="true" />
             <element signature="e#2938#2939#0" expanded="true" />
+=======
+            <marker date="1508103174756" expanded="true" signature="5298:5301" ph="{}" />
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
           </folding>
         </state>
       </provider>
@@ -1399,10 +1465,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#2714#2824#0" expanded="true" />
             <element signature="e#2823#2824#0" expanded="true" />
             <element signature="e#2916#2917#0" expanded="true" />
             <element signature="e#2938#2939#0" expanded="true" />
+=======
+            <marker date="1508103174756" expanded="true" signature="5298:5301" ph="{}" />
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
           </folding>
         </state>
       </provider>
@@ -1426,6 +1496,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Tile.java">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
@@ -1435,6 +1506,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/assets/PlayButton.png" />
     <entry file="file://$PROJECT_DIR$/desktop/src/com/innovativeexecutables/desktop/DesktopLauncher.java">
+=======
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
@@ -1442,21 +1515,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Player.java">
+    <entry file="file://$PROJECT_DIR$/core/assets/PlayButton.png" />
+    <entry file="file://$PROJECT_DIR$/desktop/src/com/innovativeexecutables/desktop/DesktopLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="475">
           <caret line="103" column="0" lean-forward="true" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
           <folding>
             <element signature="e#2815#2816#0" expanded="true" />
             <element signature="e#2844#2845#0" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="221">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Enemy.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="271">
           <caret line="32" column="18" lean-forward="false" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+=======
+        <state relative-caret-position="340">
+          <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#894#895#0" expanded="true" />
@@ -1465,8 +1550,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="92" column="5" lean-forward="false" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="158">
           <caret line="225" column="47" lean-forward="false" selection-start-line="225" selection-start-column="47" selection-end-line="225" selection-end-column="47" />
           <folding>
@@ -1475,6 +1569,13 @@
             <element signature="e#2823#2824#0" expanded="true" />
             <element signature="e#2916#2917#0" expanded="true" />
             <element signature="e#2938#2939#0" expanded="true" />
+=======
+        <state relative-caret-position="408">
+          <caret line="108" column="9" lean-forward="true" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1508103174756" expanded="true" signature="5298:5301" ph="{}" />
+>>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
           </folding>
         </state>
       </provider>
