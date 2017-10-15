@@ -3,21 +3,22 @@ package com.innovativeexecutables;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.badlogic.gdx.graphics.Color;
 =======
 import com.badlogic.gdx.Input;
 >>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
+=======
+>>>>>>> parent of 610febb... Added collision with hazards and damage, text for score, etc.
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.utils.Timer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,11 +49,8 @@ public class Gridlock extends ApplicationAdapter {
 	Tile[][] tileList = new Tile[32][32];
 	List<Enemy> enemies;
 
-	// Displays for score, health, and time
-	BitmapFont scoreFont, healthFont, timeFont;
-	String scoreString, healthString, timeString;
 
-	int time = 0;
+
 
 	@Override
 	public void create () {
@@ -69,8 +67,11 @@ public class Gridlock extends ApplicationAdapter {
 
 		obstaclesCollisionLayer = (TiledMapTileLayer) tileMap.getLayers().get("Obstacles");
 		hazardsCollisionLayer = (TiledMapTileLayer) tileMap.getLayers().get("Hazards");
+		player = new Player(obstaclesCollisionLayer, hazardsCollisionLayer);
 
-		player = new Player(100,800);
+
+
+
 
 		enemies = new ArrayList<Enemy>();
 
@@ -91,30 +92,6 @@ public class Gridlock extends ApplicationAdapter {
 
 		// spawn enemy at tile 20,20
 		enemies.add(new Enemy(tileList[20][20].getX(), tileList[20][20].getY()));
-
-		// initiate fonts
-		scoreString = "Score: 0";
-		scoreFont = new BitmapFont();
-
-		healthString = "Health: 100";
-		healthFont = new BitmapFont();
-
-		timeString = "Time: 0";
-		timeFont = new BitmapFont();
-
-		Timer.schedule(new Timer.Task(){
-						   @Override
-						   public void run() {
-							   updateTime();
-						   }
-					   }
-				, 0        //    (delay)
-				, 1     //    (seconds)
-		);
-	}
-
-	public void updateTime(){
-		time = time + 1;
 	}
 
 	@Override
@@ -127,10 +104,10 @@ public class Gridlock extends ApplicationAdapter {
 		delta = Gdx.graphics.getRawDeltaTime();
 		//creates play button object
 		Texture playButton=new Texture("play.png");
-
 		// updates
 		player.update(delta);
 		checkPlayerCollisionMap();
+
 		checkForCharCollisions();
 		cam.update();
 =======
@@ -142,6 +119,7 @@ public class Gridlock extends ApplicationAdapter {
 			mouseClickX=Gdx.input.getX();
 			mouseClickY=Gdx.input.getY();
 
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 		// draw text
@@ -160,18 +138,19 @@ public class Gridlock extends ApplicationAdapter {
 		healthFont.draw(sb, healthString, VIEWPORT_WIDTH - 150, VIEWPORT_HEIGHT - 70);
 		sb.end();
 
+=======
+>>>>>>> parent of 610febb... Added collision with hazards and damage, text for score, etc.
 		sb.begin();
 		player.render(sb);
-
-		// draws play button object
+		//draws play button object
 		sb.draw(playButton,100,976);
 
-		// draws enemies
 		for(Enemy enemy : enemies){
 			enemy.render(sb);
 		}
 
 		sb.end();
+<<<<<<< HEAD
 =======
 			if ((mouseClickX<=702&&mouseClickX>=383)&&(mouseClickY<=501&&mouseClickY>=406))
 			{
@@ -217,6 +196,8 @@ public class Gridlock extends ApplicationAdapter {
 			sb.end();
 >>>>>>> 00aa74e1e37f41dc1d4b700742b3d1669b30b867
 
+=======
+>>>>>>> parent of 610febb... Added collision with hazards and damage, text for score, etc.
 	}
 
 
@@ -231,13 +212,11 @@ public class Gridlock extends ApplicationAdapter {
 	}
 
 	public void checkForCharCollisions(){
-
-		// collision with enemy
 		for(Enemy enemy : enemies) {
-			if ((player.getX() > enemy.getX() - 150 && player.getX() < enemy.getX() + 150) && (player.getY() > enemy.getY() - 150 && player.getY() < enemy.getY() + 150)){
-					enemy.setActive(true);
-			} else{
-				enemy.setActive(false);
+			if (player.getX() > enemy.getX() - 150 && player.getX() < enemy.getX() + 150){
+				if (player.getY() > enemy.getY() - 150 && player.getY() < enemy.getY() + 150){
+					System.out.print("Met boss");
+				}
 			}
 		}
 
@@ -248,21 +227,20 @@ public class Gridlock extends ApplicationAdapter {
 		boolean collisionWithObstacles = false;
 		boolean collisionWithHazards = false;
 
-		collisionWithObstacles = isCellBLocked(2,player.getX() + player.getWidth(),player.getY()) || isCellBLocked(2,player.getX() + player.getWidth()/ 2, player.getY())|| isCellBLocked(2,player.getX(), player.getY());
-		collisionWithHazards = isCellBLocked(3,player.getX() + player.getWidth(),player.getY()) || isCellBLocked(3,player.getX() + player.getWidth()/ 2, player.getY())|| isCellBLocked(3,player.getX(), player.getY());
+		collisionWithObstacles = isCellBLocked(player.getX() + player.getWidth(),player.getY()) || isCellBLocked(player.getX() + player.getWidth()/ 2, player.getY())|| isCellBLocked(player.getX(), player.getY());
 
 		// React to Collision
 		if (collisionWithObstacles) {
-			if(player.UP_TOUCHED){
+			if(UP_TOUCHED){
 				player.setY(player.getY() - 1);
 			}
-			if(player.DOWN_TOUCHED){
+			if(DOWN_TOUCHED){
 				player.setY(player.getY() + 1);
 			}
-			if(player.LEFT_TOUCHED){
+			if(LEFT_TOUCHED){
 				player.setX(player.getX() + 1);
 			}
-			if(player.RIGHT_TOUCHED){
+			if(RIGHT_TOUCHED){
 				player.setX(player.getX() - 1);
 			}
 		}
@@ -272,28 +250,22 @@ public class Gridlock extends ApplicationAdapter {
 				(int) (player.getY() / hazardsCollisionLayer.getTileHeight()));
 
 		if(collisionWithHazards){
-			player.setHealth(player.getHealth() - 1);
-			healthString = "Health: " + player.getHealth();
-			System.out.print("lost health to hazard");
+			if(cell.getTile().getProperties().containsKey("fire")){
+
+			}
+			if(cell.getTile().getProperties().containsKey("lava")){
+
+			}
 		}
 	}
 
-	public boolean isCellBLocked(int layer, float x, float y) {
-		if(layer == 3) {
-			TiledMapTileLayer.Cell cell = hazardsCollisionLayer.getCell(
-					(int) (x / hazardsCollisionLayer.getTileWidth()),
-					(int) (y / hazardsCollisionLayer.getTileHeight()));
+	public boolean isCellBLocked(float x, float y) {
+		TiledMapTileLayer.Cell cell = obstaclesCollisionLayer.getCell(
+				(int) (x / obstaclesCollisionLayer.getTileWidth()),
+				(int) (y / obstaclesCollisionLayer.getTileHeight()));
 
-			return cell != null && cell.getTile() != null;
-		}else{ // return layer 2
-			TiledMapTileLayer.Cell cell = obstaclesCollisionLayer.getCell(
-					(int) (x / obstaclesCollisionLayer.getTileWidth()),
-					(int) (y / obstaclesCollisionLayer.getTileHeight()));
-
-			return cell != null && cell.getTile() != null;
-		}
-
-
+		return cell != null && cell.getTile() != null
+				&& cell.getTile().getProperties().containsKey("collision");
 	}
 
 }
