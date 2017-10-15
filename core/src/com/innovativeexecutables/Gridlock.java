@@ -28,6 +28,7 @@ public class Gridlock extends ApplicationAdapter {
 	public static OrthographicCamera cam;
 	private Player player;
 	private float delta;
+	private int mouseClickX,mouseClickY;
 	private Texture playButton;
 	private boolean playFlag;
 	// TiledMap
@@ -88,12 +89,22 @@ public class Gridlock extends ApplicationAdapter {
 
 	@Override
 	public void render () {
-		/*if left mouse button is clicked game will begin not sure
-		* where the play button will be so that needs implemented*/
+		/*if left mouse button is clicked game will begin
+		 * when mouse clicked location of click is saved and
+		  * click location is checked to see if the play button was clicked*/
+
+
 		if(Gdx.input.isButtonPressed(Input.Buttons.LEFT))
 		{
-			playFlag=true;
 
+			mouseClickX=Gdx.input.getX();
+			mouseClickY=Gdx.input.getY();
+
+
+			if ((mouseClickX<=702&&mouseClickX>=383)&&(mouseClickY<=501&&mouseClickY>=406))
+			{
+				playFlag=true;
+			}
 
 		}
 
@@ -125,7 +136,7 @@ public class Gridlock extends ApplicationAdapter {
 			// draws play button at start or when game is stopped
 			if(playFlag==false) {
 				//draws play button object
-				sb.draw(playButton, 100, 976);
+				sb.draw(playButton, 384, 512);
 			}
 			for (Enemy enemy : enemies) {
 				enemy.render(sb);
