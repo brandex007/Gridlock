@@ -2,6 +2,7 @@ package com.innovativeexecutables;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -27,7 +28,8 @@ public class Gridlock extends ApplicationAdapter {
 	public static OrthographicCamera cam;
 	private Player player;
 	private float delta;
-
+	private Texture playButton;
+	private boolean playFlag;
 	// TiledMap
 	private TiledMap tileMap;
 	private OrthogonalTiledMapRenderer tileMapRenderer;
@@ -46,7 +48,8 @@ public class Gridlock extends ApplicationAdapter {
 	public void create () {
 		cam = new OrthographicCamera();
 		cam.setToOrtho(false, VIEWPORT_WIDTH, VIEWPORT_HEIGHT);
-
+		//creates play button object
+		 playButton=new Texture("play.png");
 
 		tileMap = new TmxMapLoader().load("tiledmap1.tmx");
 		tileMapRenderer = new OrthogonalTiledMapRenderer(tileMap);
@@ -85,36 +88,58 @@ public class Gridlock extends ApplicationAdapter {
 
 	@Override
 	public void render () {
-		Gdx.gl.glClearColor(0, 0, 0, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		/*if left mouse button is clicked game will begin not sure
+		* where the play button will be so that needs implemented*/
+		if(Gdx.input.isButtonPressed(Input.Buttons.LEFT))
+		{
+			playFlag=true;
 
-		delta = Gdx.graphics.getRawDeltaTime();
-		//creates play button object
-		Texture playButton=new Texture("play.png");
-		// updates
-		player.update(delta);
-		checkPlayerCollisionMap();
 
-		checkForCharCollisions();
-		cam.update();
-
-		// rendering
-		tileMapRenderer.setView(cam);
-		tileMapRenderer.render();
-
-		sb = tileMapRenderer.getBatch();
-
-		sb.begin();
-		player.render(sb);
-		//draws play button object
-		sb.draw(playButton,100,976);
-
-		for(Enemy enemy : enemies){
-			enemy.render(sb);
 		}
 
-		sb.end();
+
+
+		// provides updates if play has been pressed
+		if(playFlag){
+			Gdx.gl.glClearColor(0, 0, 0, 1);
+			Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+			delta = Gdx.graphics.getRawDeltaTime();
+
+			// updates
+			player.update(delta);
+			checkPlayerCollisionMap();
+
+			checkForCharCollisions();
+			cam.update();
+
+		}
+
+			// rendering
+			tileMapRenderer.setView(cam);
+			tileMapRenderer.render();
+
+			sb = tileMapRenderer.getBatch();
+
+			sb.begin();
+			player.render(sb);
+			// draws play button at start or when game is stopped
+			if(playFlag==false) {
+				//draws play button object
+				sb.draw(playButton, 100, 976);
+			}
+			for (Enemy enemy : enemies) {
+				enemy.render(sb);
+			}
+
+			sb.end();
+
 	}
+
+
+
+
+
+
 	
 	@Override
 	public void dispose () {
