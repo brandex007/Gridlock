@@ -151,11 +151,17 @@ public class Gridlock extends ApplicationAdapter {
 
 			// updates
 			player.update(delta);
-			checkPlayerCollisionMap();
+			for(Enemy enemy : enemies){
+				enemy.update(delta);
+			}
 
+			// collisions
+			checkPlayerCollisionMap();
 			checkForCharCollisions();
+
 			cam.update();
 
+			healthString = "Health: " + player.getHealth();
 		}
 
 		// rendering
@@ -188,7 +194,7 @@ public class Gridlock extends ApplicationAdapter {
 			sb.draw(playButton, 384, 512);
 		}
 
-		// draws enemies
+		// update and draw enemies
 		for(Enemy enemy : enemies){
 			enemy.render(sb);
 		}
@@ -204,15 +210,24 @@ public class Gridlock extends ApplicationAdapter {
 
 	public void checkForCharCollisions(){
 
-		// collision with enemy
+		//// player collision with enemies
 		for(Enemy enemy : enemies) {
-			if (player.getX() > enemy.getX() - 150 && player.getX() < enemy.getX() + 150){
-				if (player.getY() > enemy.getY() - 150 && player.getY() < enemy.getY() + 150){
+			// active enemy once when player is nearby
+			if (player.getX() > enemy.getX() - 150 && player.getX() < enemy.getX() + 150) {
+				if (player.getY() > enemy.getY() - 150 && player.getY() < enemy.getY() + 150) {
 					enemy.setActive(true);
 				}
-			}else{
-				enemy.setActive(false);
 			}
+
+			// player takes damage from enemy if not attacking
+			if (player.getX() > enemy.getX() - enemy.getWidth() / 2 && player.getX() < enemy.getX() + enemy.getWidth() / 2) {
+				if (player.getY() > enemy.getY() - enemy.getHeight() / 2 && player.getY() < enemy.getY() + enemy.getHeight() / 2) {
+					if (player.isNotAttacking) {
+						player.setHealth(player.getHealth() - 1);
+					}
+				}
+			}
+
 		}
 
 	}
@@ -247,7 +262,6 @@ public class Gridlock extends ApplicationAdapter {
 
 		if(collisionWithHazards){
 			player.setHealth(player.getHealth() - 1);
-			healthString = "Health: " + player.getHealth();
 			System.out.print("lost health to hazard");
 		}
 	}

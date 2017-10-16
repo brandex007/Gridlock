@@ -13,11 +13,12 @@ import static com.innovativeexecutables.Gridlock.*;
 public class Player{
     private float x, y;
     private Texture playerTexture;
-    private float speed = 60;
+    private float speed = 100;
     public boolean UP_TOUCHED, DOWN_TOUCHED, LEFT_TOUCHED, RIGHT_TOUCHED;
     private float width, height;
     private int health = 100;
     public boolean isDead = false;
+    public boolean isNotAttacking = true;
 
     public Player(int x, int y) {
 
