@@ -3,6 +3,7 @@ package com.innovativeexecutables;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -33,7 +34,9 @@ public class Gridlock extends ApplicationAdapter {
 	private float delta;
 	private int mouseClickX,mouseClickY;
 	private Texture playButton;
-	private boolean playFlag;
+
+	private Music backgroundMusic,enemyMusic;
+	private boolean playFlag,backgroundMusicFLag,enemyMusicFlag;
 	// TiledMap
 	private TiledMap tileMap;
 	private OrthogonalTiledMapRenderer tileMapRenderer;
@@ -66,7 +69,9 @@ public class Gridlock extends ApplicationAdapter {
 
 		obstaclesCollisionLayer = (TiledMapTileLayer) tileMap.getLayers().get("Obstacles");
 		hazardsCollisionLayer = (TiledMapTileLayer) tileMap.getLayers().get("Hazards");
-
+		// track created by Marcelo Fernandez  https://soundcloud.com/marcelo-fernandez3
+		backgroundMusic=Gdx.audio.newMusic(Gdx.files.internal("medmusic.ogg"));
+		enemyMusic=Gdx.audio.newMusic(Gdx.files.internal("enemymusic.mp3"));
 		player = new Player(100,800);
 
 		enemies = new ArrayList<Enemy>();
@@ -119,8 +124,41 @@ public class Gridlock extends ApplicationAdapter {
 
 	}
 
+	//plays background music or enemy music while game is running
+	public void playBackgroundMusic()
+	{
+
+
+		if(backgroundMusicFLag)
+		{
+			enemyMusicFlag=false;
+
+			backgroundMusic.setLooping(true);
+			backgroundMusic.setVolume(.5f);
+			backgroundMusic.play();
+
+		}
+
+		else if(enemyMusicFlag)
+		{
+			enemyMusic.setLooping(true);
+			backgroundMusic.setVolume(.5f);
+			enemyMusic.play();
+
+		}
+
+		else {
+			backgroundMusic.dispose();
+			enemyMusic.dispose();
+		}
+
+
+	}
+
 	@Override
 	public void render () {
+
+		playBackgroundMusic();
 		/*if left mouse button is clicked game will begin
 		 * when mouse clicked location of click is saved and
 		  * click location is checked to see if the play button was clicked*/
@@ -137,6 +175,8 @@ public class Gridlock extends ApplicationAdapter {
 			if ((mouseClickX<=533&&mouseClickX>=383)&&(mouseClickY<=502&&mouseClickY>=457))
 			{
 				playFlag=true;
+				backgroundMusicFLag=true;
+
 			}
 
 		}
@@ -216,6 +256,9 @@ public class Gridlock extends ApplicationAdapter {
 			if (player.getX() > enemy.getX() - 150 && player.getX() < enemy.getX() + 150) {
 				if (player.getY() > enemy.getY() - 150 && player.getY() < enemy.getY() + 150) {
 					enemy.setActive(true);
+					backgroundMusicFLag=false;
+					enemyMusicFlag=true;
+
 				}
 			}
 
