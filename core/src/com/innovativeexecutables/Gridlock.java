@@ -110,8 +110,13 @@ public class Gridlock extends ApplicationAdapter {
 		);
 	}
 
-	public void updateTime(){
-		time = time + 1;
+	public void updateTime() {
+		if (playFlag)
+		{
+			time = time + 1;
+		}
+
+
 	}
 
 	@Override
@@ -128,7 +133,8 @@ public class Gridlock extends ApplicationAdapter {
 			mouseClickY=Gdx.input.getY();
 
 
-			if ((mouseClickX<=702&&mouseClickX>=383)&&(mouseClickY<=501&&mouseClickY>=406))
+
+			if ((mouseClickX<=533&&mouseClickX>=383)&&(mouseClickY<=502&&mouseClickY>=457))
 			{
 				playFlag=true;
 			}
