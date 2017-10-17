@@ -4,6 +4,7 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -36,6 +37,7 @@ public class Gridlock extends ApplicationAdapter {
 	private Texture playButton;
 
 	private Music backgroundMusic,enemyMusic;
+	private Sound impactSound;
 	private boolean playFlag,backgroundMusicFLag,enemyMusicFlag;
 	// TiledMap
 	private TiledMap tileMap;
@@ -72,6 +74,9 @@ public class Gridlock extends ApplicationAdapter {
 		// track created by Marcelo Fernandez  https://soundcloud.com/marcelo-fernandez3
 		backgroundMusic=Gdx.audio.newMusic(Gdx.files.internal("medmusic.ogg"));
 		enemyMusic=Gdx.audio.newMusic(Gdx.files.internal("enemymusic.mp3"));
+		impactSound=Gdx.audio.newSound(Gdx.files.internal("gruntsound.wav"));
+
+
 		player = new Player(100,800);
 
 		enemies = new ArrayList<Enemy>();
@@ -305,6 +310,14 @@ public class Gridlock extends ApplicationAdapter {
 
 		if(collisionWithHazards){
 			player.setHealth(player.getHealth() - 1);
+			// plays impact sound every 10 points of health lost
+			if (player.getHealth()%10==0)
+			{
+				impactSound.play(100,1.2f,0);
+			}
+
+
+
 			System.out.print("lost health to hazard");
 		}
 	}
