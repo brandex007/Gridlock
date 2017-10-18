@@ -136,7 +136,7 @@ public class Gridlock extends ApplicationAdapter {
 
 		if(backgroundMusicFLag)
 		{
-			enemyMusicFlag=false;
+
 
 			backgroundMusic.setLooping(true);
 			backgroundMusic.setVolume(.5f);
@@ -146,17 +146,23 @@ public class Gridlock extends ApplicationAdapter {
 
 		else if(enemyMusicFlag)
 		{
+			backgroundMusic.stop();
 			enemyMusic.setLooping(true);
-			backgroundMusic.setVolume(.5f);
+			enemyMusic.setVolume(.25f);
 			enemyMusic.play();
 
 		}
 
-		else {
-			backgroundMusic.dispose();
-			enemyMusic.dispose();
-		}
 
+	}
+
+	public void playImpactSound()
+	{
+		// plays impact sound every 10 points of health lost or upon initial impact
+		if ((player.getHealth()%10==0 || player.getHealth()==99)&&player.getHealth()!=0)
+		{
+			impactSound.play(100,1.2f,0);
+		}
 
 	}
 
@@ -250,6 +256,9 @@ public class Gridlock extends ApplicationAdapter {
 	
 	@Override
 	public void dispose () {
+			backgroundMusic.dispose();
+			enemyMusic.dispose();
+			impactSound.dispose();
 
 	}
 
@@ -272,6 +281,7 @@ public class Gridlock extends ApplicationAdapter {
 				if (player.getY() > enemy.getY() - enemy.getHeight() / 2 && player.getY() < enemy.getY() + enemy.getHeight() / 2) {
 					if (player.isNotAttacking) {
 						player.setHealth(player.getHealth() - 1);
+						playImpactSound();
 					}
 				}
 			}
@@ -310,13 +320,7 @@ public class Gridlock extends ApplicationAdapter {
 
 		if(collisionWithHazards){
 			player.setHealth(player.getHealth() - 1);
-			// plays impact sound every 10 points of health lost
-			if (player.getHealth()%10==0)
-			{
-				impactSound.play(100,1.2f,0);
-			}
-
-
+			playImpactSound();
 
 			System.out.print("lost health to hazard");
 		}
