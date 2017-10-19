@@ -11,12 +11,12 @@ import static com.innovativeexecutables.Gridlock.*;
 
 // Player
 public class Player{
-    private float x, y;
+    public static float x, y;
     private Texture playerTexture;
     private float speed = 100;
     public boolean UP_TOUCHED, DOWN_TOUCHED, LEFT_TOUCHED, RIGHT_TOUCHED;
-    private float width, height;
-    private int health = 100;
+    public static float width, height;
+    public static int health = 100;
     public boolean isDead = false;
     public boolean isNotAttacking = true;
 
@@ -112,12 +112,12 @@ public class Player{
         return speed;
     }
 
-    public void setHealth(int health){
+    public static void setHealth(int health){
         if(health >= 0)
-            this.health = health;
+            Player.health = health;
     }
 
-    public int getHealth(){
+    public static int getHealth(){
         return health;
     }
 
