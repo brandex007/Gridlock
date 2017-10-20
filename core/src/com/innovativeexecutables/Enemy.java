@@ -80,7 +80,7 @@ public class Enemy {
                                                   }
                                               }
                 , 0        //    (delay)
-                , 1     //    (seconds)
+                , 3     //    (seconds)
             );
         }
 

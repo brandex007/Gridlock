@@ -3,8 +3,10 @@ package com.innovativeexecutables;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 
 import static com.innovativeexecutables.Gridlock.*;
@@ -12,13 +14,15 @@ import static com.innovativeexecutables.Gridlock.*;
 // Player
 public class Player{
     public static float x, y;
-    private Texture playerTexture;
-    private float speed = 100;
+    private Texture playerLeftTexture, playerRightTexture, playerUpTexture, playerDownTexture, attackTexture, curTexture;
+    public static float speed = 100;
     public boolean UP_TOUCHED, DOWN_TOUCHED, LEFT_TOUCHED, RIGHT_TOUCHED;
     public static float width, height;
     public static int health = 100;
     public boolean isDead = false;
     public boolean isNotAttacking = true;
+    Animation<TextureRegion> walkLeftAnimation;
+    float stateTime = 0f;
 
     public Player(int x, int y) {
 
@@ -52,16 +56,6 @@ public class Player{
             y -= speed * delta;
             DOWN_TOUCHED = true;
         }
-
-        /*// set ship texture:
-        if (UP_TOUCHED == true && DOWN_TOUCHED == false) {
-            ship = ship_up;
-        } else if (DOWN_TOUCHED == true && UP_TOUCHED == false) {
-            ship = ship_down;
-        } else {
-            ship = ship_middle;
-        }*/
-
     }
 
     public void setY(float value){
@@ -95,17 +89,29 @@ public class Player{
             System.out.print("game over");
         }
 
-        sb.draw(playerTexture,x,y);
+        if(LEFT_TOUCHED){
+            curTexture = playerLeftTexture;
+        }else if(RIGHT_TOUCHED){
+            curTexture = playerRightTexture;
+        }else if(UP_TOUCHED){
+            curTexture = playerUpTexture;
+        }else{
+            curTexture = playerDownTexture;
+        }
+
+        sb.draw(curTexture,x - 10,y);
     }
 
     public void loadPlayerTextures(){
-        playerTexture = new Texture("knight.png");
-        //ship_up = new Texture("ship_up.png");
-        //ship_down = new Texture("ship_down.png");
+        playerUpTexture = new Texture("playerUp.png");
+        playerDownTexture = new Texture("playerDown.png");
+        playerLeftTexture = new Texture("playerLeft.png");
+        playerRightTexture = new Texture("playerRight.png");
 
+        curTexture = playerDownTexture;
 
-        width = playerTexture.getWidth();
-        height = playerTexture.getHeight();
+        width = playerDownTexture.getWidth() - 20;
+        height = playerDownTexture.getHeight();
     }
 
     public float getSpeed() {

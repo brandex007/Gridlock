@@ -82,7 +82,7 @@ public class EnemyAxe {
             x += (float) Math.cos(angle) * 125 * delta;
             y += (float) Math.sin(angle) * 125 * delta;
 
-            if(destinationY - y < 1 && destinationX - x < 1){ // if axe is within 1 pixel from destination, remove axe
+            if(abs(destinationY - y) < 1 && abs(destinationX - x) < 1){ // if axe is within 1 pixel from destination, remove axe
                 remove();
             }
 
