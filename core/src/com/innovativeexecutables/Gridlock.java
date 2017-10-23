@@ -77,7 +77,7 @@ public class Gridlock extends ApplicationAdapter {
 		impactSound=Gdx.audio.newSound(Gdx.files.internal("gruntsound.wav"));
 
 
-		player = new Player(200,900);
+		player = new Player(475,10);
 
 		enemies = new ArrayList<Enemy>();
 
