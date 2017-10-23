@@ -277,11 +277,25 @@ public class Gridlock extends ApplicationAdapter {
 			}
 
 			// player takes damage from enemy if not attacking
-			if (player.getX() > enemy.getX() - enemy.getWidth() / 2 && player.getX() < enemy.getX() + enemy.getWidth() / 2) {
+			if (player.getX() > enemy.getX() && player.getX() < enemy.getX() + enemy.getWidth()) {
 				if (player.getY() > enemy.getY() - enemy.getHeight() / 2 && player.getY() < enemy.getY() + enemy.getHeight() / 2) {
 					if (player.isNotAttacking) {
 						player.setHealth(player.getHealth() - 1);
 						playImpactSound();
+
+						// collision
+						if(player.UP_TOUCHED){
+							player.setY(player.getY() - Player.speed * delta);
+						}
+						if(player.DOWN_TOUCHED){
+							player.setY(player.getY() + Player.speed * delta);
+						}
+						if(player.LEFT_TOUCHED){
+							player.setX(player.getX() + Player.speed * delta);
+						}
+						if(player.RIGHT_TOUCHED){
+							player.setX(player.getX() - Player.speed * delta);
+						}
 					}
 				}
 			}
@@ -301,16 +315,16 @@ public class Gridlock extends ApplicationAdapter {
 		// React to Collision
 		if (collisionWithObstacles) {
 			if(player.UP_TOUCHED){
-				player.setY(player.getY() - 1);
+				player.setY(player.getY() - Player.speed * delta);
 			}
 			if(player.DOWN_TOUCHED){
-				player.setY(player.getY() + 1);
+				player.setY(player.getY() + Player.speed * delta);
 			}
 			if(player.LEFT_TOUCHED){
-				player.setX(player.getX() + 1);
+				player.setX(player.getX() + Player.speed * delta);
 			}
 			if(player.RIGHT_TOUCHED){
-				player.setX(player.getX() - 1);
+				player.setX(player.getX() - Player.speed * delta);
 			}
 		}
 
