@@ -15,6 +15,7 @@ import static com.innovativeexecutables.Gridlock.*;
 public class Player{
     public static float x, y;
     private Texture playerLeftTexture, playerRightTexture, playerUpTexture, playerDownTexture, attackTexture, curTexture;
+    public float regularSpeed = 100;
     public static float speed = 100;
     public boolean UP_TOUCHED, DOWN_TOUCHED, LEFT_TOUCHED, RIGHT_TOUCHED;
     public static float width, height;
@@ -116,6 +117,14 @@ public class Player{
 
     public float getSpeed() {
         return speed;
+    }
+
+    public float getRegularSpeed(){
+        return regularSpeed;
+    }
+
+    public void setSpeed(float speed){
+        this.speed = speed;
     }
 
     public static void setHealth(int health){

@@ -215,7 +215,7 @@ public class Gridlock extends ApplicationAdapter {
 			healthString = "Health: " + player.getHealth();
 		}
 
-		// rendering
+		// map rendering
 		tileMapRenderer.setView(cam);
 		tileMapRenderer.render();
 
@@ -238,7 +238,13 @@ public class Gridlock extends ApplicationAdapter {
 		sb.end();
 
 		sb.begin();
-		player.render(sb);
+		if(!(player.getX() > 416 && player.getX() < 544 && player.getY() > 480 && player.getY()<700)) {
+			player.setSpeed(player.getRegularSpeed());
+			player.render(sb);
+		}else{
+			player.setSpeed(player.getRegularSpeed() * 3f);
+		}
+
 		// draws play button at start or when game is stopped
 		if(playFlag==false) {
 			//draws play button object
