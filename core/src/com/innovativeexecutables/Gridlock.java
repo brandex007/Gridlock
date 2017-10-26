@@ -34,7 +34,7 @@ public class Gridlock extends ApplicationAdapter {
 	private Player player;
 	private float delta;
 	private int mouseClickX,mouseClickY;
-	private Texture playButton, resumeButton;
+	private Texture playButton, resumeButton, exitButton;
 
 	private Music backgroundMusic,enemyMusic;
 	private Sound impactSound;
@@ -62,7 +62,7 @@ public class Gridlock extends ApplicationAdapter {
 		cam.setToOrtho(false, VIEWPORT_WIDTH, VIEWPORT_HEIGHT);
 		//creates play button object
 		playButton=new Texture("play.png");
-		resumeButton=new Texture("resume.png");
+		//resumeButton=new Texture("resume.png");
 
 		tileMap = new TmxMapLoader().load("tiledmap1.tmx");
 		tileMapRenderer = new OrthogonalTiledMapRenderer(tileMap);
@@ -185,11 +185,15 @@ public class Gridlock extends ApplicationAdapter {
 
 
 
-			if ((mouseClickX<=533&&mouseClickX>=383)&&(mouseClickY<=502&&mouseClickY>=457))
+			if ((mouseClickX<=500&&mouseClickX>=350)&&(mouseClickY<=510&&mouseClickY>=465))
 			{
 				playFlag=true;
 				backgroundMusicFLag=true;
 
+			}
+			if ((mouseClickX<=680&&mouseClickX>=530)&&(mouseClickY<=510&&mouseClickY>=465))
+			{
+				Gdx.app.exit();
 			}
 
 		}
@@ -198,7 +202,6 @@ public class Gridlock extends ApplicationAdapter {
 		{
 			playFlag=false;
 		}
-
 
 
 		// provides updates if play has been pressed
@@ -256,10 +259,14 @@ public class Gridlock extends ApplicationAdapter {
 		if(playFlag==false) {
 			if (time == 0){
 				//draws play button object
-				sb.draw(playButton, 384, 512);
-			}else
-			//draws resume button object
-			sb.draw(resumeButton, 384, 512);
+				sb.draw(playButton, 350, 512);
+			}else if (time >= 0) {
+				resumeButton=new Texture("resume.png");
+				exitButton=new Texture("exit.png");
+				//draws resume button object
+				sb.draw(resumeButton, 350, 512);
+				sb.draw(exitButton, 530, 512);
+			}
 		}
 
 		// update and draw enemies
