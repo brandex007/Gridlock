@@ -34,7 +34,7 @@ public class Gridlock extends ApplicationAdapter {
 	private Player player;
 	private float delta;
 	private int mouseClickX,mouseClickY;
-	private Texture playButton;
+	private Texture playButton, resumeButton;
 
 	private Music backgroundMusic,enemyMusic;
 	private Sound impactSound;
@@ -62,6 +62,7 @@ public class Gridlock extends ApplicationAdapter {
 		cam.setToOrtho(false, VIEWPORT_WIDTH, VIEWPORT_HEIGHT);
 		//creates play button object
 		playButton=new Texture("play.png");
+		resumeButton=new Texture("resume.png");
 
 		tileMap = new TmxMapLoader().load("tiledmap1.tmx");
 		tileMapRenderer = new OrthogonalTiledMapRenderer(tileMap);
@@ -166,6 +167,7 @@ public class Gridlock extends ApplicationAdapter {
 
 	}
 
+
 	@Override
 	public void render () {
 
@@ -190,6 +192,11 @@ public class Gridlock extends ApplicationAdapter {
 
 			}
 
+		}
+
+		if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE))
+		{
+			playFlag=false;
 		}
 
 
@@ -247,8 +254,12 @@ public class Gridlock extends ApplicationAdapter {
 
 		// draws play button at start or when game is stopped
 		if(playFlag==false) {
-			//draws play button object
-			sb.draw(playButton, 384, 512);
+			if (time == 0){
+				//draws play button object
+				sb.draw(playButton, 384, 512);
+			}else
+			//draws resume button object
+			sb.draw(resumeButton, 384, 512);
 		}
 
 		// update and draw enemies
