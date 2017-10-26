@@ -14,7 +14,7 @@ import static com.innovativeexecutables.Gridlock.*;
 // Player
 public class Player{
     public static float x, y;
-    private Texture playerLeftTexture, playerRightTexture, playerUpTexture, playerDownTexture, attackTexture, curTexture;
+    private Texture playerLeftTexture, playerRightTexture, playerUpTexture, playerDownTexture, attackLeftTexture, attackRightTexture, curTexture;
     public float regularSpeed = 100;
     public static float speed = 100;
     public boolean UP_TOUCHED, DOWN_TOUCHED, LEFT_TOUCHED, RIGHT_TOUCHED;
@@ -22,8 +22,11 @@ public class Player{
     public static int health = 100;
     public boolean isDead = false;
     public boolean isNotAttacking = true;
-    Animation<TextureRegion> walkLeftAnimation;
-    float stateTime = 0f;
+
+    // faced left or right last
+    public boolean facedRightLast = true;
+
+    String state = "walk";
 
     public Player(int x, int y) {
 
@@ -57,6 +60,7 @@ public class Player{
             y -= speed * delta;
             DOWN_TOUCHED = true;
         }
+
     }
 
     public void setY(float value){
@@ -90,17 +94,32 @@ public class Player{
             System.out.print("game over");
         }
 
-        if(LEFT_TOUCHED){
-            curTexture = playerLeftTexture;
-        }else if(RIGHT_TOUCHED){
-            curTexture = playerRightTexture;
-        }else if(UP_TOUCHED){
-            curTexture = playerUpTexture;
-        }else{
-            curTexture = playerDownTexture;
+        // load walking textures if in walking state
+        if(state == "walk") {
+            if (LEFT_TOUCHED) {
+                facedRightLast = false;
+                curTexture = playerLeftTexture;
+            } else if (RIGHT_TOUCHED) {
+                facedRightLast = true;
+                curTexture = playerRightTexture;
+            } else if (UP_TOUCHED) {
+                curTexture = playerUpTexture;
+            } else {
+                curTexture = playerDownTexture;
+            }
+        }
+
+        // load attacking texture if in attack state
+        if(state == "attack"){
+            if(facedRightLast == false){
+                curTexture = attackLeftTexture;
+            }else if(facedRightLast){
+                curTexture = attackRightTexture;
+            }
         }
 
         sb.draw(curTexture,x - 10,y);
+
     }
 
     public void loadPlayerTextures(){
@@ -108,6 +127,8 @@ public class Player{
         playerDownTexture = new Texture("playerDown.png");
         playerLeftTexture = new Texture("playerLeft.png");
         playerRightTexture = new Texture("playerRight.png");
+        attackLeftTexture = new Texture("playerattackleft.png");
+        attackRightTexture = new Texture("playerattackright.png");
 
         curTexture = playerDownTexture;
 
@@ -134,6 +155,24 @@ public class Player{
 
     public static int getHealth(){
         return health;
+    }
+
+    public void attack(){
+        state = "attack";
+
+        // stop attack after 0.3 seconds
+        com.badlogic.gdx.utils.Timer.schedule(new com.badlogic.gdx.utils.Timer.Task() {
+                                                  @Override
+                                                  public void run() {
+                                                        stopAttack();
+                                                  }
+                                              }
+                , 0.3f       //    (delay)
+        );
+    }
+
+    public void stopAttack(){
+        state = "walk";
     }
 
 }

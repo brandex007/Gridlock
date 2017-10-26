@@ -19,400 +19,366 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.utils.Timer;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import static com.innovativeexecutables.Player.*;
 
 public class Gridlock extends ApplicationAdapter {
-	// map is 32 by 32 tiles with 32 pixel tiles
+    // map is 32 by 32 tiles with 32 pixel tiles
 
-	public static int VIEWPORT_WIDTH = 1024;
-	public static int VIEWPORT_HEIGHT = 1024;
+    public static int VIEWPORT_WIDTH = 1024;
+    public static int VIEWPORT_HEIGHT = 1024;
 
-	private Batch sb;
-	public static OrthographicCamera cam;
-	private Player player;
-	private float delta;
-	private int mouseClickX,mouseClickY;
-<<<<<<< HEAD
-	private Texture playButton,pauseButton;
-=======
-	private Texture playButton, resumeButton, exitButton;
->>>>>>> f20cabf75d903166c08bde4840a4327db1102733
+    private Batch sb;
+    public static OrthographicCamera cam;
+    private Player player;
+    private float delta;
+    private int mouseClickX, mouseClickY;
+    private Texture playButton;
 
-	private Music backgroundMusic,enemyMusic;
-	private Sound impactSound;
-	private boolean playFlag,backgroundMusicFLag,enemyMusicFlag;
-	// TiledMap
-	private TiledMap tileMap;
-	private OrthogonalTiledMapRenderer tileMapRenderer;
+    private Music backgroundMusic, enemyMusic;
+    private Sound impactSound;
+    private boolean playFlag, backgroundMusicFLag, enemyMusicFlag;
+    // TiledMap
+    private TiledMap tileMap;
+    private OrthogonalTiledMapRenderer tileMapRenderer;
 
-	// Collision
-	private TiledMapTileLayer obstaclesCollisionLayer, hazardsCollisionLayer;
+    // Collision
+    private TiledMapTileLayer obstaclesCollisionLayer, hazardsCollisionLayer;
 
-	// Tile
-	Tile[][] tileList = new Tile[32][32];
-	List<Enemy> enemies;
+    // Tile
+    Tile[][] tileList = new Tile[32][32];
+    List<Enemy> enemies;
 
-	// Displays for score, health, and time
-	BitmapFont scoreFont, healthFont, timeFont;
-	String scoreString, healthString, timeString;
+    // Displays for score, health, and time
+    BitmapFont scoreFont, healthFont, timeFont;
+    String scoreString, healthString, timeString;
 
-	int time = 0;
+    int time = 0;
 
-	@Override
-	public void create () {
-		cam = new OrthographicCamera();
-		cam.setToOrtho(false, VIEWPORT_WIDTH, VIEWPORT_HEIGHT);
-		//creates play button object
-		playButton=new Texture("play.png");
-<<<<<<< HEAD
-		pauseButton=new Texture("pause.png");
-=======
-		//resumeButton=new Texture("resume.png");
+    @Override
+    public void create() {
+        cam = new OrthographicCamera();
+        cam.setToOrtho(false, VIEWPORT_WIDTH, VIEWPORT_HEIGHT);
+        //creates play button object
+        playButton = new Texture("play.png");
 
->>>>>>> f20cabf75d903166c08bde4840a4327db1102733
-		tileMap = new TmxMapLoader().load("tiledmap1.tmx");
-		tileMapRenderer = new OrthogonalTiledMapRenderer(tileMap);
+        tileMap = new TmxMapLoader().load("tiledmap1.tmx");
+        tileMapRenderer = new OrthogonalTiledMapRenderer(tileMap);
 
-		sb = tileMapRenderer.getBatch();
-		sb.setProjectionMatrix(cam.combined);
+        sb = tileMapRenderer.getBatch();
+        sb.setProjectionMatrix(cam.combined);
 
-		obstaclesCollisionLayer = (TiledMapTileLayer) tileMap.getLayers().get("Obstacles");
-		hazardsCollisionLayer = (TiledMapTileLayer) tileMap.getLayers().get("Hazards");
-		// track created by Marcelo Fernandez  https://soundcloud.com/marcelo-fernandez3
-		backgroundMusic=Gdx.audio.newMusic(Gdx.files.internal("medmusic.ogg"));
-		enemyMusic=Gdx.audio.newMusic(Gdx.files.internal("enemymusic.mp3"));
-		impactSound=Gdx.audio.newSound(Gdx.files.internal("gruntsound.wav"));
+        obstaclesCollisionLayer = (TiledMapTileLayer) tileMap.getLayers().get("Obstacles");
+        hazardsCollisionLayer = (TiledMapTileLayer) tileMap.getLayers().get("Hazards");
+        // track created by Marcelo Fernandez  https://soundcloud.com/marcelo-fernandez3
+        backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("medmusic.ogg"));
+        enemyMusic = Gdx.audio.newMusic(Gdx.files.internal("enemymusic.mp3"));
+        impactSound = Gdx.audio.newSound(Gdx.files.internal("gruntsound.wav"));
 
 
-		player = new Player(475,10);
+        player = new Player(475, 10);
 
-		enemies = new ArrayList<Enemy>();
+        enemies = new ArrayList<Enemy>();
 
-		// tiles
-		for(int i = 0; i<Tile.tileSize; i++){
-			for(int j = 0; j<Tile.tileSize; j++){
-				tileList[i][j] = new Tile(i,j);
-			}
-		}
+        // tiles
+        for (int i = 0; i < Tile.tileSize; i++) {
+            for (int j = 0; j < Tile.tileSize; j++) {
+                tileList[i][j] = new Tile(i, j);
+            }
+        }
 
 		/*
-		// spawn enemy at every tile
+        // spawn enemy at every tile
 		for(int i = 0; i<Tile.tileSize; i++){
 			for(int j = 0; j<Tile.tileSize; j++){
 				enemies.add(new Enemy(tileList[i][j].getX(), tileList[i][j].getY()));
 			}
 		}*/
 
-		// spawn enemy at tile 20,20
-		enemies.add(new Enemy(tileList[20][20].getX(), tileList[20][20].getY()));
+        // spawn enemy at tile 20,20
+        enemies.add(new Enemy(tileList[20][20].getX(), tileList[20][20].getY()));
 
-		// initiate fonts
-		scoreString = "Score: 0";
-		scoreFont = new BitmapFont();
+        // initiate fonts
+        scoreString = "Score: 0";
+        scoreFont = new BitmapFont();
 
-		healthString = "Health: 100";
-		healthFont = new BitmapFont();
+        healthString = "Health: 100";
+        healthFont = new BitmapFont();
 
-		timeString = "Time: 0";
-		timeFont = new BitmapFont();
+        timeString = "Time: 0";
+        timeFont = new BitmapFont();
 
-		Timer.schedule(new Timer.Task(){
-						   @Override
-						   public void run() {
-							   updateTime();
-						   }
-					   }
-				, 0        //    (delay)
-				, 1     //    (seconds)
-		);
-	}
+        Timer.schedule(new Timer.Task() {
+                           @Override
+                           public void run() {
+                               updateTime();
+                           }
+                       }
+                , 0        //    (delay)
+                , 1     //    (seconds)
+        );
+    }
 
-	public void updateTime() {
-		if (playFlag)
-		{
-			time = time + 1;
-		}
-
-
-	}
-
-	//plays background music or enemy music while game is running
-	public void playBackgroundMusic()
-	{
+    public void updateTime() {
+        if (playFlag) {
+            time = time + 1;
+        }
 
 
-		if(backgroundMusicFLag)
-		{
+    }
+
+    //plays background music or enemy music while game is running
+    public void playBackgroundMusic() {
 
 
-			backgroundMusic.setLooping(true);
-			backgroundMusic.setVolume(.5f);
-			backgroundMusic.play();
-
-		}
-
-		else if(enemyMusicFlag)
-		{
-			backgroundMusic.stop();
-			enemyMusic.setLooping(true);
-			enemyMusic.setVolume(.25f);
-			enemyMusic.play();
-
-		}
+        if (backgroundMusicFLag) {
 
 
-	}
+            backgroundMusic.setLooping(true);
+            backgroundMusic.setVolume(.5f);
+            backgroundMusic.play();
 
-	public void playImpactSound()
-	{
-		// plays impact sound every 10 points of health lost or upon initial impact
-		if ((player.getHealth()%10==0 || player.getHealth()==99)&&player.getHealth()!=0)
-		{
-			impactSound.play(100,1.2f,0);
-		}
+        } else if (enemyMusicFlag) {
+            backgroundMusic.stop();
+            enemyMusic.setLooping(true);
+            enemyMusic.setVolume(.25f);
+            enemyMusic.play();
 
-	}
+        }
 
 
-	@Override
-	public void render () {
+    }
 
-		playBackgroundMusic();
-		/*if left mouse button is clicked game will begin
+    public void playImpactSound() {
+        // plays impact sound every 10 points of health lost or upon initial impact
+        if ((player.getHealth() % 10 == 0 || player.getHealth() == 99) && player.getHealth() != 0) {
+            impactSound.play(100, 1.2f, 0);
+        }
+
+    }
+
+    @Override
+    public void render() {
+
+        playBackgroundMusic();
+        /*if left mouse button is clicked game will begin
 		 * when mouse clicked location of click is saved and
 		  * click location is checked to see if the play button was clicked*/
 
 
-		if(Gdx.input.isButtonPressed(Input.Buttons.LEFT))
-		{
+        if (Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
 
-			mouseClickX=Gdx.input.getX();
-			mouseClickY=Gdx.input.getY();
-
+            mouseClickX = Gdx.input.getX();
+            mouseClickY = Gdx.input.getY();
 
 
-<<<<<<< HEAD
+            if ((mouseClickX <= 533 && mouseClickX >= 383) && (mouseClickY <= 502 && mouseClickY >= 457)) {
+                playFlag = true;
+                backgroundMusicFLag = true;
+
+            }
+
+        }
 
 
-			if ((mouseClickX<=533&&mouseClickX>=383)&&(mouseClickY<=502&&mouseClickY>=457))
-=======
-			if ((mouseClickX<=500&&mouseClickX>=350)&&(mouseClickY<=510&&mouseClickY>=465))
->>>>>>> f20cabf75d903166c08bde4840a4327db1102733
-			{
-				playFlag=true;
+        // provides updates if play has been pressed
+        if (playFlag) {
+            Gdx.gl.glClearColor(0, 0, 0, 1);
+            Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+            delta = Gdx.graphics.getRawDeltaTime();
 
-				if(!enemyMusicFlag){
-					backgroundMusicFLag=true;
+            // updates
+            player.update(delta);
+            for (Enemy enemy : enemies) {
+                enemy.update(delta);
+            }
 
-				}
+            // collisions
+            checkPlayerCollisionMap();
+            checkForCharCollisions();
 
-			}
-			if ((mouseClickX<=680&&mouseClickX>=530)&&(mouseClickY<=510&&mouseClickY>=465))
-			{
-				Gdx.app.exit();
-			}
+            cam.update();
 
-			// pauses game play
-			else if((mouseClickX<=149&&mouseClickX>=0)&&(mouseClickY<=44&&mouseClickY>=0))
-			{
-				playFlag=false;
+            healthString = "Health: " + player.getHealth();
 
+            // player attacks using spacebar
+            if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
 
-			}
+                // only attack when not currently attacking
+                if (player.state == "walk") {
 
+                    player.attack();
 
-		}
+                    for (Enemy enemy : enemies) {
+                        if (enemy.getX() < player.getX() && enemy.getX() < player.getX() + enemy.getWidth() && enemy.getY() < player.getY() && enemy.getY() < player.getY() + enemy.getHeight()) {
+                            enemy.setHealth(enemy.getHealth() - 35);
+                        }
+                    }
+                }
+            }
 
-		if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE))
-		{
-			playFlag=false;
-		}
+            // Get an iterator.
+            Iterator<Enemy> iterator = enemies.iterator();
 
+            // check if any enemies are dead and remove them
+            while(iterator.hasNext()) {
+                Enemy enemy = iterator.next();
 
-		// provides updates if play has been pressed
-		if(playFlag){
-			Gdx.gl.glClearColor(0, 0, 0, 1);
-			Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-			delta = Gdx.graphics.getRawDeltaTime();
+                if(enemy.getHealth() < 0){
+                    iterator.remove();
+                }
+            }
 
-			// updates
-			player.update(delta);
-			for(Enemy enemy : enemies){
-				enemy.update(delta);
-			}
+        }
 
-			// collisions
-			checkPlayerCollisionMap();
-			checkForCharCollisions();
+        // map rendering
+        tileMapRenderer.setView(cam);
+        tileMapRenderer.render();
+        sb = tileMapRenderer.getBatch();
 
-			cam.update();
+        // draw text
+        sb.begin();
+        scoreFont.setColor(Color.WHITE);
+        scoreFont.getData().setScale(2.0f);
+        scoreFont.draw(sb, scoreString, VIEWPORT_WIDTH - 150, VIEWPORT_HEIGHT - 10);
 
-			healthString = "Health: " + player.getHealth();
-		}
+        timeString = "Time: " + time;
+        timeFont.setColor(Color.WHITE);
+        timeFont.getData().setScale(2.0f);
+        timeFont.draw(sb, timeString, VIEWPORT_WIDTH - 150, VIEWPORT_HEIGHT - 40);
 
-		// map rendering
-		tileMapRenderer.setView(cam);
-		tileMapRenderer.render();
+        healthFont.setColor(Color.WHITE);
+        healthFont.getData().setScale(2.0f);
+        healthFont.draw(sb, healthString, VIEWPORT_WIDTH - 150, VIEWPORT_HEIGHT - 70);
+        sb.end();
 
-		sb = tileMapRenderer.getBatch();
+        sb.begin();
+        if (!(player.getX() > 416 && player.getX() < 544 && player.getY() > 480 && player.getY() < 700)) {
+            player.setSpeed(player.getRegularSpeed());
+            player.render(sb);
+        } else {
+            player.setSpeed(player.getRegularSpeed() * 3f);
+        }
 
-		// draw text
-		sb.begin();
-		scoreFont.setColor(Color.WHITE);
-		scoreFont.getData().setScale(2.0f);
-		scoreFont.draw(sb, scoreString, VIEWPORT_WIDTH - 150, VIEWPORT_HEIGHT - 10);
+        // draws play button at start or when game is stopped
+        if (playFlag == false) {
+            //draws play button object
+            sb.draw(playButton, 384, 512);
+        }
 
-		timeString = "Time: " + time;
-		timeFont.setColor(Color.WHITE);
-		timeFont.getData().setScale(2.0f);
-		timeFont.draw(sb, timeString, VIEWPORT_WIDTH - 150, VIEWPORT_HEIGHT - 40);
+        // update and draw enemies
+        for (Enemy enemy : enemies) {
+            enemy.render(sb);
+        }
 
-		healthFont.setColor(Color.WHITE);
-		healthFont.getData().setScale(2.0f);
-		healthFont.draw(sb, healthString, VIEWPORT_WIDTH - 150, VIEWPORT_HEIGHT - 70);
-		sb.end();
+        sb.end();
 
-		sb.begin();
-		if(!(player.getX() > 416 && player.getX() < 544 && player.getY() > 480 && player.getY()<700)) {
-			player.setSpeed(player.getRegularSpeed());
-			player.render(sb);
-		}else{
-			player.setSpeed(player.getRegularSpeed() * 3f);
-		}
+    }
 
-		// draws play button at start or when game is stopped
-		if(playFlag==false) {
-			if (time == 0){
-				//draws play button object
-				sb.draw(playButton, 350, 512);
-			}else if (time >= 0) {
-				resumeButton=new Texture("resume.png");
-				exitButton=new Texture("exit.png");
-				//draws resume button object
-				sb.draw(resumeButton, 350, 512);
-				sb.draw(exitButton, 530, 512);
-			}
-		}
-		//draws pause button when game in play mode
-		else{
-			sb.draw(pauseButton, 0, 978);
+    @Override
+    public void dispose() {
+        backgroundMusic.dispose();
+        enemyMusic.dispose();
+        impactSound.dispose();
 
+    }
 
-		}
+    public void checkForCharCollisions() {
 
-		// update and draw enemies
-		for(Enemy enemy : enemies){
-			enemy.render(sb);
-		}
+        //// player collision with enemies
+        for (Enemy enemy : enemies) {
+            // active enemy once when player is nearby
+            if (player.getX() > enemy.getX() - 150 && player.getX() < enemy.getX() + 150) {
+                if (player.getY() > enemy.getY() - 150 && player.getY() < enemy.getY() + 150) {
+                    enemy.setActive(true);
+                    backgroundMusicFLag = false;
+                    enemyMusicFlag = true;
 
-		sb.end();
+                }
+            }
 
-	}
-	
-	@Override
-	public void dispose () {
-			backgroundMusic.dispose();
-			enemyMusic.dispose();
-			impactSound.dispose();
+            // player takes damage from enemy if not attacking
+            if (player.getX() > enemy.getX() && player.getX() < enemy.getX() + enemy.getWidth()) {
+                if (player.getY() > enemy.getY() - enemy.getHeight() / 2 && player.getY() < enemy.getY() + enemy.getHeight() / 2) {
+                    if (player.isNotAttacking) {
+                        player.setHealth(player.getHealth() - 1);
+                        playImpactSound();
 
-	}
+                        // collision
+                        if (player.UP_TOUCHED) {
+                            player.setY(player.getY() - Player.speed * delta);
+                        }
+                        if (player.DOWN_TOUCHED) {
+                            player.setY(player.getY() + Player.speed * delta);
+                        }
+                        if (player.LEFT_TOUCHED) {
+                            player.setX(player.getX() + Player.speed * delta);
+                        }
+                        if (player.RIGHT_TOUCHED) {
+                            player.setX(player.getX() - Player.speed * delta);
+                        }
+                    }
+                }
+            }
 
-	public void checkForCharCollisions(){
+        }
 
-		//// player collision with enemies
-		for(Enemy enemy : enemies) {
-			// active enemy once when player is nearby
-			if (player.getX() > enemy.getX() - 150 && player.getX() < enemy.getX() + 150) {
-				if (player.getY() > enemy.getY() - 150 && player.getY() < enemy.getY() + 150) {
-					enemy.setActive(true);
-					backgroundMusicFLag=false;
-					enemyMusicFlag=true;
+    }
 
-				}
-			}
+    public void checkPlayerCollisionMap() {
 
-			// player takes damage from enemy if not attacking
-			if (player.getX() > enemy.getX() && player.getX() < enemy.getX() + enemy.getWidth()) {
-				if (player.getY() > enemy.getY() - enemy.getHeight() / 2 && player.getY() < enemy.getY() + enemy.getHeight() / 2) {
-					if (player.isNotAttacking) {
-						player.setHealth(player.getHealth() - 1);
-						playImpactSound();
+        boolean collisionWithObstacles = false;
+        boolean collisionWithHazards = false;
 
-						// collision
-						if(player.UP_TOUCHED){
-							player.setY(player.getY() - Player.speed * delta);
-						}
-						if(player.DOWN_TOUCHED){
-							player.setY(player.getY() + Player.speed * delta);
-						}
-						if(player.LEFT_TOUCHED){
-							player.setX(player.getX() + Player.speed * delta);
-						}
-						if(player.RIGHT_TOUCHED){
-							player.setX(player.getX() - Player.speed * delta);
-						}
-					}
-				}
-			}
+        collisionWithObstacles = isCellBLocked(2, player.getX() + player.getWidth(), player.getY()) || isCellBLocked(2, player.getX() + player.getWidth() / 2, player.getY()) || isCellBLocked(2, player.getX(), player.getY());
+        collisionWithHazards = isCellBLocked(3, player.getX() + player.getWidth(), player.getY()) || isCellBLocked(3, player.getX() + player.getWidth() / 2, player.getY()) || isCellBLocked(3, player.getX(), player.getY());
 
-		}
+        // React to Collision
+        if (collisionWithObstacles) {
+            if (player.UP_TOUCHED) {
+                player.setY(player.getY() - Player.speed * delta);
+            }
+            if (player.DOWN_TOUCHED) {
+                player.setY(player.getY() + Player.speed * delta);
+            }
+            if (player.LEFT_TOUCHED) {
+                player.setX(player.getX() + Player.speed * delta);
+            }
+            if (player.RIGHT_TOUCHED) {
+                player.setX(player.getX() - Player.speed * delta);
+            }
+        }
 
-	}
+        TiledMapTileLayer.Cell cell = hazardsCollisionLayer.getCell(
+                (int) (player.getX() / hazardsCollisionLayer.getTileWidth()),
+                (int) (player.getY() / hazardsCollisionLayer.getTileHeight()));
 
-	public void checkPlayerCollisionMap(){
+        if (collisionWithHazards) {
+            player.setHealth(player.getHealth() - 1);
+            playImpactSound();
 
-		boolean collisionWithObstacles = false;
-		boolean collisionWithHazards = false;
+            System.out.print("lost health to hazard");
+        }
+    }
 
-		collisionWithObstacles = isCellBLocked(2,player.getX() + player.getWidth(),player.getY()) || isCellBLocked(2,player.getX() + player.getWidth()/ 2, player.getY())|| isCellBLocked(2,player.getX(), player.getY());
-		collisionWithHazards = isCellBLocked(3,player.getX() + player.getWidth(),player.getY()) || isCellBLocked(3,player.getX() + player.getWidth()/ 2, player.getY())|| isCellBLocked(3,player.getX(), player.getY());
+    public boolean isCellBLocked(int layer, float x, float y) {
+        if (layer == 3) {
+            TiledMapTileLayer.Cell cell = hazardsCollisionLayer.getCell(
+                    (int) (x / hazardsCollisionLayer.getTileWidth()),
+                    (int) (y / hazardsCollisionLayer.getTileHeight()));
 
-		// React to Collision
-		if (collisionWithObstacles) {
-			if(player.UP_TOUCHED){
-				player.setY(player.getY() - Player.speed * delta);
-			}
-			if(player.DOWN_TOUCHED){
-				player.setY(player.getY() + Player.speed * delta);
-			}
-			if(player.LEFT_TOUCHED){
-				player.setX(player.getX() + Player.speed * delta);
-			}
-			if(player.RIGHT_TOUCHED){
-				player.setX(player.getX() - Player.speed * delta);
-			}
-		}
+            return cell != null && cell.getTile() != null;
+        } else { // return layer 2
+            TiledMapTileLayer.Cell cell = obstaclesCollisionLayer.getCell(
+                    (int) (x / obstaclesCollisionLayer.getTileWidth()),
+                    (int) (y / obstaclesCollisionLayer.getTileHeight()));
 
-		TiledMapTileLayer.Cell cell = hazardsCollisionLayer.getCell(
-				(int) (player.getX() / hazardsCollisionLayer.getTileWidth()),
-				(int) (player.getY() / hazardsCollisionLayer.getTileHeight()));
-
-		if(collisionWithHazards){
-			player.setHealth(player.getHealth() - 1);
-			playImpactSound();
-
-			System.out.print("lost health to hazard");
-		}
-	}
-
-	public boolean isCellBLocked(int layer, float x, float y) {
-		if(layer == 3) {
-			TiledMapTileLayer.Cell cell = hazardsCollisionLayer.getCell(
-					(int) (x / hazardsCollisionLayer.getTileWidth()),
-					(int) (y / hazardsCollisionLayer.getTileHeight()));
-
-			return cell != null && cell.getTile() != null;
-		}else{ // return layer 2
-			TiledMapTileLayer.Cell cell = obstaclesCollisionLayer.getCell(
-					(int) (x / obstaclesCollisionLayer.getTileWidth()),
-					(int) (y / obstaclesCollisionLayer.getTileHeight()));
-
-			return cell != null && cell.getTile() != null;
-		}
+            return cell != null && cell.getTile() != null;
+        }
 
 
-	}
+    }
 
 }
