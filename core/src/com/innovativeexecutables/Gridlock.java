@@ -34,7 +34,11 @@ public class Gridlock extends ApplicationAdapter {
 	private Player player;
 	private float delta;
 	private int mouseClickX,mouseClickY;
-	private Texture playButton;
+<<<<<<< HEAD
+	private Texture playButton,pauseButton;
+=======
+	private Texture playButton, resumeButton, exitButton;
+>>>>>>> f20cabf75d903166c08bde4840a4327db1102733
 
 	private Music backgroundMusic,enemyMusic;
 	private Sound impactSound;
@@ -62,7 +66,12 @@ public class Gridlock extends ApplicationAdapter {
 		cam.setToOrtho(false, VIEWPORT_WIDTH, VIEWPORT_HEIGHT);
 		//creates play button object
 		playButton=new Texture("play.png");
+<<<<<<< HEAD
+		pauseButton=new Texture("pause.png");
+=======
+		//resumeButton=new Texture("resume.png");
 
+>>>>>>> f20cabf75d903166c08bde4840a4327db1102733
 		tileMap = new TmxMapLoader().load("tiledmap1.tmx");
 		tileMapRenderer = new OrthogonalTiledMapRenderer(tileMap);
 
@@ -166,6 +175,7 @@ public class Gridlock extends ApplicationAdapter {
 
 	}
 
+
 	@Override
 	public void render () {
 
@@ -183,15 +193,42 @@ public class Gridlock extends ApplicationAdapter {
 
 
 
+<<<<<<< HEAD
+
+
 			if ((mouseClickX<=533&&mouseClickX>=383)&&(mouseClickY<=502&&mouseClickY>=457))
+=======
+			if ((mouseClickX<=500&&mouseClickX>=350)&&(mouseClickY<=510&&mouseClickY>=465))
+>>>>>>> f20cabf75d903166c08bde4840a4327db1102733
 			{
 				playFlag=true;
-				backgroundMusicFLag=true;
+
+				if(!enemyMusicFlag){
+					backgroundMusicFLag=true;
+
+				}
+
+			}
+			if ((mouseClickX<=680&&mouseClickX>=530)&&(mouseClickY<=510&&mouseClickY>=465))
+			{
+				Gdx.app.exit();
+			}
+
+			// pauses game play
+			else if((mouseClickX<=149&&mouseClickX>=0)&&(mouseClickY<=44&&mouseClickY>=0))
+			{
+				playFlag=false;
+
 
 			}
 
+
 		}
 
+		if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE))
+		{
+			playFlag=false;
+		}
 
 
 		// provides updates if play has been pressed
@@ -247,8 +284,22 @@ public class Gridlock extends ApplicationAdapter {
 
 		// draws play button at start or when game is stopped
 		if(playFlag==false) {
-			//draws play button object
-			sb.draw(playButton, 384, 512);
+			if (time == 0){
+				//draws play button object
+				sb.draw(playButton, 350, 512);
+			}else if (time >= 0) {
+				resumeButton=new Texture("resume.png");
+				exitButton=new Texture("exit.png");
+				//draws resume button object
+				sb.draw(resumeButton, 350, 512);
+				sb.draw(exitButton, 530, 512);
+			}
+		}
+		//draws pause button when game in play mode
+		else{
+			sb.draw(pauseButton, 0, 978);
+
+
 		}
 
 		// update and draw enemies
