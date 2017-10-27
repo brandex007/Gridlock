@@ -35,7 +35,7 @@ public class Gridlock extends ApplicationAdapter {
     private Player player;
     private float delta;
     private int mouseClickX, mouseClickY;
-    private Texture playButton resumeButton, exitButton;
+    private Texture playButton,resumeButton, exitButton;
 
     private Music backgroundMusic, enemyMusic;
     private Sound impactSound;

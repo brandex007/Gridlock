@@ -1,5 +1,7 @@
 package com.innovativeexecutables;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 
@@ -17,9 +19,12 @@ public class EnemyAxe {
     private int speed = 100;
     private double throwInterval;
     private int axeRotateCounter = 0;
+    private Sound axeImpactSound;
 
     public EnemyAxe(float x, float y, float playerx, float playery){
         enemyArrowTexture = new Texture("enemyAxe1.png");
+        axeImpactSound= Gdx.audio.newSound(Gdx.files.internal("gruntsound.wav"));
+
 
         width = enemyArrowTexture.getWidth();
         height = enemyArrowTexture.getHeight();
@@ -89,6 +94,11 @@ public class EnemyAxe {
             // handle collision
             if (x >= Player.x - Player.width / 2 && x <= Player.x + Player.width / 2 && y >= Player.y - Player.height / 2 && y <= Player.y + Player.height / 2) {
                 Player.setHealth(Player.getHealth() - 1);
+
+                if(Player.getHealth()%2==0){
+                    axeImpactSound.play(100);
+
+                }
             }
         }
     }
