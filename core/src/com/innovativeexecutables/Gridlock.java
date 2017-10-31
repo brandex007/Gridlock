@@ -35,7 +35,7 @@ public class Gridlock extends ApplicationAdapter {
     private Player player;
     private float delta;
     private int mouseClickX, mouseClickY;
-    private Texture playButton,resumeButton, exitButton;
+    private Texture menuButton;
 
     private Music backgroundMusic, enemyMusic;
     private Sound impactSound;
@@ -62,7 +62,7 @@ public class Gridlock extends ApplicationAdapter {
         cam = new OrthographicCamera();
         cam.setToOrtho(false, VIEWPORT_WIDTH, VIEWPORT_HEIGHT);
         //creates play button object
-        playButton = new Texture("play.png");
+        menuButton = new Texture("menu.png");
 
         tileMap = new TmxMapLoader().load("tiledmap1.tmx");
         tileMapRenderer = new OrthogonalTiledMapRenderer(tileMap);
@@ -173,15 +173,22 @@ public class Gridlock extends ApplicationAdapter {
 		mouseClickX=Gdx.input.getX();
 		mouseClickY=Gdx.input.getY();
 
-		if ((mouseClickX<=500&&mouseClickX>=350)&&(mouseClickY<=510&&mouseClickY>=465))
+		if ((mouseClickX<=610&&mouseClickX>=410)&&(mouseClickY<=450&&mouseClickY>=400))
 		{
-			playFlag=true;
+			player = new Player(475, 10);
+            		time = 0;
+            		Player.setHealth(100);
+		    	playFlag=true;
 			backgroundMusicFLag=true;
 		}
-		if ((mouseClickX<=680&&mouseClickX>=530)&&(mouseClickY<=510&&mouseClickY>=465))
+		else if ((mouseClickX<=610&&mouseClickX>=410)&&(mouseClickY<=590&&mouseClickY>=550))
 		{
 			Gdx.app.exit();
 		}
+		else if ((mouseClickX<=610&&mouseClickX>=410)&&(mouseClickY<=525&&mouseClickY>=475))
+        	{
+            		playFlag=true;
+        	}
 	}
 	if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE))
 	{
