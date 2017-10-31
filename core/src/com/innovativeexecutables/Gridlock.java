@@ -276,10 +276,8 @@ public class Gridlock extends ApplicationAdapter {
 
         // draws play button at start or when game is stopped
 	if(playFlag==false) {
-		if (time == 0){
-			//draws play button object
-			sb.draw(menuButton, 200, 200);
-		}
+		//draws play button object
+		sb.draw(menuButton, 200, 200);
 	}
 
 	// update and draw enemies
