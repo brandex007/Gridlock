@@ -278,7 +278,7 @@ public class Gridlock extends ApplicationAdapter {
 	if(playFlag==false) {
 		if (time == 0){
 			//draws play button object
-			sb.draw(playButton, 200, 200);
+			sb.draw(menuButton, 200, 200);
 		}
 	}
 
