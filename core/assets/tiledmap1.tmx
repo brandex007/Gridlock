@@ -1327,16 +1327,6 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup name="Objects">
-  <object id="3" gid="933" x="128" y="71" width="32" height="32"/>
-  <object id="4" gid="933" x="55" y="179" width="32" height="32"/>
-  <object id="6" gid="933" x="313" y="74" width="32" height="32"/>
-  <object id="7" gid="933" x="896" y="321" width="32" height="32"/>
-  <object id="8" gid="933" x="959" y="101" width="32" height="32"/>
-  <object id="10" gid="933" x="94.5712" y="991.559" width="32" height="32" rotation="-358.443"/>
-  <object id="11" gid="933" x="702.873" y="993.795" width="35" height="35" rotation="3.82155"/>
-  <object id="18" gid="933" x="737" y="261" width="32" height="32"/>
- </objectgroup>
  <layer name="Hazards" width="32" height="32">
   <data encoding="csv">
 929,930,931,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,929,930,931,
@@ -1448,4 +1438,14 @@
 628,629,629,629,550,152,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,548,549,629,629,629,629,630
 </data>
  </layer>
+ <objectgroup name="Objects">
+  <object id="3" gid="933" x="128" y="71" width="32" height="32"/>
+  <object id="4" gid="933" x="55" y="179" width="32" height="32"/>
+  <object id="6" gid="933" x="313" y="74" width="32" height="32"/>
+  <object id="7" gid="933" x="896" y="321" width="32" height="32"/>
+  <object id="8" gid="933" x="959" y="101" width="32" height="32"/>
+  <object id="10" gid="933" x="94.5712" y="991.559" width="32" height="32" rotation="-358.443"/>
+  <object id="11" gid="933" x="702.873" y="993.795" width="35" height="35" rotation="3.82155"/>
+  <object id="18" gid="933" x="737" y="261" width="32" height="32"/>
+ </objectgroup>
 </map>
