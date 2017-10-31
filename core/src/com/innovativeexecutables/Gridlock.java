@@ -278,13 +278,7 @@ public class Gridlock extends ApplicationAdapter {
 	if(playFlag==false) {
 		if (time == 0){
 			//draws play button object
-			sb.draw(playButton, 350, 512);
-		}else if (time >= 0) {
-			resumeButton=new Texture("resume.png");
-			exitButton=new Texture("exit.png");
-			//draws resume button object
-			sb.draw(resumeButton, 350, 512);
-			sb.draw(exitButton, 530, 512);
+			sb.draw(playButton, 200, 200);
 		}
 	}
 
