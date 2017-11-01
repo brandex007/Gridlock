@@ -9,12 +9,18 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 import static com.innovativeexecutables.Gridlock.*;
 
 // Player
 public class Player{
     public static float x, y;
-    private Texture playerLeftTexture, playerRightTexture, playerUpTexture, playerDownTexture, attackLeftTexture, attackRightTexture, curTexture;
+    private Texture playerLeftTexture, playerRightTexture, playerUpTexture, playerDownTexture, attackLeftTexture, attackRightTexture, curTexture,
+            playerLeftTextureSPR, playerRightTextureSPR, playerUpTextureSPR, playerDownTextureSPR, attackLeftTextureSPR, attackRightTextureSPR, curTextureSPR,
+            playerLeftTextureBOW, playerRightTextureBOW, playerUpTextureBOW, playerDownTextureBOW, attackLeftTextureBOW, attackRightTextureBOW, curTextureBOW;
     public float regularSpeed = 100;
     public static float speed = 100;
     public boolean UP_TOUCHED, DOWN_TOUCHED, LEFT_TOUCHED, RIGHT_TOUCHED;
@@ -22,6 +28,12 @@ public class Player{
     public static int health = 100;
     public boolean isDead = false;
     public boolean isNotAttacking = true;
+    public enum Weapon {SWORD,SPEAR,BOW}
+    public Weapon weapon = Weapon.SWORD;
+    public int attack = 10;
+    public Spear spear;
+    public Bow bow;
+    public List<Enum> weaponsHaventUsedYet;
 
     // faced left or right last
     public boolean facedRightLast = true;
@@ -34,6 +46,10 @@ public class Player{
         this.y = y;
 
         loadPlayerTextures();
+        weaponsHaventUsedYet = new ArrayList<Enum>();
+
+        weaponsHaventUsedYet.add(Weapon.BOW);
+        weaponsHaventUsedYet.add(Weapon.SPEAR);
     }
 
     public void update (float delta){
@@ -118,6 +134,11 @@ public class Player{
             }
         }
 
+        if(weapon == Weapon.BOW) {
+            bow.render(sb);
+        }else if(weapon == Weapon.SPEAR){
+            spear.render(sb);
+        }
         sb.draw(curTexture,x - 10,y);
 
     }
@@ -129,6 +150,20 @@ public class Player{
         playerRightTexture = new Texture("playerRight.png");
         attackLeftTexture = new Texture("playerattackleft.png");
         attackRightTexture = new Texture("playerattackright.png");
+
+        playerUpTextureSPR = new Texture("playerUpSPR.png");
+        playerDownTextureSPR = new Texture("playerDownSPR.png");
+        playerLeftTextureSPR = new Texture("playerLeftSPR.png");
+        playerRightTextureSPR = new Texture("playerRightSPR.png");
+        attackLeftTextureSPR = new Texture("playerattackleftSPR.png");
+        attackRightTextureSPR = new Texture("playerattackrightSPR.png");
+
+        playerUpTextureBOW = new Texture("playerUpBOW.png");
+        playerDownTextureBOW = new Texture("playerDownBOW.png");
+        playerLeftTextureBOW = new Texture("playerLeftBOW.png");
+        playerRightTextureBOW = new Texture("playerRightBOW.png");
+        attackLeftTextureBOW = new Texture("playerattackleftBOW.png");
+        attackRightTextureBOW = new Texture("playerattackrightBOW.png");
 
         curTexture = playerDownTexture;
 
@@ -173,6 +208,91 @@ public class Player{
 
     public void stopAttack(){
         state = "walk";
+    }
+
+    public void addWeapon(int chestX, int chestY) {
+
+        // randomize item
+        int max = 2;
+        int min = 1;
+
+        boolean randomizing = true;
+        int choice = 1;
+
+        while(randomizing) {
+            Random random = new Random();
+            choice = random.nextInt(max - min + 1) + min;
+
+            // try another random number if item was already used
+            switch (choice){
+                case 1:
+                    if(weaponsHaventUsedYet.contains(Weapon.SPEAR))
+                        randomizing = false;
+                    break;
+                case 2:
+                    if(!weaponsHaventUsedYet.contains(Weapon.SPEAR))
+                        randomizing = false;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        switch (choice) {
+            case 1:
+                weapon = Weapon.SPEAR;
+                attack = 30;
+
+
+
+                spear = new Spear(chestX, chestY);
+                // remove item from chest after 2 seconds
+                com.badlogic.gdx.utils.Timer.schedule(new com.badlogic.gdx.utils.Timer.Task() {
+                                                          @Override
+                                                          public void run() {
+                                                              spear.removeFromChest();
+                                                              // change textures
+                                                              playerUpTexture = playerUpTextureSPR;
+                                                              playerLeftTexture = playerLeftTextureSPR;
+                                                              playerRightTexture = playerRightTextureSPR;
+                                                              playerDownTexture = playerDownTextureSPR;
+                                                              attackLeftTexture = attackLeftTextureSPR;
+                                                              attackRightTexture = attackRightTextureSPR;
+                                                          }
+                                                      }
+                        , 1f       //    (delay)
+                );
+
+                weaponsHaventUsedYet.remove(Weapon.SPEAR);
+                break;
+
+            case 2:
+                weapon = Weapon.BOW;
+                attack = 50;
+
+                bow = new Bow(chestX, chestY);
+                // remove item from chest after 2 seconds
+                com.badlogic.gdx.utils.Timer.schedule(new com.badlogic.gdx.utils.Timer.Task() {
+                                                          @Override
+                                                          public void run() {
+                                                              bow.removeFromChest();
+                                                              // change textures
+                                                              playerUpTexture = playerUpTextureBOW;
+                                                              playerLeftTexture = playerLeftTextureBOW;
+                                                              playerRightTexture = playerRightTextureBOW;
+                                                              playerDownTexture = playerDownTextureBOW;
+                                                              attackLeftTexture = attackLeftTextureBOW;
+                                                              attackRightTexture = attackRightTextureBOW;
+                                                          }
+                                                      }
+                        , 1f       //    (delay)
+                );
+                weaponsHaventUsedYet.remove(Weapon.BOW);
+                break;
+
+            default:
+                break;
+        }
     }
 
 }

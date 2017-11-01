@@ -11,7 +11,6 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
@@ -21,8 +20,7 @@ import com.badlogic.gdx.utils.Timer;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-import static com.innovativeexecutables.Player.*;
+import java.util.Random;
 
 public class Gridlock extends ApplicationAdapter {
     // map is 32 by 32 tiles with 32 pixel tiles
@@ -49,7 +47,12 @@ public class Gridlock extends ApplicationAdapter {
 
     // Tile
     Tile[][] tileList = new Tile[32][32];
+
+    // Enemies
     List<Enemy> enemies;
+
+    // Chests
+    List<Chest> chests;
 
     // Displays for score, health, and time
     BitmapFont scoreFont, healthFont, timeFont;
@@ -82,6 +85,8 @@ public class Gridlock extends ApplicationAdapter {
 
         enemies = new ArrayList<Enemy>();
 
+        chests = new ArrayList<Chest>();
+
         // tiles
         for (int i = 0; i < Tile.tileSize; i++) {
             for (int j = 0; j < Tile.tileSize; j++) {
@@ -89,16 +94,12 @@ public class Gridlock extends ApplicationAdapter {
             }
         }
 
-		/*
-        // spawn enemy at every tile
-		for(int i = 0; i<Tile.tileSize; i++){
-			for(int j = 0; j<Tile.tileSize; j++){
-				enemies.add(new Enemy(tileList[i][j].getX(), tileList[i][j].getY()));
-			}
-		}*/
-
         // spawn enemy at tile 20,20
         enemies.add(new Enemy(tileList[20][20].getX(), tileList[20][20].getY()));
+
+        // spawn chests
+        chests.add(new Chest(tileList[4][10].getX(),tileList[4][10].getY()));
+        chests.add(new Chest(tileList[20][30].getX(),tileList[20][30].getY()));
 
         // initiate fonts
         scoreString = "Score: 0";
@@ -210,6 +211,7 @@ public class Gridlock extends ApplicationAdapter {
             // collisions
             checkPlayerCollisionMap();
             checkForCharCollisions();
+            checkForChestCollisions();
 
             cam.update();
 
@@ -225,7 +227,7 @@ public class Gridlock extends ApplicationAdapter {
 
                     for (Enemy enemy : enemies) {
                         if (enemy.getX() < player.getX() && enemy.getX() < player.getX() + enemy.getWidth() && enemy.getY() < player.getY() && enemy.getY() < player.getY() + enemy.getHeight()) {
-                            enemy.setHealth(enemy.getHealth() - 35);
+                            enemy.setHealth(enemy.getHealth() - player.attack);
                         }
                     }
                 }
@@ -267,6 +269,12 @@ public class Gridlock extends ApplicationAdapter {
         sb.end();
 
         sb.begin();
+
+        // draw chests
+        for(Chest chest : chests){
+            chest.render(sb);
+        }
+
         if (!(player.getX() > 416 && player.getX() < 544 && player.getY() > 480 && player.getY() < 700)) {
             player.setSpeed(player.getRegularSpeed());
             player.render(sb);
@@ -284,6 +292,8 @@ public class Gridlock extends ApplicationAdapter {
 	for(Enemy enemy : enemies){
 		enemy.render(sb);
 	}
+
+
 
 	sb.end();
     }
@@ -336,6 +346,29 @@ public class Gridlock extends ApplicationAdapter {
 
         }
 
+    }
+
+    public void checkForChestCollisions(){
+        for(Chest chest : chests){
+            // show chest when nearby
+            if (player.getX() > chest.getX() - 150 && player.getX() < chest.getX() + 150) {
+                if (player.getY() > chest.getY() - 150 && player.getY() < chest.getY() + 150) {
+                    chest.setActive();
+                }
+            }
+
+            // open chest if colliding
+            if (player.getX() > chest.getX() - 2 && player.getX() < chest.getX() + chest.getWidth() + 2) {
+                if (player.getY() > chest.getY() - chest.getHeight() / 2 - 2&& player.getY() < chest.getY() + chest.getHeight() / 2 + 2) {
+                    // activate chest if inactive
+                    if(chest.isUnopened) {
+                        chest.openChest();
+                        System.out.println("chest");
+                        player.addWeapon(chest.getX() + chest.getWidth() / 2,chest.getY() + chest.getHeight() / 2);
+                    }
+                }
+            }
+        }
     }
 
     public void checkPlayerCollisionMap() {
