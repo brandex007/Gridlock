@@ -295,4 +295,17 @@ public class Player{
         }
     }
 
+    public void resetPlayer(){
+        speed = 100;
+        health = 100;
+        isDead = false;
+        isNotAttacking = true;
+        weaponsHaventUsedYet.add(Weapon.BOW);
+        weaponsHaventUsedYet.add(Weapon.SPEAR);
+        attack = 10;
+        state = "walk";
+        facedRightLast = true;
+        loadPlayerTextures();
+    }
+
 }

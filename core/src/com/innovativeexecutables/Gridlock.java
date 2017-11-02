@@ -94,12 +94,7 @@ public class Gridlock extends ApplicationAdapter {
             }
         }
 
-        // spawn enemy at tile 20,20
-        enemies.add(new Enemy(tileList[20][20].getX(), tileList[20][20].getY()));
-
-        // spawn chests
-        chests.add(new Chest(tileList[4][10].getX(),tileList[4][10].getY()));
-        chests.add(new Chest(tileList[20][30].getX(),tileList[20][30].getY()));
+        spawnObjectsAndEnemies();
 
         // initiate fonts
         scoreString = "Score: 0";
@@ -120,6 +115,15 @@ public class Gridlock extends ApplicationAdapter {
                 , 0        //    (delay)
                 , 1     //    (seconds)
         );
+    }
+
+    public void spawnObjectsAndEnemies() {
+        // spawn enemy at tile 20,20
+        enemies.add(new Enemy(tileList[20][20].getX(), tileList[20][20].getY()));
+
+        // spawn chests
+        chests.add(new Chest(tileList[4][10].getX(), tileList[4][10].getY()));
+        chests.add(new Chest(tileList[20][30].getX(), tileList[20][30].getY()));
     }
 
     public void updateTime() {
@@ -161,42 +165,31 @@ public class Gridlock extends ApplicationAdapter {
     }
 
     @Override
-    public void render () {
+    public void render() {
 
-		playBackgroundMusic();
-		/*if left mouse button is clicked game will begin
+        playBackgroundMusic();
+        /*if left mouse button is clicked game will begin
 		 * when mouse clicked location of click is saved and
 		  * click location is checked to see if the play button was clicked*/
 
 
-	if(Gdx.input.isButtonPressed(Input.Buttons.LEFT))
-	{
-		mouseClickX=Gdx.input.getX();
-		mouseClickY=Gdx.input.getY();
+        if (Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
+            mouseClickX = Gdx.input.getX();
+            mouseClickY = Gdx.input.getY();
 
-		if ((mouseClickX<=610&&mouseClickX>=410)&&(mouseClickY<=450&&mouseClickY>=400))
-		{
-			player = new Player(475, 10);
-            		time = 0;
-            		Player.setHealth(100);
-		    	playFlag=true;
-			backgroundMusicFLag=true;
-		}
-		else if ((mouseClickX<=610&&mouseClickX>=410)&&(mouseClickY<=590&&mouseClickY>=550))
-		{
-			Gdx.app.exit();
-		}
-		else if ((mouseClickX<=610&&mouseClickX>=410)&&(mouseClickY<=525&&mouseClickY>=475))
-        	{
-            		playFlag=true;
-        	}
-	}
-	if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE))
-	{
-		playFlag=false;
-	}
+            if ((mouseClickX <= 610 && mouseClickX >= 410) && (mouseClickY <= 450 && mouseClickY >= 400)) {
+                restartGame();
+            } else if ((mouseClickX <= 610 && mouseClickX >= 410) && (mouseClickY <= 590 && mouseClickY >= 550)) {
+                Gdx.app.exit();
+            } else if ((mouseClickX <= 610 && mouseClickX >= 410) && (mouseClickY <= 525 && mouseClickY >= 475)) {
+                playFlag = true;
+            }
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
+            playFlag = false;
+        }
 
-	// provides updates if play has been pressed
+        // provides updates if play has been pressed
         if (playFlag) {
             Gdx.gl.glClearColor(0, 0, 0, 1);
             Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
@@ -237,10 +230,10 @@ public class Gridlock extends ApplicationAdapter {
             Iterator<Enemy> iterator = enemies.iterator();
 
             // check if any enemies are dead and remove them
-            while(iterator.hasNext()) {
+            while (iterator.hasNext()) {
                 Enemy enemy = iterator.next();
 
-                if(enemy.getHealth() < 0){
+                if (enemy.getHealth() < 0) {
                     iterator.remove();
                 }
             }
@@ -271,7 +264,7 @@ public class Gridlock extends ApplicationAdapter {
         sb.begin();
 
         // draw chests
-        for(Chest chest : chests){
+        for (Chest chest : chests) {
             chest.render(sb);
         }
 
@@ -282,20 +275,20 @@ public class Gridlock extends ApplicationAdapter {
             player.setSpeed(player.getRegularSpeed() * 3f);
         }
 
+        // update and draw enemies
+        for (Enemy enemy : enemies) {
+            enemy.render(sb);
+        }
+
+
         // draws play button at start or when game is stopped
-	if(playFlag==false) {
-		//draws play button object
-		sb.draw(menuButton, 200, 200);
-	}
-
-	// update and draw enemies
-	for(Enemy enemy : enemies){
-		enemy.render(sb);
-	}
+        if (playFlag == false) {
+            //draws play button object
+            sb.draw(menuButton, 200, 200);
+        }
 
 
-
-	sb.end();
+        sb.end();
     }
 
     @Override
@@ -348,8 +341,8 @@ public class Gridlock extends ApplicationAdapter {
 
     }
 
-    public void checkForChestCollisions(){
-        for(Chest chest : chests){
+    public void checkForChestCollisions() {
+        for (Chest chest : chests) {
             // show chest when nearby
             if (player.getX() > chest.getX() - 150 && player.getX() < chest.getX() + 150) {
                 if (player.getY() > chest.getY() - 150 && player.getY() < chest.getY() + 150) {
@@ -359,12 +352,12 @@ public class Gridlock extends ApplicationAdapter {
 
             // open chest if colliding
             if (player.getX() > chest.getX() - 2 && player.getX() < chest.getX() + chest.getWidth() + 2) {
-                if (player.getY() > chest.getY() - chest.getHeight() / 2 - 2&& player.getY() < chest.getY() + chest.getHeight() / 2 + 2) {
+                if (player.getY() > chest.getY() - chest.getHeight() / 2 - 2 && player.getY() < chest.getY() + chest.getHeight() / 2 + 2) {
                     // activate chest if inactive
-                    if(chest.isUnopened) {
+                    if (chest.isUnopened) {
                         chest.openChest();
                         System.out.println("chest");
-                        player.addWeapon(chest.getX() + chest.getWidth() / 2,chest.getY() + chest.getHeight() / 2);
+                        player.addWeapon(chest.getX() + chest.getWidth() / 2, chest.getY() + chest.getHeight() / 2);
                     }
                 }
             }
@@ -423,6 +416,30 @@ public class Gridlock extends ApplicationAdapter {
         }
 
 
+    }
+
+    public void restartGame() {
+        time = 0;
+        player.resetPlayer();
+        player.setX(475);
+        player.setY(10);
+
+        enemies = new ArrayList<Enemy>();
+        chests = new ArrayList<Chest>();
+
+        scoreString = "Score: 0";
+        timeString = "Time: 0";
+        healthString = "Health: 100";
+
+        playFlag = true;
+
+        backgroundMusic.stop();
+        enemyMusic.stop();
+
+        backgroundMusicFLag = true;
+        enemyMusicFlag = false;
+
+        spawnObjectsAndEnemies();
     }
 
 }
