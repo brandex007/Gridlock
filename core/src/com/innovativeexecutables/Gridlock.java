@@ -122,8 +122,12 @@ public class Gridlock extends ApplicationAdapter {
         enemies.add(new Enemy(tileList[20][20].getX(), tileList[20][20].getY()));
 
         // spawn chests
-        chests.add(new Chest(tileList[4][10].getX(), tileList[4][10].getY()));
-        chests.add(new Chest(tileList[20][30].getX(), tileList[20][30].getY()));
+        chests.add(new Chest(tileList[30][27].getX(), tileList[30][27].getY()));
+        chests.add(new Chest(tileList[4][30].getX(), tileList[4][30].getY()));
+        chests.add(new Chest(tileList[27][27].getX(), tileList[21][21].getY()));
+        chests.add(new Chest(tileList[23][22].getX(), tileList[24][24].getY()));
+        chests.add(new Chest(tileList[6][6].getX(), tileList[4][4].getY()));
+        chests.add(new Chest(tileList[20][20].getX(), tileList[14][14].getY()));
     }
 
     public void updateTime() {
