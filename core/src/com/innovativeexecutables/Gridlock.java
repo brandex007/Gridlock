@@ -33,10 +33,10 @@ public class Gridlock extends ApplicationAdapter {
     private Player player;
     private float delta;
     private int mouseClickX, mouseClickY;
-    private Texture menuButton;
+    private Texture menuButton,gameOverWin,gameOverLoss;
 
     private Music backgroundMusic, enemyMusic;
-    private Sound impactSound;
+    private Sound impactSound,winSound,loseSound;
     private boolean playFlag, backgroundMusicFLag, enemyMusicFlag;
     // TiledMap
     private TiledMap tileMap;
@@ -66,6 +66,9 @@ public class Gridlock extends ApplicationAdapter {
         cam.setToOrtho(false, VIEWPORT_WIDTH, VIEWPORT_HEIGHT);
         //creates play button object
         menuButton = new Texture("menu.png");
+        gameOverWin=new Texture("gameoverwin.png");
+        gameOverLoss=new Texture("gameoverlose.png");
+
 
         tileMap = new TmxMapLoader().load("tiledmap1.tmx");
         tileMapRenderer = new OrthogonalTiledMapRenderer(tileMap);
@@ -79,6 +82,10 @@ public class Gridlock extends ApplicationAdapter {
         backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("medmusic.ogg"));
         enemyMusic = Gdx.audio.newMusic(Gdx.files.internal("enemymusic.mp3"));
         impactSound = Gdx.audio.newSound(Gdx.files.internal("gruntsound.wav"));
+        //Level up sound effects" by Bart Kelsey. Commissioned by Will Corwin for OpenGameArt.org
+        winSound = Gdx.audio.newSound(Gdx.files.internal("chipquest.wav"));
+       // loseSound = Gdx.audio.newSound(Gdx.files.internal("gameoversound.wav"));
+
 
 
         player = new Player(475, 10);
@@ -225,6 +232,8 @@ public class Gridlock extends ApplicationAdapter {
                     for (Enemy enemy : enemies) {
                         if (enemy.getX() < player.getX() && enemy.getX() < player.getX() + enemy.getWidth() && enemy.getY() < player.getY() && enemy.getY() < player.getY() + enemy.getHeight()) {
                             enemy.setHealth(enemy.getHealth() - player.attack);
+
+
                         }
                     }
                 }
@@ -282,7 +291,33 @@ public class Gridlock extends ApplicationAdapter {
         // update and draw enemies
         for (Enemy enemy : enemies) {
             enemy.render(sb);
+
         }
+
+        // if player is dead displays game over
+        if(player.isDead)
+        {
+            backgroundMusic.stop();
+            enemyMusic.stop();
+            impactSound.stop();
+
+            //loseSound.play(100);
+
+
+            playFlag=false;
+            sb.draw(gameOverLoss,300,700);
+
+        }
+
+        if(enemies.isEmpty()){
+            backgroundMusic.stop();
+            enemyMusic.stop();
+            impactSound.stop();
+
+            playFlag=false;
+            sb.draw(gameOverWin,300,700);
+        }
+
 
 
         // draws play button at start or when game is stopped
@@ -400,7 +435,7 @@ public class Gridlock extends ApplicationAdapter {
             player.setHealth(player.getHealth() - 1);
             playImpactSound();
 
-            System.out.print("lost health to hazard");
+            //System.out.print("lost health to hazard");
         }
     }
 

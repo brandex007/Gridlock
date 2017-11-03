@@ -23,6 +23,7 @@ public class Enemy {
     }
 
     public void render (Batch sb){
+
         // render if active
         if(isActive) {
             sb.draw(enemyTexture, x, y);

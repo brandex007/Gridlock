@@ -116,7 +116,7 @@ public class Player{
 
         if(health <= 0){
             isDead = true;
-            System.out.print("game over");
+
         }
 
         // load walking textures if in walking state
