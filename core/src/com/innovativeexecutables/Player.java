@@ -235,7 +235,7 @@ public class Player{
     public void addWeapon(int chestX, int chestY) {
 
         // randomize item
-        int max = 2;
+        int max = 6;
         int min = 1;
 
         boolean randomizing = true;
@@ -252,23 +252,23 @@ public class Player{
                         randomizing = false;
                     break;
                 case 2:
-                    if(!weaponsHaventUsedYet.contains(Weapon.SPEAR))
+                    if(weaponsHaventUsedYet.contains(Weapon.SPEAR))
                         randomizing = false;
                     break;
                 case 3:
-                    if(!weaponsHaventUsedYet.contains(Weapon.HELMET))
+                    if(weaponsHaventUsedYet.contains(Weapon.HELMET))
                         randomizing = false;
                     break;
                 case 4:
-                    if(!weaponsHaventUsedYet.contains(Weapon.GREAVES))
+                    if(weaponsHaventUsedYet.contains(Weapon.GREAVES))
                         randomizing = false;
                     break;
                 case 5:
-                    if(!weaponsHaventUsedYet.contains(Weapon.CUISSES))
+                    if(weaponsHaventUsedYet.contains(Weapon.CUISSES))
                         randomizing = false;
                     break;
                 case 6:
-                    if(!weaponsHaventUsedYet.contains(Weapon.BREASTPLATE))
+                    if(weaponsHaventUsedYet.contains(Weapon.BREASTPLATE))
                         randomizing = false;
                     break;
                 default:
@@ -330,7 +330,7 @@ public class Player{
                 
             case 3:
                 weapon = Weapon.HELMET;
-                health =+ 5;
+                health += 5;
 
                 helmet = new Helmet(chestX, chestY);
                 // remove item from chest after 2 seconds
@@ -347,7 +347,7 @@ public class Player{
 
             case 4:
                 weapon = Weapon.GREAVES;
-                health =+ 5;
+                health += 5;
 
                 greaves = new Greaves(chestX, chestY);
                 // remove item from chest after 2 seconds
@@ -364,7 +364,7 @@ public class Player{
 
             case 5:
                 weapon = Weapon.CUISSES;
-                health =+ 5;
+                health += 5;
 
                 cuisses = new Cuisses(chestX, chestY);
                 // remove item from chest after 2 seconds
@@ -381,7 +381,7 @@ public class Player{
 
             case 6:
                 weapon = Weapon.BREASTPLATE;
-                health =+ 10;
+                health += 10;
 
                 breastplate = new Breastplate(chestX, chestY);
                 // remove item from chest after 2 seconds
