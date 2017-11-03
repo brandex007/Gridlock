@@ -20,7 +20,7 @@ public class Player{
     public static float x, y;
     private Texture playerLeftTexture, playerRightTexture, playerUpTexture, playerDownTexture, attackLeftTexture, attackRightTexture, curTexture,
             playerLeftTextureSPR, playerRightTextureSPR, playerUpTextureSPR, playerDownTextureSPR, attackLeftTextureSPR, attackRightTextureSPR, curTextureSPR,
-            playerLeftTextureAXE, playerRightTextureAXE, playerUpTextureAXE, playerDownTextureAXE, attackLeftTextureAXE, attackRightTextureAXE, curTextureAXE
+            playerLeftTextureAXE, playerRightTextureAXE, playerUpTextureAXE, playerDownTextureAXE, attackLeftTextureAXE, attackRightTextureAXE, curTextureAXE,
             armorTextureHELMET, armorTextureGREAVES, armorTextureCUISSES, armorTextureBREASTPLATE;
     public float regularSpeed = 100;
     public static float speed = 100;
