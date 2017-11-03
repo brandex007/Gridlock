@@ -20,7 +20,8 @@ public class Player{
     public static float x, y;
     private Texture playerLeftTexture, playerRightTexture, playerUpTexture, playerDownTexture, attackLeftTexture, attackRightTexture, curTexture,
             playerLeftTextureSPR, playerRightTextureSPR, playerUpTextureSPR, playerDownTextureSPR, attackLeftTextureSPR, attackRightTextureSPR, curTextureSPR,
-            playerLeftTextureAXE, playerRightTextureAXE, playerUpTextureAXE, playerDownTextureAXE, attackLeftTextureAXE, attackRightTextureAXE, curTextureAXE;
+            playerLeftTextureAXE, playerRightTextureAXE, playerUpTextureAXE, playerDownTextureAXE, attackLeftTextureAXE, attackRightTextureAXE, curTextureAXE
+            armorTextureHELMET, armorTextureGREAVES, armorTextureCUISSES, armorTextureBREASTPLATE;
     public float regularSpeed = 100;
     public static float speed = 100;
     public boolean UP_TOUCHED, DOWN_TOUCHED, LEFT_TOUCHED, RIGHT_TOUCHED;
@@ -28,11 +29,15 @@ public class Player{
     public static int health = 100;
     public boolean isDead = false;
     public boolean isNotAttacking = true;
-    public enum Weapon {SWORD,SPEAR,AXE}
+    public enum Weapon {SWORD,SPEAR,AXE,HELMET,GREAVES,CUISSES,BREASTPLATE}
     public Weapon weapon = Weapon.SWORD;
     public int attack = 10;
     public Spear spear;
     public Axe axe;
+    public Helmet helmet;
+    public Greaves greaves;
+    public Cuisses cuisses;
+    public Breastplate breastplate;
     public List<Enum> weaponsHaventUsedYet;
 
     // faced left or right last
@@ -50,6 +55,10 @@ public class Player{
 
         weaponsHaventUsedYet.add(Weapon.AXE);
         weaponsHaventUsedYet.add(Weapon.SPEAR);
+        weaponsHaventUsedYet.add(Weapon.HELMET);
+        weaponsHaventUsedYet.add(Weapon.GREAVES);
+        weaponsHaventUsedYet.add(Weapon.CUISSES);
+        weaponsHaventUsedYet.add(Weapon.BREASTPLATE);
     }
 
     public void update (float delta){
@@ -138,6 +147,14 @@ public class Player{
             axe.render(sb);
         }else if(weapon == Weapon.SPEAR){
             spear.render(sb);
+        }else if(weapon == Weapon.HELMET) {
+            helmet.render(sb);
+        }else if(weapon == Weapon.GREAVES){
+            greaves.render(sb);
+        }else if(weapon == Weapon.CUISSES){
+            cuisses.render(sb);
+        }else if(weapon == Weapon.BREASTPLATE){
+            breastplate.render(sb);
         }
         sb.draw(curTexture,x - 10,y);
 
@@ -164,6 +181,11 @@ public class Player{
         playerRightTextureAXE = new Texture("playerRightAXE.png");
         attackLeftTextureAXE = new Texture("playerattackleftAXE.png");
         attackRightTextureAXE = new Texture("playerattackrightAXE.png");
+        
+        armorTextureHELMET = new Texture ("helmet.png");
+        armorTextureGREAVES = new Texture("greaves.png");
+        armorTextureCUISSES = new Texture("cuisses.png");
+        armorTextureBREASTPLATE = new Texture("breastplate.png");
 
         curTexture = playerDownTexture;
 
@@ -233,6 +255,22 @@ public class Player{
                     if(!weaponsHaventUsedYet.contains(Weapon.SPEAR))
                         randomizing = false;
                     break;
+                case 3:
+                    if(!weaponsHaventUsedYet.contains(Weapon.HELMET))
+                        randomizing = false;
+                    break;
+                case 4:
+                    if(!weaponsHaventUsedYet.contains(Weapon.GREAVES))
+                        randomizing = false;
+                    break;
+                case 5:
+                    if(!weaponsHaventUsedYet.contains(Weapon.CUISSES))
+                        randomizing = false;
+                    break;
+                case 6:
+                    if(!weaponsHaventUsedYet.contains(Weapon.BREASTPLATE))
+                        randomizing = false;
+                    break;
                 default:
                     break;
             }
@@ -288,6 +326,74 @@ public class Player{
                         , 1f       //    (delay)
                 );
                 weaponsHaventUsedYet.remove(Weapon.AXE);
+                break;
+                
+            case 3:
+                weapon = Weapon.HELMET;
+                health =+ 5;
+
+                helmet = new Helmet(chestX, chestY);
+                // remove item from chest after 2 seconds
+                com.badlogic.gdx.utils.Timer.schedule(new com.badlogic.gdx.utils.Timer.Task() {
+                                                          @Override
+                                                          public void run() {
+                                                              helmet.removeFromChest();
+                                                          }
+                                                      }
+                        , 1f       //    (delay)
+                );
+                weaponsHaventUsedYet.remove(Weapon.HELMET);
+                break;
+
+            case 4:
+                weapon = Weapon.GREAVES;
+                health =+ 5;
+
+                greaves = new Greaves(chestX, chestY);
+                // remove item from chest after 2 seconds
+                com.badlogic.gdx.utils.Timer.schedule(new com.badlogic.gdx.utils.Timer.Task() {
+                                                          @Override
+                                                          public void run() {
+                                                              greaves.removeFromChest();
+                                                          }
+                                                      }
+                        , 1f       //    (delay)
+                );
+                weaponsHaventUsedYet.remove(Weapon.GREAVES);
+                break;
+
+            case 5:
+                weapon = Weapon.CUISSES;
+                health =+ 5;
+
+                cuisses = new Cuisses(chestX, chestY);
+                // remove item from chest after 2 seconds
+                com.badlogic.gdx.utils.Timer.schedule(new com.badlogic.gdx.utils.Timer.Task() {
+                                                          @Override
+                                                          public void run() {
+                                                              cuisses.removeFromChest();
+                                                          }
+                                                      }
+                        , 1f       //    (delay)
+                );
+                weaponsHaventUsedYet.remove(Weapon.CUISSES);
+                break;
+
+            case 6:
+                weapon = Weapon.BREASTPLATE;
+                health =+ 10;
+
+                breastplate = new Breastplate(chestX, chestY);
+                // remove item from chest after 2 seconds
+                com.badlogic.gdx.utils.Timer.schedule(new com.badlogic.gdx.utils.Timer.Task() {
+                                                          @Override
+                                                          public void run() {
+                                                              breastplate.removeFromChest();
+                                                          }
+                                                      }
+                        , 1f       //    (delay)
+                );
+                weaponsHaventUsedYet.remove(Weapon.BREASTPLATE);
                 break;
 
             default:
