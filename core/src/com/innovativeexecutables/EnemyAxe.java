@@ -29,15 +29,22 @@ public class EnemyAxe {
 
         this.x = x;
         this.y = y;
-        this.destinationX = playerx;
-        this.destinationY = playery;
+        this.destinationX = playerx - Player.width / 2;
+        this.destinationY = playery - Player.height / 2;
 
         Random r = new Random();
-        throwInterval = 0.95 + r.nextFloat() * (1.05 - 0.95); // determine the ratio (90% to 110%) to throw the axe (such as 90% towards the player or 110%)
+        // throw more accurate if close
+        if((abs(x - playerx) < 100 && abs(y - playery) < 100)){
+            throwInterval = 0.95 + r.nextFloat() * (1.05 - 0.95); // determine the ratio (95% to 105%) to throw the axe (such as 90% towards the player or 110%)
+        }else if ((abs(x - playerx) < 300 && abs(y - playery) < 300)){
+            throwInterval = 0.93 + r.nextFloat() * (1.07 - 0.93);
+        } else{
+            throwInterval = 0.91 + r.nextFloat() * (1.09 - 0.91);
+        }
 
         // update destination based on throw interval (between 95% and 105% of player's location when first thrown)
-        this.destinationX = (float) (throwInterval * this.destinationX);
-        this.destinationY = (float) (throwInterval * this.destinationY);
+       this.destinationX = (float) (throwInterval * this.destinationX);
+       this.destinationY = (float) (throwInterval * this.destinationY);
 
         // rotate every 0.2 seconds
         Timer t = new Timer();
