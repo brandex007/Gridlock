@@ -81,7 +81,7 @@ public class Gridlock extends ApplicationAdapter {
         // track created by Marcelo Fernandez  https://soundcloud.com/marcelo-fernandez3
         backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("medmusic.ogg"));
         enemyMusic = Gdx.audio.newMusic(Gdx.files.internal("enemymusic.mp3"));
-        impactSound = Gdx.audio.newSound(Gdx.files.internal("gruntsound.wav"));
+        impactSound = Gdx.audio.newSound(Gdx.files.internal("gruntsound.mp3"));
         //Level up sound effects" by Bart Kelsey. Commissioned by Will Corwin for OpenGameArt.org
         winSound = Gdx.audio.newSound(Gdx.files.internal("chipquest.wav"));
        // loseSound = Gdx.audio.newSound(Gdx.files.internal("gameoversound.wav"));
@@ -343,8 +343,8 @@ public class Gridlock extends ApplicationAdapter {
         //// player collision with enemies
         for (Enemy enemy : enemies) {
             // active enemy once when player is nearby
-            if (player.getX() > enemy.getX() - 150 && player.getX() < enemy.getX() + 150) {
-                if (player.getY() > enemy.getY() - 150 && player.getY() < enemy.getY() + 150) {
+            if (player.getX() > enemy.getX() - 300 && player.getX() < enemy.getX() + 300) {
+                if (player.getY() > enemy.getY() - 300 && player.getY() < enemy.getY() + 300) {
                     enemy.setActive(true);
                     backgroundMusicFLag = false;
                     enemyMusicFlag = true;

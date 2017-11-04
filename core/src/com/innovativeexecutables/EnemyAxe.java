@@ -16,7 +16,6 @@ public class EnemyAxe {
     private boolean negX = false, negY = false;
     private Texture enemyArrowTexture;
     private boolean isActive = true;
-    private int speed = 100;
     private double throwInterval;
     private int axeRotateCounter = 0;
     private Sound axeImpactSound;
@@ -26,7 +25,7 @@ public class EnemyAxe {
 
         width = enemyArrowTexture.getWidth();
         height = enemyArrowTexture.getHeight();
-        axeImpactSound = Gdx.audio.newSound(Gdx.files.internal("gruntsound.wav"));
+        axeImpactSound = Gdx.audio.newSound(Gdx.files.internal("gruntsound.mp3"));
 
         this.x = x;
         this.y = y;
@@ -34,9 +33,9 @@ public class EnemyAxe {
         this.destinationY = playery;
 
         Random r = new Random();
-        throwInterval = 0.9 + r.nextFloat() * (1.1 - 0.9); // determine the ratio (90% to 110%) to throw the axe (such as 90% towards the player or 110%)
+        throwInterval = 0.95 + r.nextFloat() * (1.05 - 0.95); // determine the ratio (90% to 110%) to throw the axe (such as 90% towards the player or 110%)
 
-        // update destination based on throw interval (between 90% and 110% of player's location when first thrown)
+        // update destination based on throw interval (between 95% and 105% of player's location when first thrown)
         this.destinationX = (float) (throwInterval * this.destinationX);
         this.destinationY = (float) (throwInterval * this.destinationY);
 
@@ -86,24 +85,22 @@ public class EnemyAxe {
             x += (float) Math.cos(angle) * 125 * delta;
             y += (float) Math.sin(angle) * 125 * delta;
 
-            if(abs(destinationY - y) < 1 && abs(destinationX - x) < 1){ // if axe is within 1 pixel from destination, remove axe
-                remove();
-            }
-
             // handle collision
-            if (x >= Player.x - Player.width / 2 && x <= Player.x + Player.width / 2 && y >= Player.y - Player.height / 2 && y <= Player.y + Player.height / 2) {
-                Player.setHealth(Player.getHealth() - 1);
+            if (x + width >= Player.x && x <= Player.x + Player.width && y + height >= Player.y && y <= Player.y + Player.height) {
+                Player.setHealth(Player.getHealth() - 7);
                 // plays impact sound for axe
-                if (Player.getHealth() % 2 == 0)
-                {
-                    axeImpactSound.play();
-                }
+                axeImpactSound.play();
+
                 // disposes resource after player death
                 if (Player.getHealth()==0)
                 {
                     axeImpactSound.dispose();
                 }
 
+                remove();
+
+            }else if(abs(destinationY - y) < 1 && abs(destinationX - x) < 1){ // if axe is within 1 pixel from destination, remove axe
+                remove();
             }
         }
     }
@@ -117,6 +114,6 @@ public class EnemyAxe {
 
     public void remove(){
         isActive = false;
-
+        enemyArrowTexture.dispose();
     }
 }

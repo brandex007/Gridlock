@@ -12,8 +12,6 @@ public class Enemy {
     private int health = 100;
     private boolean isActive = false;
     private List<EnemyAxe> arrowList;
-    private float delta;
-
 
     public Enemy(int x, int y) {
         loadEnemyTextures();
@@ -34,7 +32,6 @@ public class Enemy {
     }
 
     public void update(float delta){
-        this.delta = delta;
 
         // update arrows
         for(EnemyAxe enemyArrow : arrowList){
