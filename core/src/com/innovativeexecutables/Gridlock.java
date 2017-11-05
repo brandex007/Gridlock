@@ -60,6 +60,9 @@ public class Gridlock extends ApplicationAdapter {
 
     int time = 0;
 
+    // Score class
+    Score score;
+
     @Override
     public void create() {
         cam = new OrthographicCamera();
@@ -122,6 +125,8 @@ public class Gridlock extends ApplicationAdapter {
                 , 0        //    (delay)
                 , 1     //    (seconds)
         );
+
+        score = new Score();
     }
 
     public void spawnObjectsAndEnemies() {
@@ -208,9 +213,12 @@ public class Gridlock extends ApplicationAdapter {
 
             // updates
             player.update(delta);
+
             for (Enemy enemy : enemies) {
                 enemy.update(delta);
             }
+
+            scoreString = "Score: " + score.getScore();
 
             // collisions
             checkPlayerCollisionMap();
@@ -242,12 +250,16 @@ public class Gridlock extends ApplicationAdapter {
             // Get an iterator.
             Iterator<Enemy> iterator = enemies.iterator();
 
-            // check if any enemies are dead and remove them
+            // check if any enemies are dead and remove them, and update score
             while (iterator.hasNext()) {
                 Enemy enemy = iterator.next();
 
                 if (enemy.getHealth() < 0) {
                     iterator.remove();
+
+                    // 200 points for killing enemy
+                    score.setScore(score.getScore() + 200);
+                    scoreString = "Score: " + score.getScore();
                 }
             }
 
@@ -356,8 +368,8 @@ public class Gridlock extends ApplicationAdapter {
             if (player.getX() > enemy.getX() && player.getX() < enemy.getX() + enemy.getWidth()) {
                 if (player.getY() > enemy.getY() - enemy.getHeight() / 2 && player.getY() < enemy.getY() + enemy.getHeight() / 2) {
                     if (player.isNotAttacking) {
-                        player.setHealth(player.getHealth() - 1);
-                        playImpactSound();
+                        //player.setHealth(player.getHealth() - 1);
+                        //playImpactSound();
 
                         // collision
                         if (player.UP_TOUCHED) {
@@ -397,6 +409,10 @@ public class Gridlock extends ApplicationAdapter {
                         chest.openChest();
                         System.out.println("chest");
                         player.addWeapon(chest.getX() + chest.getWidth() / 2, chest.getY() + chest.getHeight() / 2);
+
+                        // add 50 points for finding item
+                        score.setScore(score.getScore() + 50);
+                        scoreString = "Score: " + score.getScore();
                     }
                 }
             }

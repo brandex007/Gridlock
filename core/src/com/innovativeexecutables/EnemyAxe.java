@@ -46,14 +46,6 @@ public class EnemyAxe {
        this.destinationX = (float) (throwInterval * this.destinationX);
        this.destinationY = (float) (throwInterval * this.destinationY);
 
-        // rotate every 0.2 seconds
-        Timer t = new Timer();
-        t.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                System.out.println("Hello World");
-            }
-        }, 0, 5000);
         com.badlogic.gdx.utils.Timer.schedule(new com.badlogic.gdx.utils.Timer.Task(){
                                                   @Override
                                                   public void run() {
