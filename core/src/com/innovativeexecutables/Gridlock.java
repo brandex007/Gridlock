@@ -133,7 +133,8 @@ public class Gridlock extends ApplicationAdapter {
 
     public void spawnObjectsAndEnemies() {
         // spawn enemy at tile 20,20
-        enemies.add(new Enemy(tileList[20][20].getX(), tileList[20][20].getY()));
+        enemies.add(new Enemy(tileList[4][4].getX(), tileList[22][22].getY()));
+        enemies.add(new Enemy(tileList[20][20].getX(), tileList[30][30].getY()));
 
         // spawn chests
         chests.add(new Chest(tileList[30][27].getX(), tileList[30][27].getY()));
