@@ -9,7 +9,7 @@ public class Score {
         com.badlogic.gdx.utils.Timer.schedule(new com.badlogic.gdx.utils.Timer.Task(){
                                                   @Override
                                                   public void run() {
-                                                      scoreCounter += 1.5;
+                                                      scoreCounter -= 0.2;
 
                                                       score = (int) scoreCounter;
                                                   }
