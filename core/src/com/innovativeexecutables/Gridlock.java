@@ -490,6 +490,7 @@ public class Gridlock extends ApplicationAdapter {
 
     public void restartGame() {
         time = 0;
+	score.setScore(0);
         player.resetPlayer();
         player.setX(475);
         player.setY(10);
