@@ -14,8 +14,8 @@ public class Score {
                                                       score += (int) scoreCounter;
                                                   }
                                               }
-                , 30        //    (delay)
-                , 30     //    (seconds)
+                , 0        //    (delay)
+                , 1     //    (seconds)
         );
     }
 
