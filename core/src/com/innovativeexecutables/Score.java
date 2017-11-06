@@ -11,7 +11,7 @@ public class Score {
                                                   public void run() {
                                                       scoreCounter -= 1.0;
 
-                                                      score = (int) scoreCounter;
+                                                      score += (int) scoreCounter;
                                                   }
                                               }
                 , 30        //    (delay)
