@@ -241,10 +241,8 @@ public class Gridlock extends ApplicationAdapter {
                     player.attack();
 
                     for (Enemy enemy : enemies) {
-                        if (enemy.getX() < player.getX() || enemy.getX() < player.getX() + enemy.getWidth() && enemy.getY() < player.getY() || enemy.getY() < player.getY() + enemy.getHeight()) {
+                        if (enemy.getX() + enemy.getWidth() > player.getX() && enemy.getX() < player.getX() + enemy.getWidth() && enemy.getY() + enemy.getWidth() > player.getY() && enemy.getY() < player.getY() + enemy.getHeight()) {
                             enemy.setHealth(enemy.getHealth() - player.attack);
-                            enemyHurt.play(100);
-
 
 
                         }
