@@ -36,7 +36,7 @@ public class Gridlock extends ApplicationAdapter {
     private Texture menuButton,gameOverWin,gameOverLoss;
 
     private Music backgroundMusic, enemyMusic;
-    private Sound impactSound,winSound,loseSound;
+    private Sound impactSound,winSound,loseSound,enemyHurt;
     private boolean playFlag, backgroundMusicFLag, enemyMusicFlag,playWin,playLose;
     // TiledMap
     private TiledMap tileMap;
@@ -89,6 +89,7 @@ public class Gridlock extends ApplicationAdapter {
         winSound = Gdx.audio.newSound(Gdx.files.internal("chipquest.wav"));
         //credit Joseph Gilbert / Kistol
         loseSound = Gdx.audio.newSound(Gdx.files.internal("gameo.ogg"));
+        enemyHurt = Gdx.audio.newSound(Gdx.files.internal("enemyinjured.mp3"));
 
 
 
@@ -241,6 +242,8 @@ public class Gridlock extends ApplicationAdapter {
                     for (Enemy enemy : enemies) {
                         if (enemy.getX() < player.getX() && enemy.getX() < player.getX() + enemy.getWidth() && enemy.getY() < player.getY() && enemy.getY() < player.getY() + enemy.getHeight()) {
                             enemy.setHealth(enemy.getHealth() - player.attack);
+                            enemyHurt.play(100);
+
 
 
                         }
@@ -355,6 +358,9 @@ public class Gridlock extends ApplicationAdapter {
         backgroundMusic.dispose();
         enemyMusic.dispose();
         impactSound.dispose();
+        enemyHurt.dispose();
+        winSound.dispose();
+        loseSound.dispose();
 
     }
 
