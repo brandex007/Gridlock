@@ -37,7 +37,7 @@ public class Gridlock extends ApplicationAdapter {
 
     private Music backgroundMusic, enemyMusic;
     private Sound impactSound,winSound,loseSound;
-    private boolean playFlag, backgroundMusicFLag, enemyMusicFlag;
+    private boolean playFlag, backgroundMusicFLag, enemyMusicFlag,playWin,playLose;
     // TiledMap
     private TiledMap tileMap;
     private OrthogonalTiledMapRenderer tileMapRenderer;
@@ -87,7 +87,8 @@ public class Gridlock extends ApplicationAdapter {
         impactSound = Gdx.audio.newSound(Gdx.files.internal("gruntsound.mp3"));
         //Level up sound effects" by Bart Kelsey. Commissioned by Will Corwin for OpenGameArt.org
         winSound = Gdx.audio.newSound(Gdx.files.internal("chipquest.wav"));
-       // loseSound = Gdx.audio.newSound(Gdx.files.internal("gameoversound.wav"));
+        //credit Joseph Gilbert / Kistol
+        loseSound = Gdx.audio.newSound(Gdx.files.internal("gameo.ogg"));
 
 
 
@@ -313,8 +314,10 @@ public class Gridlock extends ApplicationAdapter {
             enemyMusic.stop();
             impactSound.stop();
 
-            //loseSound.play(100);
-
+            if(!playLose){
+                playLose=true;
+                loseSound.play();
+            }
 
             playFlag=false;
             sb.draw(gameOverLoss,300,700);
@@ -325,6 +328,11 @@ public class Gridlock extends ApplicationAdapter {
             backgroundMusic.stop();
             enemyMusic.stop();
             impactSound.stop();
+            if(!playWin){
+                playWin=true;
+                winSound.play();
+            }
+
 
             playFlag=false;
             sb.draw(gameOverWin,300,700);
