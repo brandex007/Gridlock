@@ -2,7 +2,7 @@ package com.innovativeexecutables;
 
 public class Score {
     private float scoreCounter = 0;
-    private int score = 0;
+    private int score = 200;
 
     public Score(){
         // update score every 1 second
