@@ -12,9 +12,17 @@ public class Enemy {
     private int health = 100;
     private boolean isActive = false;
     private List<EnemyAxe> arrowList;
+    private String enemyType;
 
-    public Enemy(int x, int y) {
+    public Enemy(int x, int y, String enemyType) {
+        this.enemyType = enemyType;
         loadEnemyTextures();
+
+        if(enemyType.equals("enemy1"))
+            health = 100;
+        else if(enemyType.equals("professorEnemy"))
+            health = 125;
+
         this.x = x - (width / 2);
         this.y = y - (height / 2);
         arrowList = new ArrayList<EnemyAxe>();
@@ -41,7 +49,14 @@ public class Enemy {
 
 
     public void loadEnemyTextures(){
-        enemyTexture = new Texture("enemy.png");
+        if(enemyType.equals("enemy1"))
+            enemyTexture = new Texture("enemy.png");
+        else if(enemyType.equals("professorEnemy"))
+            enemyTexture = new Texture("enemy2.png");
+
+        //System.out.println(enemyType);
+        //enemyTexture = new Texture("enemy2.png");
+
 
         width = enemyTexture.getWidth();
         height = enemyTexture.getHeight();
