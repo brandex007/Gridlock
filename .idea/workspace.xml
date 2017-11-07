@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb79c044-5a60-44be-ba1b-bc37e8317f39" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java" afterPath="$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java" />
     </list>
     <ignored path="$PROJECT_DIR$/desktop/.gradle/" />
@@ -30,7 +31,7 @@
       <file leaf-file-name="Enemy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Enemy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
+            <state relative-caret-position="969">
               <caret line="69" column="12" lean-forward="false" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
               <folding />
             </state>
@@ -40,8 +41,8 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="413" column="29" lean-forward="true" selection-start-line="413" selection-start-column="29" selection-end-line="413" selection-end-column="29" />
+            <state relative-caret-position="6256">
+              <caret line="413" column="29" lean-forward="false" selection-start-line="413" selection-start-column="29" selection-end-line="413" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -50,8 +51,8 @@
       <file leaf-file-name="Gridlock.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1095">
-              <caret line="497" column="23" lean-forward="false" selection-start-line="497" selection-start-column="23" selection-end-line="497" selection-end-column="23" />
+            <state relative-caret-position="294">
+              <caret line="498" column="22" lean-forward="false" selection-start-line="498" selection-start-column="22" selection-end-line="498" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4034#4235#0" expanded="true" />
@@ -64,7 +65,7 @@
       <file leaf-file-name="SpriteBatch.java" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/graphics/g2d/SpriteBatch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
+            <state relative-caret-position="8024">
               <caret line="508" column="0" lean-forward="false" selection-start-line="508" selection-start-column="0" selection-end-line="508" selection-end-column="0" />
               <folding>
                 <element signature="e#14756#14757#0" expanded="true" />
@@ -76,7 +77,7 @@
       <file leaf-file-name="LwjglApplication.java" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-lwjgl/1.9.6/54887b828ab0c6c55deae03b0cca70c31531bacd/gdx-backend-lwjgl-1.9.6-sources.jar!/com/badlogic/gdx/backends/lwjgl/LwjglApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
+            <state relative-caret-position="3179">
               <caret line="224" column="0" lean-forward="false" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
               <folding />
             </state>
@@ -86,7 +87,7 @@
       <file leaf-file-name="OpenALSound.java" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-lwjgl/1.9.6/54887b828ab0c6c55deae03b0cca70c31531bacd/gdx-backend-lwjgl-1.9.6-sources.jar!/com/badlogic/gdx/backends/lwjgl/audio/OpenALSound.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
+            <state relative-caret-position="527">
               <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding>
                 <element signature="e#1739#1740#0" expanded="true" />
@@ -98,7 +99,7 @@
       <file leaf-file-name="OpenALAudio.java" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-lwjgl/1.9.6/54887b828ab0c6c55deae03b0cca70c31531bacd/gdx-backend-lwjgl-1.9.6-sources.jar!/com/badlogic/gdx/backends/lwjgl/audio/OpenALAudio.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
+            <state relative-caret-position="2074">
               <caret line="157" column="0" lean-forward="false" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
               <folding />
             </state>
@@ -111,13 +112,10 @@
             <state relative-caret-position="221">
               <caret line="13" column="70" lean-forward="false" selection-start-line="13" selection-start-column="70" selection-end-line="13" selection-end-column="70" />
               <folding>
-                <marker date="1510070452433" expanded="true" signature="536:609" ph="{...}" />
-                <marker date="1510070452433" expanded="true" signature="536:657" ph="{...}" />
-                <marker date="1510070452433" expanded="true" signature="536:755" ph="{...}" />
-                <marker date="1510070452433" expanded="false" signature="792:802" ph=" { " />
-                <marker date="1510070452433" expanded="false" signature="821:827" ph=" }" />
-                <marker date="1510070452433" expanded="false" signature="854:864" ph=" { " />
-                <marker date="1510070452433" expanded="false" signature="877:883" ph=" }" />
+                <marker date="1510086323370" expanded="false" signature="794:804" ph=" { " />
+                <marker date="1510086323370" expanded="false" signature="823:829" ph=" }" />
+                <marker date="1510086323370" expanded="false" signature="856:866" ph=" { " />
+                <marker date="1510086323370" expanded="false" signature="879:885" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -765,6 +763,7 @@
     </option>
     <option name="modificationStamps">
       <map>
+        <entry key="$PROJECT_DIR$" value="9041396434629" />
         <entry key="$PROJECT_DIR$/build.gradle" value="3162183560" />
         <entry key="$PROJECT_DIR$/core/build.gradle" value="2971590108" />
         <entry key="$PROJECT_DIR$/desktop/build.gradle" value="3162347408" />
@@ -927,7 +926,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -963,9 +963,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1404,13 +1403,10 @@
         <state relative-caret-position="221">
           <caret line="13" column="70" lean-forward="false" selection-start-line="13" selection-start-column="70" selection-end-line="13" selection-end-column="70" />
           <folding>
-            <marker date="1510070452433" expanded="true" signature="536:609" ph="{...}" />
-            <marker date="1510070452433" expanded="true" signature="536:657" ph="{...}" />
-            <marker date="1510070452433" expanded="true" signature="536:755" ph="{...}" />
-            <marker date="1510070452433" expanded="false" signature="792:802" ph=" { " />
-            <marker date="1510070452433" expanded="false" signature="821:827" ph=" }" />
-            <marker date="1510070452433" expanded="false" signature="854:864" ph=" { " />
-            <marker date="1510070452433" expanded="false" signature="877:883" ph=" }" />
+            <marker date="1510086323370" expanded="false" signature="794:804" ph=" { " />
+            <marker date="1510086323370" expanded="false" signature="823:829" ph=" }" />
+            <marker date="1510086323370" expanded="false" signature="856:866" ph=" { " />
+            <marker date="1510086323370" expanded="false" signature="879:885" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -1425,7 +1421,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Enemy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
+        <state relative-caret-position="969">
           <caret line="69" column="12" lean-forward="false" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
           <folding />
         </state>
@@ -1433,15 +1429,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="413" column="29" lean-forward="true" selection-start-line="413" selection-start-column="29" selection-end-line="413" selection-end-column="29" />
+        <state relative-caret-position="6256">
+          <caret line="413" column="29" lean-forward="false" selection-start-line="413" selection-start-column="29" selection-end-line="413" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-lwjgl/1.9.6/54887b828ab0c6c55deae03b0cca70c31531bacd/gdx-backend-lwjgl-1.9.6-sources.jar!/com/badlogic/gdx/backends/lwjgl/audio/OpenALAudio.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
+        <state relative-caret-position="2074">
           <caret line="157" column="0" lean-forward="false" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
           <folding />
         </state>
@@ -1449,7 +1445,7 @@
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-lwjgl/1.9.6/54887b828ab0c6c55deae03b0cca70c31531bacd/gdx-backend-lwjgl-1.9.6-sources.jar!/com/badlogic/gdx/backends/lwjgl/audio/OpenALSound.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
+        <state relative-caret-position="527">
           <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding>
             <element signature="e#1739#1740#0" expanded="true" />
@@ -1459,7 +1455,7 @@
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/graphics/g2d/SpriteBatch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state relative-caret-position="8024">
           <caret line="508" column="0" lean-forward="false" selection-start-line="508" selection-start-column="0" selection-end-line="508" selection-end-column="0" />
           <folding>
             <element signature="e#14756#14757#0" expanded="true" />
@@ -1469,7 +1465,7 @@
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-lwjgl/1.9.6/54887b828ab0c6c55deae03b0cca70c31531bacd/gdx-backend-lwjgl-1.9.6-sources.jar!/com/badlogic/gdx/backends/lwjgl/LwjglApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
+        <state relative-caret-position="3179">
           <caret line="224" column="0" lean-forward="false" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
           <folding />
         </state>
@@ -1477,8 +1473,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="497" column="23" lean-forward="false" selection-start-line="497" selection-start-column="23" selection-end-line="497" selection-end-column="23" />
+        <state relative-caret-position="294">
+          <caret line="498" column="22" lean-forward="false" selection-start-line="498" selection-start-column="22" selection-end-line="498" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4034#4235#0" expanded="true" />

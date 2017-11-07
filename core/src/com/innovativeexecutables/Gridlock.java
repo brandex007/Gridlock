@@ -496,6 +496,7 @@ public class Gridlock extends ApplicationAdapter {
     public void restartGame() {
         loseSound.stop();
         playLose=false;
+        playWin=false;
 
         time = 0;
 	score.setScore(200);
