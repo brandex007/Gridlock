@@ -243,6 +243,7 @@ public class Gridlock extends ApplicationAdapter {
                     for (Enemy enemy : enemies) {
                         if (enemy.getX() + enemy.getWidth() > player.getX() && enemy.getX() < player.getX() + enemy.getWidth() && enemy.getY() + enemy.getWidth() > player.getY() && enemy.getY() < player.getY() + enemy.getHeight()) {
                             enemy.setHealth(enemy.getHealth() - player.attack);
+                            enemyHurt.play(100);
 
 
                         }
@@ -317,9 +318,15 @@ public class Gridlock extends ApplicationAdapter {
             impactSound.stop();
 
             if(!playLose){
+
+                loseSound.play(100);
+
                 playLose=true;
-                loseSound.play();
+
             }
+
+
+
 
             playFlag=false;
             sb.draw(gameOverLoss,300,700);
@@ -487,6 +494,9 @@ public class Gridlock extends ApplicationAdapter {
     }
 
     public void restartGame() {
+        loseSound.stop();
+        playLose=false;
+
         time = 0;
 	score.setScore(200);
         player.resetPlayer();
