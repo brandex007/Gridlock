@@ -73,7 +73,7 @@ public class Gridlock extends ApplicationAdapter {
         gameOverLoss=new Texture("gameoverlose.png");
 
 
-        // 1.6 Map will be loaded
+        // 1.1.2 Map will be loaded
         tileMap = new TmxMapLoader().load("tiledmap1.tmx");
         tileMapRenderer = new OrthogonalTiledMapRenderer(tileMap);
 
@@ -93,7 +93,7 @@ public class Gridlock extends ApplicationAdapter {
         enemyHurt = Gdx.audio.newSound(Gdx.files.internal("enemyinjured.mp3"));
 
 
-        // 1.5 Game will render a user character
+        // 1.1.1 Game will render a user character
         player = new Player(475, 10);
 
         enemies = new ArrayList<Enemy>();
@@ -135,10 +135,11 @@ public class Gridlock extends ApplicationAdapter {
     }
 
     public void spawnObjectsAndEnemies() {
-        // 1.8 All bosses will be loaded and spawned invisibly
+        // 1.1.4 All bosses will be loaded and spawned invisibly
         enemies.add(new Enemy(tileList[4][4].getX(), tileList[22][22].getY(), "enemy1"));
         enemies.add(new Enemy(tileList[20][20].getX(), tileList[30][30].getY(), "professorEnemy"));
 
+        // 1.1.3 All chests will be loaded
         // spawn chests
         chests.add(new Chest(tileList[30][27].getX(), tileList[30][27].getY()));
         chests.add(new Chest(tileList[4][30].getX(), tileList[4][30].getY()));
@@ -279,7 +280,7 @@ public class Gridlock extends ApplicationAdapter {
 
         }
 
-        // 1.6 Map will be rendered
+        // 1.1.2 Map will be rendered
         // map rendering
         tileMapRenderer.setView(cam);
         tileMapRenderer.render();
@@ -304,6 +305,7 @@ public class Gridlock extends ApplicationAdapter {
 
         sb.begin();
 
+        // 1.1.3 All chests will be rendered
         // draw chests
         for (Chest chest : chests) {
             chest.render(sb);
@@ -332,8 +334,8 @@ public class Gridlock extends ApplicationAdapter {
             // if player is dead displays game over
             if(!playLose){
 
-                // 	1.13.3 Game over music must play for win or loss
 
+                // 1.12.1 Game over music must play for win or loss
                 loseSound.play(100);
 
                 playLose=true;
@@ -344,12 +346,12 @@ public class Gridlock extends ApplicationAdapter {
 
             // 1.12 Upon completion of the game, the game will indicate when the player has won or lost
             playFlag=false;
-            // 2.8.4 Game should display lose text
+            // 2.8.3 Game should display lose text
             sb.draw(gameOverLoss,300,700);
 
         }
 
-        //	3.5 Upon death of boss, player wins game
+        //	3.4 Upon death of boss, player wins game
         if(enemies.isEmpty()){
             backgroundMusic.stop();
             enemyMusic.stop();
@@ -357,26 +359,26 @@ public class Gridlock extends ApplicationAdapter {
             if(!playWin){
                 playWin=true;
 
-                //	1.13.3 Game over music must play for win or loss
+                //	1.12.1 Game over music must play for win or loss
                 winSound.play();
             }
 
 
             // 	1.12 Upon completion of the game, the game will indicate when the player has won or lost
             playFlag=false;
-            // 	3.5.4 Game should display win text
+            // 	3.4.3 Game should display win text
             sb.draw(gameOverWin,300,700);
         }
 
 
 
         // 1.1 Pressing start button initiates gameplay
-        // 1.3 There must be a pause and resume button, triggered by the escape key
+        // 1.3 There must be a menu with “Continue” & “New Game” options triggered by the escape key
         // draws play button at start or when game is stopped
         if (playFlag == false) {
             //draws play button object
-            // 2.8.2 Game should offer to play again
-            // 3.5.2 Game should offer to play again
+            // 2.8.1 Game should offer to play again
+            // 3.4.3 Game should offer to play again
 
             sb.draw(menuButton, 200, 200);
         }
@@ -384,6 +386,8 @@ public class Gridlock extends ApplicationAdapter {
 
         sb.end();
     }
+
+    // 1.11 The game dispose of all objects not in use
 
     @Override
     public void dispose() {
@@ -522,14 +526,24 @@ public class Gridlock extends ApplicationAdapter {
 
     }
 
-    // 	1.10 The game should be able to be restarted
+    // 	1.10 The game is able to be restarted
     public void restartGame() {
         loseSound.stop();
         playLose=false;
         playWin=false;
 
+        // remove all enemy stuff
+        for(Enemy enemy : enemies){
+            enemy.remove();
+        }
+
+        // remove all chests
+        for(Chest chest : chests){
+            chest.remove();
+        }
+
         time = 0;
-	score.setScore(200);
+	    score.setScore(200);
         player.resetPlayer();
         player.setX(475);
         player.setY(10);

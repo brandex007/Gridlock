@@ -44,6 +44,9 @@ public class Chest {
 
     public void remove(){
         isActive = false;
+        closedTexture.dispose();
+        openTexture.dispose();
+        currTexture.dispose();
     }
 
     public void loadTexture(){

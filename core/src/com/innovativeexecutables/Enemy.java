@@ -88,7 +88,7 @@ public class Enemy {
         if(this.isActive == false){
             this.isActive = isActive;
 
-            // 3.3. Boss must begin attacking by throwing axes in all directions, relatively towards player
+            // 3.3.1 Boss must begin attacking by throwing axes in all directions, relatively towards player
             // add arrow to list with players position at time of throw
             // add arrow every 2 seconds
             com.badlogic.gdx.utils.Timer.schedule(new com.badlogic.gdx.utils.Timer.Task(){
@@ -110,5 +110,19 @@ public class Enemy {
 
     public int getHealth(){
         return health;
+    }
+
+    /*public void dispose(){
+        enemyTexture.dispose();
+
+        for(EnemyAxe enemyAxe : arrowList){
+            enemyAxe.dispose();
+        }
+    }*/
+
+    public void remove(){
+        for (EnemyAxe enemyAxe : arrowList){
+            enemyAxe.remove();
+        }
     }
 }

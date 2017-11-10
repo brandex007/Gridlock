@@ -247,7 +247,6 @@ public class Player{
         boolean randomizing = true;
         int choice = 1;
 
-        // 	2.3.2 Player must not be able to pick up the same item
         while(randomizing) {
             Random random = new Random();
             choice = random.nextInt(max - min + 1) + min;
@@ -284,12 +283,12 @@ public class Player{
         }
 
         // 2.3.1 Player must render specified weapon textures
-        // 2.3.3 Player stats must be updated based on item picked up
+        // 2.3.2 Player stats must be updated based on item picked up
         switch (choice) {
             case 1:
                 weapon = Weapon.SPEAR;
 
-                // 3.3.3.2.1 If player picks up spear, player attack is updated to 30
+                // 3.3.2.2.1 If player picks up spear, player attack is updated to 30
                 attack = 30;
 
                 spear = new Spear(chestX, chestY);
@@ -316,7 +315,7 @@ public class Player{
             case 2:
                 weapon = Weapon.AXE;
 
-                // 3.3.3.2.2 If player picks up axe, player attack is updated to 50
+                // 2.3.2.2.2 If player picks up axe, player attack is updated to 50
                 attack = 50;
 
                 axe = new Axe(chestX, chestY);
@@ -342,7 +341,7 @@ public class Player{
             case 3:
                 weapon = Weapon.HELMET;
 
-                // 3.3.3.1.1 If player picks up helmet, greaves, or cuisses, player health is increased by 5
+                // 2.3.2.1.1 If player picks up helmet, greaves, or cuisses, player health is increased by 5
                 health += 5;
 
                 helmet = new Helmet(chestX, chestY);
@@ -361,7 +360,7 @@ public class Player{
             case 4:
                 weapon = Weapon.GREAVES;
 
-                // 3.3.3.1.1 If player picks up helmet, greaves, or cuisses, player health is increased by 5
+                // 2.3.2.1.1 If player picks up helmet, greaves, or cuisses, player health is increased by 5
                 health += 5;
 
                 greaves = new Greaves(chestX, chestY);
@@ -380,7 +379,7 @@ public class Player{
             case 5:
                 weapon = Weapon.CUISSES;
 
-                // 3.3.3.1.1 If player picks up helmet, greaves, or cuisses, player health is increased by 5
+                // 3.3.2.1.1 If player picks up helmet, greaves, or cuisses, player health is increased by 5
                 health += 5;
 
                 cuisses = new Cuisses(chestX, chestY);
@@ -399,7 +398,7 @@ public class Player{
             case 6:
                 weapon = Weapon.BREASTPLATE;
 
-                // 3.3.3.1.2 If player picks up breastplate, player health is increased by 10
+                // 3.3.2.1.2 If player picks up breastplate, player health is increased by 10
                 health += 10;
 
                 breastplate = new Breastplate(chestX, chestY);
