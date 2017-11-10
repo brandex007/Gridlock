@@ -7,7 +7,7 @@ public class Score {
     private int score = 200;
 
     public Score(){
-        // 	1.2.1. Score must subtract by 2 every second
+        // 	1.2.1. Score must subtract by 2 every 30 second
         com.badlogic.gdx.utils.Timer.schedule(new com.badlogic.gdx.utils.Timer.Task(){
                                                   @Override
                                                   public void run() {
