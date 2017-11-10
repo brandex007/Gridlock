@@ -9,6 +9,8 @@ import java.util.List;
 public class Enemy {
     private int x, y, width, height;
     private Texture enemyTexture;
+
+
     private int health = 100;
     private boolean isActive = false;
     private List<EnemyAxe> arrowList;
@@ -18,6 +20,8 @@ public class Enemy {
         this.enemyType = enemyType;
         loadEnemyTextures();
 
+
+        // 3.1 Enemy has an initial health value of 100, and professor boss has health of 120
         if(enemyType.equals("enemy1"))
             health = 100;
         else if(enemyType.equals("professorEnemy"))
@@ -84,6 +88,7 @@ public class Enemy {
         if(this.isActive == false){
             this.isActive = isActive;
 
+            // 3.3. Boss must begin attacking by throwing axes in all directions, relatively towards player
             // add arrow to list with players position at time of throw
             // add arrow every 2 seconds
             com.badlogic.gdx.utils.Timer.schedule(new com.badlogic.gdx.utils.Timer.Task(){

@@ -73,6 +73,7 @@ public class Gridlock extends ApplicationAdapter {
         gameOverLoss=new Texture("gameoverlose.png");
 
 
+        // 1.6 Map will be loaded
         tileMap = new TmxMapLoader().load("tiledmap1.tmx");
         tileMapRenderer = new OrthogonalTiledMapRenderer(tileMap);
 
@@ -92,7 +93,7 @@ public class Gridlock extends ApplicationAdapter {
         enemyHurt = Gdx.audio.newSound(Gdx.files.internal("enemyinjured.mp3"));
 
 
-
+        // 1.5 Game will render a user character
         player = new Player(475, 10);
 
         enemies = new ArrayList<Enemy>();
@@ -109,6 +110,7 @@ public class Gridlock extends ApplicationAdapter {
         spawnObjectsAndEnemies();
 
         // initiate fonts
+        // 1.2 Score must be visible to user during gameplay
         scoreString = "Score: 0";
         scoreFont = new BitmapFont();
 
@@ -118,6 +120,7 @@ public class Gridlock extends ApplicationAdapter {
         timeString = "Time: 0";
         timeFont = new BitmapFont();
 
+        // 1.5 The game will have timer that will be counted upward in seconds upon start of the game
         Timer.schedule(new Timer.Task() {
                            @Override
                            public void run() {
@@ -132,7 +135,7 @@ public class Gridlock extends ApplicationAdapter {
     }
 
     public void spawnObjectsAndEnemies() {
-        // spawn enemy at tile 20,20
+        // 1.8 All bosses will be loaded and spawned invisibly
         enemies.add(new Enemy(tileList[4][4].getX(), tileList[22][22].getY(), "enemy1"));
         enemies.add(new Enemy(tileList[20][20].getX(), tileList[30][30].getY(), "professorEnemy"));
 
@@ -153,6 +156,7 @@ public class Gridlock extends ApplicationAdapter {
 
     }
 
+    // 1.6 The game will have background music playing during gameplay
     //plays background music or enemy music while game is running
     public void playBackgroundMusic() {
 
@@ -175,6 +179,7 @@ public class Gridlock extends ApplicationAdapter {
 
     }
 
+    // 1.7 The game will have sound effects for each impact
     public void playImpactSound() {
         // plays impact sound every 10 points of health lost or upon initial impact
         if ((player.getHealth() % 10 == 0 || player.getHealth() == 99) && player.getHealth() != 0) {
@@ -191,14 +196,16 @@ public class Gridlock extends ApplicationAdapter {
 		 * when mouse clicked location of click is saved and
 		  * click location is checked to see if the play button was clicked*/
 
-
+        // 	1.1 Pressing start button initiates gameplay
         if (Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
             mouseClickX = Gdx.input.getX();
             mouseClickY = Gdx.input.getY();
 
             if ((mouseClickX <= 610 && mouseClickX >= 410) && (mouseClickY <= 450 && mouseClickY >= 400)) {
                 restartGame();
-            } else if ((mouseClickX <= 610 && mouseClickX >= 410) && (mouseClickY <= 590 && mouseClickY >= 550)) {
+            } 	// 1.4 There must be an exit button, triggered by the escape key
+            else if ((mouseClickX <= 610 && mouseClickX >= 410) && (mouseClickY <= 590 && mouseClickY >= 550)) {
+                // 1.4.1 Game must exit
                 Gdx.app.exit();
             } else if ((mouseClickX <= 610 && mouseClickX >= 410) && (mouseClickY <= 525 && mouseClickY >= 475)) {
                 playFlag = true;
@@ -230,8 +237,10 @@ public class Gridlock extends ApplicationAdapter {
 
             cam.update();
 
+            //	1.8 The game must display player health
             healthString = "Health: " + player.getHealth();
 
+            // 	2.4 Player must be able to attack by the user pressing space bar
             // player attacks using spacebar
             if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
 
@@ -242,6 +251,7 @@ public class Gridlock extends ApplicationAdapter {
 
                     for (Enemy enemy : enemies) {
                         if (enemy.getX() + enemy.getWidth() > player.getX() && enemy.getX() < player.getX() + enemy.getWidth() && enemy.getY() + enemy.getWidth() > player.getY() && enemy.getY() < player.getY() + enemy.getHeight()) {
+                            // 	3.2 Enemy must lose damage specified by player attack when player is attacking enemy
                             enemy.setHealth(enemy.getHealth() - player.attack);
                             enemyHurt.play(100);
 
@@ -269,12 +279,14 @@ public class Gridlock extends ApplicationAdapter {
 
         }
 
+        // 1.6 Map will be rendered
         // map rendering
         tileMapRenderer.setView(cam);
         tileMapRenderer.render();
         sb = tileMapRenderer.getBatch();
 
         // draw text
+        // 1.2 Score must be visible to user during gameplay
         sb.begin();
         scoreFont.setColor(Color.WHITE);
         scoreFont.getData().setScale(2.0f);
@@ -310,14 +322,17 @@ public class Gridlock extends ApplicationAdapter {
 
         }
 
-        // if player is dead displays game over
+        // 2.8 When player dies, player loses game
         if(player.isDead)
         {
             backgroundMusic.stop();
             enemyMusic.stop();
             impactSound.stop();
 
+            // if player is dead displays game over
             if(!playLose){
+
+                // 	1.13.3 Game over music must play for win or loss
 
                 loseSound.play(100);
 
@@ -327,31 +342,42 @@ public class Gridlock extends ApplicationAdapter {
 
 
 
-
+            // 1.12 Upon completion of the game, the game will indicate when the player has won or lost
             playFlag=false;
+            // 2.8.4 Game should display lose text
             sb.draw(gameOverLoss,300,700);
 
         }
 
+        //	3.5 Upon death of boss, player wins game
         if(enemies.isEmpty()){
             backgroundMusic.stop();
             enemyMusic.stop();
             impactSound.stop();
             if(!playWin){
                 playWin=true;
+
+                //	1.13.3 Game over music must play for win or loss
                 winSound.play();
             }
 
 
+            // 	1.12 Upon completion of the game, the game will indicate when the player has won or lost
             playFlag=false;
+            // 	3.5.4 Game should display win text
             sb.draw(gameOverWin,300,700);
         }
 
 
 
+        // 1.1 Pressing start button initiates gameplay
+        // 1.3 There must be a pause and resume button, triggered by the escape key
         // draws play button at start or when game is stopped
         if (playFlag == false) {
             //draws play button object
+            // 2.8.2 Game should offer to play again
+            // 3.5.2 Game should offer to play again
+
             sb.draw(menuButton, 200, 200);
         }
 
@@ -374,6 +400,7 @@ public class Gridlock extends ApplicationAdapter {
 
         //// player collision with enemies
         for (Enemy enemy : enemies) {
+            //	3.3 When player is within 300 pixels from boss, the boss will become visible
             // active enemy once when player is nearby
             if (player.getX() > enemy.getX() - 300 && player.getX() < enemy.getX() + 300) {
                 if (player.getY() > enemy.getY() - 300 && player.getY() < enemy.getY() + 300) {
@@ -412,6 +439,7 @@ public class Gridlock extends ApplicationAdapter {
 
     }
 
+    // 2.3 Player must be able to pick up spear, sword, or armor
     public void checkForChestCollisions() {
         for (Chest chest : chests) {
             // show chest when nearby
@@ -467,6 +495,7 @@ public class Gridlock extends ApplicationAdapter {
                 (int) (player.getX() / hazardsCollisionLayer.getTileWidth()),
                 (int) (player.getY() / hazardsCollisionLayer.getTileHeight()));
 
+        // 2.7 When player comes in contact with hazards, player loses 1 health per frame (every split second)
         if (collisionWithHazards) {
             player.setHealth(player.getHealth() - 1);
             playImpactSound();
@@ -493,6 +522,7 @@ public class Gridlock extends ApplicationAdapter {
 
     }
 
+    // 	1.10 The game should be able to be restarted
     public void restartGame() {
         loseSound.stop();
         playLose=false;

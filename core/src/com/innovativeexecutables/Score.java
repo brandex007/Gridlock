@@ -2,10 +2,12 @@ package com.innovativeexecutables;
 
 public class Score {
     private float scoreCounter = 0;
+
+    // 	1.2.2. Score must start at 200
     private int score = 200;
 
     public Score(){
-        // update score every 1 second
+        // 	1.2.1. Score must subtract by 2 every second
         com.badlogic.gdx.utils.Timer.schedule(new com.badlogic.gdx.utils.Timer.Task(){
                                                   @Override
                                                   public void run() {
