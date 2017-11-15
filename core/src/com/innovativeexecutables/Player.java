@@ -27,7 +27,7 @@ public class Player{
     public boolean UP_TOUCHED, DOWN_TOUCHED, LEFT_TOUCHED, RIGHT_TOUCHED;
     public static float width, height;
 
-    //	2.1 Player has initial health value of 100
+    //	3.2.1 Player has initial health value of 100
     public static int health = 100;
 
     public boolean isDead = false;
@@ -71,7 +71,7 @@ public class Player{
         LEFT_TOUCHED = false;
         RIGHT_TOUCHED = false;
 
-        // 	2.5 Player will move in the direction of key pressed
+        // 	3.2.5 Player will move in the direction of key pressed
         // update player movement
         if(Gdx.input.isKeyPressed(Input.Keys.LEFT) && x > 0){
             x -= speed * delta;
@@ -124,7 +124,7 @@ public class Player{
         }
 
         // load walking textures if in walking state
-        // 	2.5.1 Player image texture will change based on direction of movement
+        // 	3.2.5.1 Player image texture will change based on direction of movement
         if(state == "walk") {
             if (LEFT_TOUCHED) {
                 facedRightLast = false;
@@ -139,7 +139,7 @@ public class Player{
             }
         }
 
-        // 2.4.1 During attack player’s image switches to weapon down
+        // 3.2.4.1 During attack player’s image switches to weapon down
         // load attacking texture if in attack state
         if(state == "attack"){
             if(facedRightLast == false){
@@ -282,13 +282,13 @@ public class Player{
             }
         }
 
-        // 2.3.1 Player must render specified weapon textures
-        // 2.3.2 Player stats must be updated based on item picked up
+        // 3.2.3.1 Player must render specified weapon textures
+        // 3.2.3.2 Player stats must be updated based on item picked up
         switch (choice) {
             case 1:
                 weapon = Weapon.SPEAR;
 
-                // 3.3.2.2.1 If player picks up spear, player attack is updated to 30
+                // 3.2.3.2.2.1 If player picks up spear, player attack is updated to 30
                 attack = 30;
 
                 spear = new Spear(chestX, chestY);
@@ -315,7 +315,7 @@ public class Player{
             case 2:
                 weapon = Weapon.AXE;
 
-                // 2.3.2.2.2 If player picks up axe, player attack is updated to 50
+                // 3.2.3.2.2.2 If player picks up axe, player attack is updated to 50
                 attack = 50;
 
                 axe = new Axe(chestX, chestY);
@@ -341,7 +341,7 @@ public class Player{
             case 3:
                 weapon = Weapon.HELMET;
 
-                // 2.3.2.1.1 If player picks up helmet, greaves, or cuisses, player health is increased by 5
+                // 3.2.3.2.1.1 If player picks up helmet, greaves, or cuisses, player health is increased by 5
                 health += 5;
 
                 helmet = new Helmet(chestX, chestY);
@@ -360,7 +360,7 @@ public class Player{
             case 4:
                 weapon = Weapon.GREAVES;
 
-                // 2.3.2.1.1 If player picks up helmet, greaves, or cuisses, player health is increased by 5
+                // 3.2.3.2.1.1 If player picks up helmet, greaves, or cuisses, player health is increased by 5
                 health += 5;
 
                 greaves = new Greaves(chestX, chestY);
@@ -379,7 +379,7 @@ public class Player{
             case 5:
                 weapon = Weapon.CUISSES;
 
-                // 3.3.2.1.1 If player picks up helmet, greaves, or cuisses, player health is increased by 5
+                // 3.2.3.2.1.1 If player picks up helmet, greaves, or cuisses, player health is increased by 5
                 health += 5;
 
                 cuisses = new Cuisses(chestX, chestY);
@@ -398,7 +398,7 @@ public class Player{
             case 6:
                 weapon = Weapon.BREASTPLATE;
 
-                // 3.3.2.1.2 If player picks up breastplate, player health is increased by 10
+                // 3.2.3.2.1.2 If player picks up breastplate, player health is increased by 10
                 health += 10;
 
                 breastplate = new Breastplate(chestX, chestY);
