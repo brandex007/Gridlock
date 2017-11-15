@@ -87,10 +87,10 @@ public class EnemyAxe {
             // handle collision
             if (x + width >= Player.x && x <= Player.x + Player.width && y + height >= Player.y && y <= Player.y + Player.height) {
 
-                // 2.2.1 When player is not attacking and player is in contact with axe, player must lose 7 health
+                // 3.2.2.1 When player is not attacking and player is in contact with axe, player must lose 7 health
                 Player.setHealth(Player.getHealth() - 7);
 
-                // 2.2.2 Player hurt sound must play
+                // 3.2.2.2 Player hurt sound must play
                 // plays impact sound for axe
                 axeImpactSound.play();
 
