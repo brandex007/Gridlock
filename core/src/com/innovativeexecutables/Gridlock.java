@@ -3,6 +3,7 @@ package com.innovativeexecutables;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
@@ -55,16 +56,23 @@ public class Gridlock extends ApplicationAdapter {
     List<Chest> chests;
 
     // Displays for score, health, and time
-    BitmapFont scoreFont, healthFont, timeFont;
-    String scoreString, healthString, timeString;
+    BitmapFont scoreFont, healthFont, timeFont, highScoreFont;
+    String scoreString, healthString, timeString, highScoreString;
 
     int time = 0;
 
     // Score class
     Score score;
 
+    // Saved data preferences
+    Preferences prefs;
+
+    int highScore;
+
     @Override
     public void create() {
+        prefs = Gdx.app.getPreferences("Preferences");
+
         cam = new OrthographicCamera();
         cam.setToOrtho(false, VIEWPORT_WIDTH, VIEWPORT_HEIGHT);
         //creates play button object
@@ -119,6 +127,9 @@ public class Gridlock extends ApplicationAdapter {
 
         timeString = "Time: 0";
         timeFont = new BitmapFont();
+
+        highScoreString = "High Score: ";
+        highScoreFont = new BitmapFont();
 
         // 3.1.5 The game will have timer that will be counted upward in seconds upon start of the game
         Timer.schedule(new Timer.Task() {
@@ -349,6 +360,12 @@ public class Gridlock extends ApplicationAdapter {
             // 3.2.8.3 Game should display lose text
             sb.draw(gameOverLoss,300,700);
 
+            highScore = prefs.getInteger("score");
+            if(score.getScore() > highScore) {
+                prefs.putInteger("score", score.getScore());
+                prefs.flush();
+            }
+
         }
 
         //	3.3.4 Upon death of boss, player wins game
@@ -361,6 +378,12 @@ public class Gridlock extends ApplicationAdapter {
 
                 //	3.1.12.1 Game over music must play for win or loss
                 winSound.play();
+
+                highScore = prefs.getInteger("score");
+                if(score.getScore() > highScore) {
+                    prefs.putInteger("score", score.getScore());
+                    prefs.flush();
+                }
             }
 
 
@@ -381,6 +404,15 @@ public class Gridlock extends ApplicationAdapter {
             // 3.3.4.3 Game should offer to play again
 
             sb.draw(menuButton, 200, 200);
+
+            // display high score
+            if(player.isDead || enemies.isEmpty()) {
+                // draw text
+                // 1.2 Score must be visible to user during gameplay
+                highScoreFont.setColor(Color.WHITE);
+                highScoreFont.getData().setScale(2f);
+                highScoreFont.draw(sb, highScoreString + highScore, 400, 710);
+            }
         }
 
 
