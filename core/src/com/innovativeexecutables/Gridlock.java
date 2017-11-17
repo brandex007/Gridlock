@@ -408,7 +408,7 @@ public class Gridlock extends ApplicationAdapter {
             // display high score
             if(player.isDead || enemies.isEmpty()) {
                 // draw text
-                // 1.2 Score must be visible to user during gameplay
+                // 3.1.2 Score must be visible to user during gameplay
                 highScoreFont.setColor(Color.WHITE);
                 highScoreFont.getData().setScale(2f);
                 highScoreFont.draw(sb, highScoreString + highScore, 400, 710);
