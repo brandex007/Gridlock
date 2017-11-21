@@ -7,33 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb79c044-5a60-44be-ba1b-bc37e8317f39" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3/fileContent/annotation-processors.bin" afterPath="$PROJECT_DIR$/.gradle/4.3/fileContent/annotation-processors.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/4.3/fileContent/fileContent.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.3/fileHashes/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.3/fileHashes/fileHashes.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.3/fileHashes/resourceHashesCache.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.3/taskHistory/taskHistory.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.3/taskHistory/taskHistory.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Chest.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Chest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Enemy$1.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Enemy$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Enemy.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Enemy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/EnemyAxe.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/EnemyAxe.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Gridlock$1.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Gridlock$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Gridlock.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Gridlock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Player$1.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Player$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Player$2.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Player$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Player$3.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Player$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Player$4.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Player$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Player$5.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Player$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Player$6.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Player$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Player$7.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Player$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Player$Weapon.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Player$Weapon.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Player.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Score$1.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Score$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Score.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Score.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" afterPath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/desktop/build/libs/desktop-1.0.jar" afterPath="$PROJECT_DIR$/desktop/build/libs/desktop-1.0.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java" afterPath="$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java" />
     </list>
@@ -114,18 +87,10 @@
       <file leaf-file-name="Enemy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Enemy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1620">
-              <caret line="124" column="30" lean-forward="false" selection-start-line="124" selection-start-column="30" selection-end-line="124" selection-end-column="30" />
+            <state relative-caret-position="60">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
-                <marker date="1510794708615" expanded="true" signature="2117:2323" ph="//..." />
-                <marker date="1510794708615" expanded="true" signature="2117:2936" ph="{...}" />
-                <marker date="1510794708615" expanded="true" signature="2413:2823" ph="{...}" />
-                <marker date="1510794708615" expanded="true" signature="2543:2775" ph="{...}" />
-                <marker date="1510794708615" expanded="false" signature="2975:2985" ph=" { " />
-                <marker date="1510794708615" expanded="false" signature="3006:3012" ph=" }" />
-                <marker date="1510794708615" expanded="false" signature="3040:3050" ph=" { " />
-                <marker date="1510794708615" expanded="false" signature="3064:3070" ph=" }" />
-                <marker date="1510794708615" expanded="true" signature="3253:3346" ph="{...}" />
+                <marker date="1510962140134" expanded="true" signature="2117:2323" ph="//..." />
               </folding>
             </state>
           </provider>
@@ -134,15 +99,31 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5820">
-              <caret line="433" column="0" lean-forward="false" selection-start-line="433" selection-start-column="0" selection-end-line="433" selection-end-column="0" />
+            <state relative-caret-position="105">
+              <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="23" selection-end-column="98" />
               <folding>
-                <marker date="1510794708618" expanded="true" signature="15415:16308" ph="{...}" />
-                <marker date="1510794708618" expanded="true" signature="15735:16091" ph="{...}" />
-                <marker date="1510794708618" expanded="false" signature="15880:15945" ph=" { " />
-                <marker date="1510794708618" expanded="false" signature="15975:16035" ph=" }" />
-                <marker date="1510794708618" expanded="true" signature="16339:16644" ph="{...}" />
+                <marker date="1510957536063" expanded="true" signature="15415:16308" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Axe.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Axe.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Weapon.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Weapon.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -150,60 +131,18 @@
       <file leaf-file-name="Gridlock.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state relative-caret-position="566">
+              <caret line="101" column="72" lean-forward="true" selection-start-line="101" selection-start-column="72" selection-end-line="101" selection-end-column="72" />
               <folding>
-                <element signature="e#4575#4776#0" expanded="true" />
-                <element signature="e#4775#4776#0" expanded="true" />
+                <element signature="e#4665#4866#0" expanded="true" />
+                <element signature="e#4865#4866#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DesktopLauncher.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/desktop/src/com/innovativeexecutables/desktop/DesktopLauncher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Chest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Chest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="48" column="30" lean-forward="false" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpriteBatch.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/graphics/g2d/SpriteBatch.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7080">
-              <caret line="508" column="0" lean-forward="false" selection-start-line="508" selection-start-column="0" selection-end-line="508" selection-end-column="0" />
-              <folding>
-                <element signature="e#14756#14757#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LwjglApplication.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-lwjgl/1.9.6/54887b828ab0c6c55deae03b0cca70c31531bacd/gdx-backend-lwjgl-1.9.6-sources.jar!/com/badlogic/gdx/backends/lwjgl/LwjglApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2805">
-              <caret line="224" column="0" lean-forward="false" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Score.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Score.java">
+      <file leaf-file-name="Tile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Tile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
               <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
@@ -212,26 +151,44 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Chest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Chest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Score.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Score.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="EnemyAxe.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/EnemyAxe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1680">
-              <caret line="121" column="0" lean-forward="false" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+            <state relative-caret-position="1575">
+              <caret line="108" column="5" lean-forward="false" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1510794708616" expanded="true" signature="4410:4489" ph="//..." />
-                <marker date="1510794708616" expanded="true" signature="4964:5078" ph="{...}" />
-                <marker date="1510794708616" expanded="true" signature="5104:5174" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
+      <file leaf-file-name="Breastplate.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Breastplate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="195">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -248,9 +205,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>chest</find>
-      <find>hazard</find>
-      <find>gameov</find>
       <find>gameover</find>
       <find>lose</find>
       <find>overw</find>
@@ -278,6 +232,9 @@
       <find>restart</find>
       <find>score</find>
       <find>highScoreFont</find>
+      <find>win</find>
+      <find>iterator</find>
+      <find>level</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -1084,21 +1041,21 @@
         <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Armor.java" />
         <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Spear.java" />
         <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Bow.java" />
-        <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Weapon.java" />
-        <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Score.java" />
-        <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Player.java" />
         <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/EnemyAxe.java" />
+        <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Player.java" />
         <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Enemy.java" />
+        <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Axe.java" />
+        <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Weapon.java" />
         <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Chest.java" />
+        <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Score.java" />
         <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="182" />
     <option name="y" value="22" />
-    <option name="width" value="949" />
-    <option name="height" value="726" />
+    <option name="width" value="1280" />
+    <option name="height" value="729" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -1343,24 +1300,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="182" y="22" width="949" height="726" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="22" width="1280" height="729" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32519084" sideWeight="0.496875" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32267883" sideWeight="0.496875" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25114155" sideWeight="0.42265624" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32415903" sideWeight="0.57734376" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32267883" sideWeight="0.57734376" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921028" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1380,12 +1336,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/assets/enemyArrow.png" />
     <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Tile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1398,11 +1353,7 @@
         <state relative-caret-position="748">
           <caret line="51" column="31" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
           <folding>
-            <marker date="1510794708618" expanded="true" signature="15415:16308" ph="{...}" />
-            <marker date="1510794708618" expanded="true" signature="15735:16091" ph="{...}" />
-            <marker date="1510794708618" expanded="false" signature="15880:15945" ph=" { " />
-            <marker date="1510794708618" expanded="false" signature="15975:16035" ph=" }" />
-            <marker date="1510794708618" expanded="true" signature="16339:16644" ph="{...}" />
+            <marker date="1510957536063" expanded="true" signature="15415:16308" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1412,8 +1363,8 @@
         <state relative-caret-position="2261">
           <caret line="154" column="0" lean-forward="false" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
           <folding>
-            <element signature="e#4575#4776#0" expanded="true" />
-            <element signature="e#4775#4776#0" expanded="true" />
+            <element signature="e#4665#4866#0" expanded="true" />
+            <element signature="e#4865#4866#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1428,15 +1379,7 @@
         <state relative-caret-position="612">
           <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding>
-            <marker date="1510794708615" expanded="true" signature="2117:2323" ph="//..." />
-            <marker date="1510794708615" expanded="true" signature="2117:2936" ph="{...}" />
-            <marker date="1510794708615" expanded="true" signature="2413:2823" ph="{...}" />
-            <marker date="1510794708615" expanded="true" signature="2543:2775" ph="{...}" />
-            <marker date="1510794708615" expanded="false" signature="2975:2985" ph=" { " />
-            <marker date="1510794708615" expanded="false" signature="3006:3012" ph=" }" />
-            <marker date="1510794708615" expanded="false" signature="3040:3050" ph=" { " />
-            <marker date="1510794708615" expanded="false" signature="3064:3070" ph=" }" />
-            <marker date="1510794708615" expanded="true" signature="3253:3346" ph="{...}" />
+            <marker date="1510962140134" expanded="true" signature="2117:2323" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -1454,11 +1397,7 @@
         <state relative-caret-position="731">
           <caret line="50" column="31" lean-forward="true" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
           <folding>
-            <marker date="1510794708618" expanded="true" signature="15415:16308" ph="{...}" />
-            <marker date="1510794708618" expanded="true" signature="15735:16091" ph="{...}" />
-            <marker date="1510794708618" expanded="false" signature="15880:15945" ph=" { " />
-            <marker date="1510794708618" expanded="false" signature="15975:16035" ph=" }" />
-            <marker date="1510794708618" expanded="true" signature="16339:16644" ph="{...}" />
+            <marker date="1510957536063" expanded="true" signature="15415:16308" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1469,8 +1408,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4575#4776#0" expanded="true" />
-            <element signature="e#4775#4776#0" expanded="true" />
+            <element signature="e#4665#4866#0" expanded="true" />
+            <element signature="e#4865#4866#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1480,8 +1419,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4575#4776#0" expanded="true" />
-            <element signature="e#4775#4776#0" expanded="true" />
+            <element signature="e#4665#4866#0" expanded="true" />
+            <element signature="e#4865#4866#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1491,8 +1430,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4575#4776#0" expanded="true" />
-            <element signature="e#4775#4776#0" expanded="true" />
+            <element signature="e#4665#4866#0" expanded="true" />
+            <element signature="e#4865#4866#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1511,13 +1450,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/tileset1.png" />
     <entry file="file://$PROJECT_DIR$/assets/items.tsx" />
-    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Tile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/assets/pause.png" />
     <entry file="file://$PROJECT_DIR$/assets/play.png" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/graphics/TextureData.java">
@@ -1594,20 +1526,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Weapon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Breastplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Cuisses.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1629,21 +1547,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/graphics/g2d/SpriteBatch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7080">
-          <caret line="508" column="0" lean-forward="false" selection-start-line="508" selection-start-column="0" selection-end-line="508" selection-end-column="0" />
-          <folding>
-            <element signature="e#14756#14757#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-lwjgl/1.9.6/54887b828ab0c6c55deae03b0cca70c31531bacd/gdx-backend-lwjgl-1.9.6-sources.jar!/com/badlogic/gdx/backends/lwjgl/LwjglApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2805">
           <caret line="224" column="0" lean-forward="false" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1651,68 +1558,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Score.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5820">
-          <caret line="433" column="0" lean-forward="false" selection-start-line="433" selection-start-column="0" selection-end-line="433" selection-end-column="0" />
-          <folding>
-            <marker date="1510794708618" expanded="true" signature="15415:16308" ph="{...}" />
-            <marker date="1510794708618" expanded="true" signature="15735:16091" ph="{...}" />
-            <marker date="1510794708618" expanded="false" signature="15880:15945" ph=" { " />
-            <marker date="1510794708618" expanded="false" signature="15975:16035" ph=" }" />
-            <marker date="1510794708618" expanded="true" signature="16339:16644" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Enemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="124" column="30" lean-forward="false" selection-start-line="124" selection-start-column="30" selection-end-line="124" selection-end-column="30" />
-          <folding>
-            <marker date="1510794708615" expanded="true" signature="2117:2323" ph="//..." />
-            <marker date="1510794708615" expanded="true" signature="2117:2936" ph="{...}" />
-            <marker date="1510794708615" expanded="true" signature="2413:2823" ph="{...}" />
-            <marker date="1510794708615" expanded="true" signature="2543:2775" ph="{...}" />
-            <marker date="1510794708615" expanded="false" signature="2975:2985" ph=" { " />
-            <marker date="1510794708615" expanded="false" signature="3006:3012" ph=" }" />
-            <marker date="1510794708615" expanded="false" signature="3040:3050" ph=" { " />
-            <marker date="1510794708615" expanded="false" signature="3064:3070" ph=" }" />
-            <marker date="1510794708615" expanded="true" signature="3253:3346" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/EnemyAxe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="121" column="0" lean-forward="false" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1510794708616" expanded="true" signature="4410:4489" ph="//..." />
-            <marker date="1510794708616" expanded="true" signature="4964:5078" ph="{...}" />
-            <marker date="1510794708616" expanded="true" signature="5104:5174" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Chest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="48" column="30" lean-forward="false" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1720,17 +1565,102 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/graphics/g2d/SpriteBatch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7080">
+          <caret line="508" column="0" lean-forward="false" selection-start-line="508" selection-start-column="0" selection-end-line="508" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="23" selection-end-column="98" />
+          <folding>
+            <marker date="1510957536063" expanded="true" signature="15415:16308" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Axe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Weapon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Breastplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Enemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <marker date="1510962140134" expanded="true" signature="2117:2323" ph="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/EnemyAxe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1575">
+          <caret line="108" column="5" lean-forward="false" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1510794708616" expanded="true" signature="4410:4489" ph="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Score.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Chest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Tile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+        <state relative-caret-position="566">
+          <caret line="101" column="72" lean-forward="true" selection-start-line="101" selection-start-column="72" selection-end-line="101" selection-end-column="72" />
           <folding>
-            <element signature="e#4575#4776#0" expanded="true" />
-            <element signature="e#4775#4776#0" expanded="true" />
+            <element signature="e#4665#4866#0" expanded="true" />
+            <element signature="e#4865#4866#0" expanded="true" />
           </folding>
         </state>
       </provider>

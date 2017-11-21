@@ -40,7 +40,7 @@ public class Gridlock extends ApplicationAdapter {
     private Sound impactSound,winSound,loseSound,enemyHurt;
     private boolean playFlag, backgroundMusicFLag, enemyMusicFlag,playWin,playLose;
     // TiledMap
-    private TiledMap tileMap;
+    private TiledMap tileMap, tileMap2;
     private OrthogonalTiledMapRenderer tileMapRenderer;
 
     // Collision
@@ -68,6 +68,7 @@ public class Gridlock extends ApplicationAdapter {
     Preferences prefs;
 
     int highScore;
+    int level = 1;
 
     @Override
     public void create() {
@@ -83,6 +84,7 @@ public class Gridlock extends ApplicationAdapter {
 
         // 3.1.1.2 Map will be loaded
         tileMap = new TmxMapLoader().load("tiledmap1.tmx");
+        tileMap2 = new TmxMapLoader().load("tiledmap2.tmx");
         tileMapRenderer = new OrthogonalTiledMapRenderer(tileMap);
 
         sb = tileMapRenderer.getBatch();
@@ -369,7 +371,7 @@ public class Gridlock extends ApplicationAdapter {
         }
 
         //	3.3.4 Upon death of boss, player wins game
-        if(enemies.isEmpty()){
+        if(enemies.isEmpty() && level == 2){
             backgroundMusic.stop();
             enemyMusic.stop();
             impactSound.stop();
@@ -391,6 +393,27 @@ public class Gridlock extends ApplicationAdapter {
             playFlag=false;
             // 	3.3.4.3 Game should display win text
             sb.draw(gameOverWin,300,700);
+
+            // change level
+        }else if(enemies.isEmpty() && level == 1){
+            level = 2;
+
+            // Get an iterator.
+            Iterator<Chest> iterator = chests.iterator();
+
+            // Remove chests
+            while (iterator.hasNext()) {
+                Chest chest = iterator.next();
+
+                chest.remove(); // set sprites inactive
+                chests.remove(chest); // remove from arraylist
+            }
+
+
+            enemyMusic.stop();
+            backgroundMusic.play();
+
+            tileMapRenderer = new OrthogonalTiledMapRenderer(tileMap2);
         }
 
 
