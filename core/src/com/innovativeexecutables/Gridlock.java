@@ -70,6 +70,8 @@ public class Gridlock extends ApplicationAdapter {
     int highScore;
     int level = 1;
 
+    boolean testing = false;
+
     @Override
     public void create() {
         prefs = Gdx.app.getPreferences("Preferences");
@@ -104,7 +106,7 @@ public class Gridlock extends ApplicationAdapter {
 
 
         // 3.1.1.1 Game will render a user character
-        player = new Player(475, 10);
+        player = new Player(500, 90);
 
         enemies = new ArrayList<Enemy>();
 
@@ -150,7 +152,7 @@ public class Gridlock extends ApplicationAdapter {
     public void spawnObjectsAndEnemies() {
         // 3.1.1.4 All bosses will be loaded and spawned invisibly
         enemies.add(new Enemy(tileList[4][4].getX(), tileList[22][22].getY(), "enemy1"));
-        enemies.add(new Enemy(tileList[24][24].getX(), tileList[27][27].getY(), "professorEnemy"));
+        //enemies.add(new Enemy(tileList[24][24].getX(), tileList[27][27].getY(), "professorEnemy"));
 
         // 3.1.1.3 All chests will be loaded
         // spawn chests
@@ -395,7 +397,8 @@ public class Gridlock extends ApplicationAdapter {
             sb.draw(gameOverWin,300,700);
 
             // change level
-        }else if(enemies.isEmpty() && level == 1){
+        }else if(enemies.isEmpty() && level == 1 || testing){
+            testing = false;
             level = 2;
 
             // Get an iterator.
@@ -405,15 +408,27 @@ public class Gridlock extends ApplicationAdapter {
             while (iterator.hasNext()) {
                 Chest chest = iterator.next();
 
-                chest.remove(); // set sprites inactive
+                iterator.remove(); // set sprites inactive
                 chests.remove(chest); // remove from arraylist
             }
-
 
             enemyMusic.stop();
             backgroundMusic.play();
 
             tileMapRenderer = new OrthogonalTiledMapRenderer(tileMap2);
+
+            sb.end();
+
+            sb.dispose();
+            sb = tileMapRenderer.getBatch();
+            sb.setProjectionMatrix(cam.combined);
+
+            obstaclesCollisionLayer = (TiledMapTileLayer) tileMap2.getLayers().get("Obstacles");
+            hazardsCollisionLayer = (TiledMapTileLayer) tileMap2.getLayers().get("Hazards");
+
+            enemies.add(new Enemy(tileList[4][4].getX(), tileList[22][22].getY(), "enemy1"));
+
+            sb.begin();
         }
 
 
@@ -600,8 +615,14 @@ public class Gridlock extends ApplicationAdapter {
         time = 0;
 	    score.setScore(200);
         player.resetPlayer();
-        player.setX(475);
-        player.setY(10);
+        if(level == 2) {
+            player.setX(800);
+            player.setY(10);
+        }
+        if(level == 1) {
+            player.setX(500);
+            player.setY(10);
+        }
 
         enemies = new ArrayList<Enemy>();
         chests = new ArrayList<Chest>();
