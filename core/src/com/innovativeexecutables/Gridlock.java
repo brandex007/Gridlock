@@ -427,6 +427,9 @@ public class Gridlock extends ApplicationAdapter {
             hazardsCollisionLayer = (TiledMapTileLayer) tileMap2.getLayers().get("Hazards");
 
             enemies.add(new Enemy(tileList[4][4].getX(), tileList[22][22].getY(), "enemy1"));
+            player.setX(800);
+            player.setY(90);
+            Player.setHealth(100);
 
             sb.begin();
         }
