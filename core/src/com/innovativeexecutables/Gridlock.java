@@ -426,7 +426,17 @@ public class Gridlock extends ApplicationAdapter {
             obstaclesCollisionLayer = (TiledMapTileLayer) tileMap2.getLayers().get("Obstacles");
             hazardsCollisionLayer = (TiledMapTileLayer) tileMap2.getLayers().get("Hazards");
 
-            enemies.add(new Enemy(tileList[4][4].getX(), tileList[22][22].getY(), "enemy1"));
+            chests.add(new Chest(tileList[30][27].getX(), tileList[20][20].getY()));
+            chests.add(new Chest(tileList[0][0].getX(), tileList[15][15].getY()));
+            chests.add(new Chest(tileList[16][16].getX(), tileList[13][13].getY()));
+            chests.add(new Chest(tileList[0][0].getX(), tileList[13][13].getY()));
+            chests.add(new Chest(tileList[30][30].getX(), tileList[3][3].getY()));
+            chests.add(new Chest(tileList[11][11].getX(), tileList[26][26].getY()));
+            chests.add(new Chest(tileList[25][25].getX(), tileList[22][22].getY()));
+            enemies.add(new Enemy(tileList[3][3].getX(), tileList[20][20].getY(), "enemy1"));
+            enemies.add(new Enemy(tileList[13][13].getX(), tileList[1][1].getY(), "enemy1"));
+            enemies.add(new Enemy(tileList[30][30].getX(), tileList[30][30].getY(), "enemy1"));
+            enemies.add(new Enemy(tileList[5][5].getX(), tileList[29][29].getY(), "professorEnemy"));
             player.setX(800);
             player.setY(90);
             Player.setHealth(100);
