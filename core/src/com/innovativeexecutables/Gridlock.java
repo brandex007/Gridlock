@@ -438,7 +438,7 @@ public class Gridlock extends ApplicationAdapter {
             enemies.add(new Enemy(tileList[30][30].getX(), tileList[30][30].getY(), "enemy1"));
             enemies.add(new Enemy(tileList[5][5].getX(), tileList[29][29].getY(), "professorEnemy"));
             player.setX(800);
-            player.setY(90);
+            player.setY(10);
             Player.setHealth(100);
 
             sb.begin();
