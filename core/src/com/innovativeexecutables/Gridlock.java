@@ -34,7 +34,7 @@ public class Gridlock extends ApplicationAdapter {
     private Player player;
     private float delta;
     private int mouseClickX, mouseClickY;
-    private Texture menuButton,gameOverWin,gameOverLoss;
+    private Texture menuButton,gameOverWin,gameOverLoss, gate;
 
     private Music backgroundMusic, enemyMusic;
     private Sound impactSound,winSound,loseSound,enemyHurt;
@@ -42,9 +42,10 @@ public class Gridlock extends ApplicationAdapter {
     // TiledMap
     private TiledMap tileMap, tileMap2;
     private OrthogonalTiledMapRenderer tileMapRenderer;
+    private boolean gateIsClosed = true;
 
     // Collision
-    private TiledMapTileLayer obstaclesCollisionLayer, hazardsCollisionLayer;
+    private TiledMapTileLayer obstaclesCollisionLayer, hazardsCollisionLayer, switchCollisionLayer,gateCollisionLayer;
 
     // Tile
     Tile[][] tileList = new Tile[32][32];
@@ -94,6 +95,7 @@ public class Gridlock extends ApplicationAdapter {
 
         obstaclesCollisionLayer = (TiledMapTileLayer) tileMap.getLayers().get("Obstacles");
         hazardsCollisionLayer = (TiledMapTileLayer) tileMap.getLayers().get("Hazards");
+
         // track created by Marcelo Fernandez  https://soundcloud.com/marcelo-fernandez3
         backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("medmusic.ogg"));
         enemyMusic = Gdx.audio.newMusic(Gdx.files.internal("enemymusic.mp3"));
@@ -237,6 +239,7 @@ public class Gridlock extends ApplicationAdapter {
             Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
             delta = Gdx.graphics.getRawDeltaTime();
 
+
             // updates
             player.update(delta);
 
@@ -301,6 +304,12 @@ public class Gridlock extends ApplicationAdapter {
         tileMapRenderer.render();
         sb = tileMapRenderer.getBatch();
 
+        if(level == 2){
+            sb.begin();
+            sb.draw(gate,800,825);
+            sb.end();
+        }
+
         // draw text
         // 3.1.2 Score must be visible to user during gameplay
         sb.begin();
@@ -329,8 +338,12 @@ public class Gridlock extends ApplicationAdapter {
         if (!(player.getX() > 416 && player.getX() < 544 && player.getY() > 480 && player.getY() < 700)) {
             player.setSpeed(player.getRegularSpeed());
             player.render(sb);
-        } else {
-            player.setSpeed(player.getRegularSpeed() * 3f);
+        } else { // move through gate quicker in level 1
+            if(level == 1) {
+                player.setSpeed(player.getRegularSpeed() * 3f);
+            }else{
+                player.render(sb);
+            }
         }
 
         // update and draw enemies
@@ -425,6 +438,10 @@ public class Gridlock extends ApplicationAdapter {
 
             obstaclesCollisionLayer = (TiledMapTileLayer) tileMap2.getLayers().get("Obstacles");
             hazardsCollisionLayer = (TiledMapTileLayer) tileMap2.getLayers().get("Hazards");
+            switchCollisionLayer = (TiledMapTileLayer) tileMap2.getLayers().get("Switch");
+            gateCollisionLayer = (TiledMapTileLayer) tileMap2.getLayers().get("Gate");
+
+            gate = new Texture("GateClosed.png");
 
             chests.add(new Chest(tileList[30][27].getX(), tileList[20][20].getY()));
             chests.add(new Chest(tileList[0][0].getX(), tileList[15][15].getY()));
@@ -443,8 +460,6 @@ public class Gridlock extends ApplicationAdapter {
 
             sb.begin();
         }
-
-
 
         // 3.1.1 Pressing start button initiates gameplay
         // 3.1.3 There must be a menu with “Continue” & “New Game” options triggered by the escape key
@@ -465,7 +480,6 @@ public class Gridlock extends ApplicationAdapter {
                 highScoreFont.draw(sb, highScoreString + highScore, 400, 710);
             }
         }
-
 
         sb.end();
     }
@@ -558,12 +572,21 @@ public class Gridlock extends ApplicationAdapter {
 
         boolean collisionWithObstacles = false;
         boolean collisionWithHazards = false;
+        boolean collisionWithGate = false;
+        boolean collisionWithSwitch = false;
 
         collisionWithObstacles = isCellBLocked(2, player.getX() + player.getWidth(), player.getY()) || isCellBLocked(2, player.getX() + player.getWidth() / 2, player.getY()) || isCellBLocked(2, player.getX(), player.getY());
         collisionWithHazards = isCellBLocked(3, player.getX() + player.getWidth(), player.getY()) || isCellBLocked(3, player.getX() + player.getWidth() / 2, player.getY()) || isCellBLocked(3, player.getX(), player.getY());
 
+        if(gateIsClosed) {
+            collisionWithGate = isCellBLocked(1, player.getX() + player.getWidth(), player.getY() + 5) || isCellBLocked(1, player.getX() + player.getWidth() / 1, player.getY() + 5) || isCellBLocked(1, player.getX(), player.getY() + 5);
+        }
+
+        collisionWithSwitch = isCellBLocked(4, player.getX() + player.getWidth(), player.getY()) || isCellBLocked(4, player.getX() + player.getWidth() / 2, player.getY()) || isCellBLocked(4, player.getX(), player.getY());
+
+
         // React to Collision
-        if (collisionWithObstacles) {
+        if (collisionWithObstacles || collisionWithGate || collisionWithSwitch) {
             if (player.UP_TOUCHED) {
                 player.setY(player.getY() - Player.speed * delta);
             }
@@ -576,6 +599,11 @@ public class Gridlock extends ApplicationAdapter {
             if (player.RIGHT_TOUCHED) {
                 player.setX(player.getX() - Player.speed * delta);
             }
+        }
+
+        if(collisionWithSwitch){
+            gateIsClosed = false;
+            gate = new Texture("GateOpen.png");
         }
 
         TiledMapTileLayer.Cell cell = hazardsCollisionLayer.getCell(
@@ -592,13 +620,29 @@ public class Gridlock extends ApplicationAdapter {
     }
 
     public boolean isCellBLocked(int layer, float x, float y) {
+        if(level == 2){
+            if(layer == 1) {
+                TiledMapTileLayer.Cell cell = gateCollisionLayer.getCell(
+                        (int) (x / gateCollisionLayer.getTileWidth()),
+                        (int) (y / gateCollisionLayer.getTileHeight()));
+
+                return cell != null && cell.getTile() != null;
+            }else if(layer == 4) {
+                TiledMapTileLayer.Cell cell = switchCollisionLayer.getCell(
+                        (int) (x / switchCollisionLayer.getTileWidth()),
+                        (int) (y / switchCollisionLayer.getTileHeight()));
+
+                return cell != null && cell.getTile() != null;
+            }
+        }
+
         if (layer == 3) {
             TiledMapTileLayer.Cell cell = hazardsCollisionLayer.getCell(
                     (int) (x / hazardsCollisionLayer.getTileWidth()),
                     (int) (y / hazardsCollisionLayer.getTileHeight()));
 
             return cell != null && cell.getTile() != null;
-        } else { // return layer 2
+        }else if(layer == 2){ // return layer 2
             TiledMapTileLayer.Cell cell = obstaclesCollisionLayer.getCell(
                     (int) (x / obstaclesCollisionLayer.getTileWidth()),
                     (int) (y / obstaclesCollisionLayer.getTileHeight()));
@@ -606,7 +650,7 @@ public class Gridlock extends ApplicationAdapter {
             return cell != null && cell.getTile() != null;
         }
 
-
+        return false;
     }
 
     // 	3.1.10 The game is able to be restarted
