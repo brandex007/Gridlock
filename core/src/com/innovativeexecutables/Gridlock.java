@@ -38,7 +38,9 @@ public class Gridlock extends ApplicationAdapter {
 
     private Music backgroundMusic, enemyMusic;
     private Sound impactSound,winSound,loseSound,enemyHurt;
-    private boolean playFlag, backgroundMusicFLag, enemyMusicFlag,playWin,playLose;
+    private boolean backgroundMusicFLag, enemyMusicFlag,playWin,playLose;
+    public static boolean playFlag;
+
     // TiledMap
     private TiledMap tileMap, tileMap2;
     private OrthogonalTiledMapRenderer tileMapRenderer;

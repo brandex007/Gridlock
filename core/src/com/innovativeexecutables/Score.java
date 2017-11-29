@@ -11,7 +11,8 @@ public class Score {
         com.badlogic.gdx.utils.Timer.schedule(new com.badlogic.gdx.utils.Timer.Task(){
             @Override
             public void run() {
-                score -= scoreCounter;
+                if(Gridlock.playFlag == true)
+                    score -= scoreCounter;
             }
         }
                                               , 0        //    (delay)

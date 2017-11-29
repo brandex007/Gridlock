@@ -102,7 +102,8 @@ public class Enemy {
             com.badlogic.gdx.utils.Timer.schedule(new com.badlogic.gdx.utils.Timer.Task(){
                                                   @Override
                                                   public void run() {
-                                                      arrowList.add(new EnemyAxe(x + (width / 2),y + (height / 2),Player.x + (Player.width / 2), Player.y + (Player.height / 2)));
+                                                      if(Gridlock.playFlag == true)
+                                                        arrowList.add(new EnemyAxe(x + (width / 2),y + (height / 2),Player.x + (Player.width / 2), Player.y + (Player.height / 2)));
                                                   }
                                               }
                 , 0        //    (delay)
