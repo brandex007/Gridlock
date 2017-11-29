@@ -22,7 +22,7 @@ public class Enemy {
 
 
         // 3.3.1 Enemy has an initial health value of 100, and professor boss has health of 120
-        if(enemyType.equals("enemy1"))
+        if(enemyType.equals("enemy1") || enemyType.equals("enemy3") || enemyType.equals("enemy4") || enemyType.equals("enemy5") || enemyType.equals("enemy6"))
             health = 100;
         else if(enemyType.equals("professorEnemy"))
             health = 125;
@@ -57,6 +57,14 @@ public class Enemy {
             enemyTexture = new Texture("enemy.png");
         else if(enemyType.equals("professorEnemy"))
             enemyTexture = new Texture("enemy2.png");
+        else if(enemyType.equals("enemy3"))
+            enemyTexture = new Texture("enemy3.png");
+        else if(enemyType.equals("enemy4"))
+            enemyTexture = new Texture("enemy4.png");
+        else if(enemyType.equals("enemy5"))
+            enemyTexture = new Texture("enemy5.png");
+        else if(enemyType.equals("enemy6"))
+            enemyTexture = new Texture("enemy6.png");
 
         //System.out.println(enemyType);
         //enemyTexture = new Texture("enemy2.png");
