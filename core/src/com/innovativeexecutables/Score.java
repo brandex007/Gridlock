@@ -1,7 +1,7 @@
 package com.innovativeexecutables;
 
 public class Score {
-    private float scoreCounter = 0;
+    private int scoreCounter = 2;
     
     // 3.1.2.2. Score must start at 200
     private int score = 200;
@@ -11,12 +11,10 @@ public class Score {
         com.badlogic.gdx.utils.Timer.schedule(new com.badlogic.gdx.utils.Timer.Task(){
             @Override
             public void run() {
-                scoreCounter -= 2.0;
-                
-                score += (int) scoreCounter;
+                score -= scoreCounter;
             }
         }
-                                              , 30        //    (delay)
+                                              , 0        //    (delay)
                                               , 30     //    (seconds)
                                               );
     }
