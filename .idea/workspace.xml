@@ -7,6 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb79c044-5a60-44be-ba1b-bc37e8317f39" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.3/fileHashes/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.3/fileHashes/fileHashes.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/innovativeexecutables/Enemy.java" afterPath="$PROJECT_DIR$/core/src/com/innovativeexecutables/Enemy.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java" afterPath="$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java" />
@@ -100,14 +102,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Enemy.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Enemy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Enemy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="105" column="56" lean-forward="false" selection-start-line="105" selection-start-column="56" selection-end-line="105" selection-end-column="56" />
+            <state relative-caret-position="186">
+              <caret line="103" column="12" lean-forward="true" selection-start-line="103" selection-start-column="12" selection-end-line="110" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1511991022570" expanded="true" signature="2629:2835" ph="//..." />
+                <element signature="e#2962#3273#0" expanded="true" />
+                <element signature="e#3272#3273#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,11 +119,9 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
+            <state relative-caret-position="366">
               <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
-              <folding>
-                <marker date="1510957536063" expanded="true" signature="15415:16308" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -145,15 +146,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gridlock.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Gridlock.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="41" column="18" lean-forward="false" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+            <state relative-caret-position="95">
+              <caret line="381" column="105" lean-forward="true" selection-start-line="381" selection-start-column="105" selection-end-line="381" selection-end-column="105" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4811#5012#0" expanded="true" />
-                <element signature="e#5011#5012#0" expanded="true" />
+                <element signature="e#4923#5049#0" expanded="true" />
+                <element signature="e#5048#5049#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -173,16 +174,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Tile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Chest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Chest.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -196,10 +187,13 @@
       <file leaf-file-name="Score.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Score.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="229">
+              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
               <folding>
-                <element signature="e#298#505#0" expanded="true" />
+                <element signature="e#371#556#0" expanded="true" />
+                <element signature="e#555#556#0" expanded="true" />
+                <element signature="e#739#740#0" expanded="true" />
+                <element signature="e#767#768#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -216,8 +210,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>boss</find>
-      <find>player must render spe</find>
       <find>player must be able to pick</find>
       <find>player health is increased by 5</find>
       <find>space</find>
@@ -240,12 +232,14 @@
       <find>playflag</find>
       <find>player = new</find>
       <find>restart</find>
-      <find>gate</find>
       <find>score</find>
       <find>score.set</find>
       <find>menu</find>
       <find>escap</find>
       <find>playFlag</find>
+      <find>enemies.add</find>
+      <find>gate</find>
+      <find>timer</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -844,7 +838,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="9059745413000" />
+        <entry key="$PROJECT_DIR$" value="9071996508000" />
         <entry key="$PROJECT_DIR$/build.gradle" value="3162183560" />
         <entry key="$PROJECT_DIR$/core/build.gradle" value="2971590108" />
         <entry key="$PROJECT_DIR$/desktop/build.gradle" value="3162347408" />
@@ -1057,17 +1051,17 @@
         <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Axe.java" />
         <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Weapon.java" />
         <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Chest.java" />
-        <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java" />
-        <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Score.java" />
         <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Enemy.java" />
+        <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Score.java" />
+        <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="229" />
-    <option name="y" value="37" />
-    <option name="width" value="982" />
-    <option name="height" value="730" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="640" />
+    <option name="y" value="22" />
+    <option name="width" value="640" />
+    <option name="height" value="724" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -1299,18 +1293,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="229" y="37" width="982" height="730" extended-state="0" />
+    <frame x="0" y="22" width="1280" height="724" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32159266" sideWeight="0.496875" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32055214" sideWeight="0.496875" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25114155" sideWeight="0.42265624" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3206687" sideWeight="0.57734376" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32055214" sideWeight="0.57734376" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1347,8 +1341,8 @@
           <caret line="154" column="0" lean-forward="false" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4811#5012#0" expanded="true" />
-            <element signature="e#5011#5012#0" expanded="true" />
+            <element signature="e#4923#5049#0" expanded="true" />
+            <element signature="e#5048#5049#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1364,7 +1358,8 @@
           <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1511991022570" expanded="true" signature="2629:2835" ph="//..." />
+            <element signature="e#2962#3273#0" expanded="true" />
+            <element signature="e#3272#3273#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1381,9 +1376,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="50" column="31" lean-forward="true" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
-          <folding>
-            <marker date="1510957536063" expanded="true" signature="15415:16308" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1394,8 +1387,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4811#5012#0" expanded="true" />
-            <element signature="e#5011#5012#0" expanded="true" />
+            <element signature="e#4923#5049#0" expanded="true" />
+            <element signature="e#5048#5049#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1406,8 +1399,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4811#5012#0" expanded="true" />
-            <element signature="e#5011#5012#0" expanded="true" />
+            <element signature="e#4923#5049#0" expanded="true" />
+            <element signature="e#5048#5049#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1418,8 +1411,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4811#5012#0" expanded="true" />
-            <element signature="e#5011#5012#0" expanded="true" />
+            <element signature="e#4923#5049#0" expanded="true" />
+            <element signature="e#5048#5049#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1522,7 +1515,6 @@
           <caret line="108" column="5" lean-forward="false" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="false" />
-            <marker date="1510794708616" expanded="true" signature="4410:4489" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -1553,13 +1545,11 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Player.java">
+    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Weapon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
-          <folding>
-            <marker date="1510957536063" expanded="true" signature="15415:16308" ph="{...}" />
-          </folding>
+        <state relative-caret-position="330">
+          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1571,43 +1561,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Weapon.java">
+    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        <state relative-caret-position="366">
+          <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Enemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="103" column="12" lean-forward="true" selection-start-line="103" selection-start-column="12" selection-end-line="110" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2962#3273#0" expanded="true" />
+            <element signature="e#3272#3273#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Score.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="229">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
-            <element signature="e#298#505#0" expanded="true" />
+            <element signature="e#371#556#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
+            <element signature="e#767#768#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="41" column="18" lean-forward="false" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+        <state relative-caret-position="95">
+          <caret line="381" column="105" lean-forward="true" selection-start-line="381" selection-start-column="105" selection-end-line="381" selection-end-column="105" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4811#5012#0" expanded="true" />
-            <element signature="e#5011#5012#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Enemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="105" column="56" lean-forward="false" selection-start-line="105" selection-start-column="56" selection-end-line="105" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1511991022570" expanded="true" signature="2629:2835" ph="//..." />
+            <element signature="e#4923#5049#0" expanded="true" />
+            <element signature="e#5048#5049#0" expanded="true" />
           </folding>
         </state>
       </provider>

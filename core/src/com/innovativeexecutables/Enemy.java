@@ -2,6 +2,7 @@ package com.innovativeexecutables;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.utils.Timer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,7 @@ public class Enemy {
     private boolean isActive = false;
     private List<EnemyAxe> arrowList;
     private String enemyType;
+    private Timer timer;
 
     public Enemy(int x, int y, String enemyType) {
         this.enemyType = enemyType;
@@ -99,16 +101,15 @@ public class Enemy {
             // 3.3.3.1 Boss must begin attacking by throwing axes in all directions, relatively towards player
             // add arrow to list with players position at time of throw
             // add arrow every 2 seconds
-            com.badlogic.gdx.utils.Timer.schedule(new com.badlogic.gdx.utils.Timer.Task(){
-                                                  @Override
-                                                  public void run() {
-                                                      if(Gridlock.playFlag == true)
-                                                        arrowList.add(new EnemyAxe(x + (width / 2),y + (height / 2),Player.x + (Player.width / 2), Player.y + (Player.height / 2)));
-                                                  }
-                                              }
-                , 0        //    (delay)
-                , 3     //    (seconds)
-            );
+            timer = new Timer();
+            timer.scheduleTask(new Timer.Task() {
+                @Override
+                public void run() {
+                    if(Gridlock.playFlag == true)
+                        arrowList.add(new EnemyAxe(x + (width / 2),y + (height / 2),Player.x + (Player.width / 2), Player.y + (Player.height / 2)));
+                }
+            }, 0, 3);
+
         }
 
     }
@@ -133,5 +134,7 @@ public class Enemy {
         for (EnemyAxe enemyAxe : arrowList){
             enemyAxe.remove();
         }
+        if(timer != null)
+            timer.stop();
     }
 }

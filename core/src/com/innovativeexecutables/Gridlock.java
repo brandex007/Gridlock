@@ -49,6 +49,9 @@ public class Gridlock extends ApplicationAdapter {
     // Collision
     private TiledMapTileLayer obstaclesCollisionLayer, hazardsCollisionLayer, switchCollisionLayer,gateCollisionLayer;
 
+    //Timers
+    Timer timer;
+
     // Tile
     Tile[][] tileList = new Tile[32][32];
 
@@ -59,7 +62,7 @@ public class Gridlock extends ApplicationAdapter {
     List<Chest> chests;
 
     // Displays for score, health, and time
-    BitmapFont scoreFont, healthFont, timeFont, highScoreFont;
+    BitmapFont scoreFont, healthFont, timeFont, highScoreFont, gateFont;
     String scoreString, healthString, timeString, highScoreString;
 
     int time = 0;
@@ -139,16 +142,18 @@ public class Gridlock extends ApplicationAdapter {
         highScoreString = "High Score: ";
         highScoreFont = new BitmapFont();
 
+        gateFont = new BitmapFont();
+
         // 3.1.5 The game will have timer that will be counted upward in seconds upon start of the game
-        Timer.schedule(new Timer.Task() {
-                           @Override
-                           public void run() {
-                               updateTime();
-                           }
-                       }
-                , 0        //    (delay)
-                , 1     //    (seconds)
-        );
+        timer = new Timer();
+        timer.scheduleTask(new Timer.Task() {
+            @Override
+            public void run() {
+                updateTime();
+            }
+        }, 0, 1);
+
+
 
         score = new Score();
     }
@@ -156,7 +161,7 @@ public class Gridlock extends ApplicationAdapter {
     public void spawnObjectsAndEnemies() {
         // 3.1.1.4 All bosses will be loaded and spawned invisibly
         enemies.add(new Enemy(tileList[4][4].getX(), tileList[22][22].getY(), "enemy1"));
-        enemies.add(new Enemy(tileList[24][24].getX(), tileList[27][27].getY(), "enemy5"));
+        //enemies.add(new Enemy(tileList[24][24].getX(), tileList[27][27].getY(), "enemy5"));
 
         // 3.1.1.3 All chests will be loaded
         // spawn chests
@@ -385,6 +390,9 @@ public class Gridlock extends ApplicationAdapter {
                 prefs.flush();
             }
 
+            timer.stop();
+            score.removeTimer();
+
         }
 
         //	3.3.4 Upon death of boss, player wins game
@@ -397,6 +405,9 @@ public class Gridlock extends ApplicationAdapter {
 
                 //	3.1.12.1 Game over music must play for win or loss
                 winSound.play();
+
+                timer.stop();
+                score.removeTimer();
 
                 highScore = prefs.getInteger("score");
                 if(score.getScore() > highScore) {
