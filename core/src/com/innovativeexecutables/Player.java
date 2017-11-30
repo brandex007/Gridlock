@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
+import com.badlogic.gdx.utils.Timer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +48,8 @@ public class Player{
     public boolean facedRightLast = true;
 
     String state = "walk";
+
+    Timer timer;
 
     public Player(int x, int y) {
 
@@ -223,18 +226,18 @@ public class Player{
     public void attack(){
         state = "attack";
 
-        // stop attack after 0.3 seconds
-        com.badlogic.gdx.utils.Timer.schedule(new com.badlogic.gdx.utils.Timer.Task() {
-                                                  @Override
-                                                  public void run() {
-                                                        stopAttack();
-                                                  }
-                                              }
-                , 0.3f       //    (delay)
-        );
+        timer = new Timer();
+        timer.scheduleTask(new Timer.Task() {
+            @Override
+            public void run() {
+                stopAttack();
+            }
+        }, 0.3f);
     }
 
     public void stopAttack(){
+
+        timer.stop();
         state = "walk";
     }
 
