@@ -164,9 +164,6 @@ public class Gridlock extends ApplicationAdapter {
         enemies.add(new Enemy(tileList[4][4].getX(), tileList[22][22].getY(), "enemy1"));
         enemies.add(new Enemy(tileList[24][24].getX(), tileList[27][27].getY(), "enemy5"));
 
-
-        enemies.add(new Enemy(tileList[12][16].getX(), tileList[27][27].getY(), "enemy5"));
-
         // 3.1.1.3 All chests will be loaded
         // spawn chests
         chests.add(new Chest(tileList[30][27].getX(), tileList[30][27].getY()));
@@ -280,7 +277,7 @@ public class Gridlock extends ApplicationAdapter {
                     player.attack();
 
                     for (Enemy enemy : enemies) {
-                        if (enemy.getX() + enemy.getWidth() > player.getX() - 1 && enemy.getX() < player.getX() +
+                        if (enemy.getX() + enemy.getWidth() > player.getX() - 3 && enemy.getX() < player.getX() +
                                 enemy.getWidth() && enemy.getY() + enemy.getWidth() > player.getY() && enemy.getY() < player.getY() + enemy.getHeight()) {
                             // 	3.3.2 Enemy must lose damage specified by player attack when player is attacking enemy
                             enemy.setHealth(enemy.getHealth() - player.attack);
