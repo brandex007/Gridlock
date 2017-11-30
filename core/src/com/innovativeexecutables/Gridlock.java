@@ -161,7 +161,7 @@ public class Gridlock extends ApplicationAdapter {
     public void spawnObjectsAndEnemies() {
         // 3.1.1.4 All bosses will be loaded and spawned invisibly
         enemies.add(new Enemy(tileList[4][4].getX(), tileList[22][22].getY(), "enemy1"));
-        //enemies.add(new Enemy(tileList[24][24].getX(), tileList[27][27].getY(), "enemy5"));
+        enemies.add(new Enemy(tileList[24][24].getX(), tileList[27][27].getY(), "enemy5"));
 
         // 3.1.1.3 All chests will be loaded
         // spawn chests
@@ -463,7 +463,7 @@ public class Gridlock extends ApplicationAdapter {
             chests.add(new Chest(tileList[30][30].getX(), tileList[3][3].getY()));
             chests.add(new Chest(tileList[11][11].getX(), tileList[26][26].getY()));
             chests.add(new Chest(tileList[25][25].getX(), tileList[22][22].getY()));
-            enemies.add(new Enemy(tileList[3][3].getX(), tileList[20][20].getY(), "enemy6"));
+            enemies.add(new Enemy(tileList[1][1].getX(), tileList[20][20].getY(), "enemy6"));
             enemies.add(new Enemy(tileList[13][13].getX(), tileList[1][1].getY(), "enemy4"));
             enemies.add(new Enemy(tileList[30][30].getX(), tileList[30][30].getY(), "enemy3"));
             enemies.add(new Enemy(tileList[5][5].getX(), tileList[29][29].getY(), "professorEnemy"));
