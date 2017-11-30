@@ -7,24 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb79c044-5a60-44be-ba1b-bc37e8317f39" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3/fileContent/annotation-processors.bin" afterPath="$PROJECT_DIR$/.gradle/4.3/fileContent/annotation-processors.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/4.3/fileContent/fileContent.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.3/fileHashes/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.3/fileHashes/fileHashes.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.3/fileHashes/resourceHashesCache.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.3/taskHistory/taskHistory.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.3/taskHistory/taskHistory.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Enemy$1.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Enemy$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Enemy.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Enemy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Gridlock$1.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Gridlock$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Gridlock.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Gridlock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Score$1.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Score$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Score.class" afterPath="$PROJECT_DIR$/core/build/classes/java/main/com/innovativeexecutables/Score.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" afterPath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/desktop/build/libs/desktop-1.0.jar" afterPath="$PROJECT_DIR$/desktop/build/libs/desktop-1.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java" afterPath="$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/innovativeexecutables/EnemyAxe.java" afterPath="$PROJECT_DIR$/core/src/com/innovativeexecutables/EnemyAxe.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/innovativeexecutables/Player.java" afterPath="$PROJECT_DIR$/core/src/com/innovativeexecutables/Player.java" />
     </list>
     <ignored path="$PROJECT_DIR$/desktop/.gradle/" />
@@ -105,8 +88,8 @@
       <file leaf-file-name="Enemy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Enemy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1195">
-              <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+            <state relative-caret-position="134">
+              <caret line="100" column="57" lean-forward="false" selection-start-line="100" selection-start-column="52" selection-end-line="100" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,14 +97,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EnemyAxe.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/EnemyAxe.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="97" column="41" lean-forward="false" selection-start-line="97" selection-start-column="41" selection-end-line="97" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-48">
-              <caret line="59" column="53" lean-forward="true" selection-start-line="59" selection-start-column="53" selection-end-line="59" selection-end-column="53" />
+            <state relative-caret-position="1526">
+              <caret line="220" column="30" lean-forward="false" selection-start-line="220" selection-start-column="30" selection-end-line="220" selection-end-column="30" />
               <folding>
-                <element signature="e#7321#7447#0" expanded="true" />
-                <element signature="e#7446#7447#0" expanded="true" />
+                <element signature="e#7365#7491#0" expanded="true" />
+                <element signature="e#7490#7491#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -150,11 +143,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gridlock.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Gridlock.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="282" column="79" lean-forward="false" selection-start-line="282" selection-start-column="79" selection-end-line="282" selection-end-column="79" />
+            <state relative-caret-position="159">
+              <caret line="352" column="29" lean-forward="false" selection-start-line="352" selection-start-column="25" selection-end-line="352" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#5001#5127#0" expanded="true" />
@@ -175,16 +168,6 @@
         <entry file="file://$PROJECT_DIR$/core/assets/GateOpen.png">
           <provider selected="true" editor-type-id="images">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Chest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Chest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding />
-            </state>
           </provider>
         </entry>
       </file>
@@ -219,7 +202,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>during attack pla</find>
       <find>lose text</find>
       <find>enemy must</find>
       <find>when player is within</find>
@@ -249,6 +231,7 @@
       <find>win</find>
       <find>[3][3]</find>
       <find>timer = new</find>
+      <find>throw</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -1055,14 +1038,14 @@
         <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Armor.java" />
         <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Spear.java" />
         <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Bow.java" />
-        <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/EnemyAxe.java" />
         <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Axe.java" />
         <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Weapon.java" />
         <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Chest.java" />
         <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Enemy.java" />
         <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Score.java" />
-        <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Player.java" />
         <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java" />
+        <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/EnemyAxe.java" />
+        <option value="$PROJECT_DIR$/core/src/com/innovativeexecutables/Player.java" />
       </list>
     </option>
   </component>
@@ -1313,7 +1296,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25114155" sideWeight="0.42265624" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1557252" sideWeight="0.57734376" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1557252" sideWeight="0.57734376" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1384,8 +1367,8 @@
         <state relative-caret-position="731">
           <caret line="50" column="31" lean-forward="true" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
           <folding>
-            <element signature="e#7321#7447#0" expanded="true" />
-            <element signature="e#7446#7447#0" expanded="true" />
+            <element signature="e#7365#7491#0" expanded="true" />
+            <element signature="e#7490#7491#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1519,16 +1502,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/EnemyAxe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="108" column="5" lean-forward="false" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Chest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1545,14 +1518,6 @@
     <entry file="file://$PROJECT_DIR$/core/assets/GateOpen.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Axe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Weapon.java">
@@ -1582,35 +1547,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Player.java">
+    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Axe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-48">
-          <caret line="59" column="53" lean-forward="true" selection-start-line="59" selection-start-column="53" selection-end-line="59" selection-end-column="53" />
+        <state relative-caret-position="195">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="352" column="29" lean-forward="false" selection-start-line="352" selection-start-column="25" selection-end-line="352" selection-end-column="29" />
           <folding>
-            <element signature="e#7321#7447#0" expanded="true" />
-            <element signature="e#7446#7447#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#5001#5127#0" expanded="true" />
+            <element signature="e#5126#5127#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Enemy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1195">
-          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        <state relative-caret-position="134">
+          <caret line="100" column="57" lean-forward="false" selection-start-line="100" selection-start-column="52" selection-end-line="100" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Gridlock.java">
+    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/EnemyAxe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="282" column="79" lean-forward="false" selection-start-line="282" selection-start-column="79" selection-end-line="282" selection-end-column="79" />
+        <state relative-caret-position="330">
+          <caret line="97" column="41" lean-forward="false" selection-start-line="97" selection-start-column="41" selection-end-line="97" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/innovativeexecutables/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1526">
+          <caret line="220" column="30" lean-forward="false" selection-start-line="220" selection-start-column="30" selection-end-line="220" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5001#5127#0" expanded="true" />
-            <element signature="e#5126#5127#0" expanded="true" />
+            <element signature="e#7365#7491#0" expanded="true" />
+            <element signature="e#7490#7491#0" expanded="true" />
           </folding>
         </state>
       </provider>

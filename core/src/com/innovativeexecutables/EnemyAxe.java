@@ -95,7 +95,7 @@ public class EnemyAxe {
                 axeImpactSound.play();
 
                 // disposes resource after player death
-                if (Player.getHealth()==0)
+                if (Player.getHealth() <= 0)
                 {
                     axeImpactSound.dispose();
                 }

@@ -217,6 +217,8 @@ public class Player{
     public static void setHealth(int health){
         if(health >= 0)
             Player.health = health;
+        else
+            Player.health = 0;
     }
 
     public static int getHealth(){
