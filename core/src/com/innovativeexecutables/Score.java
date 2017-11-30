@@ -18,7 +18,7 @@ public class Score {
                 if(Gridlock.playFlag == true)
                     score -= scoreCounter;
             }
-        }, 0, 30);
+        }, 31, 30);
 
     }
     
