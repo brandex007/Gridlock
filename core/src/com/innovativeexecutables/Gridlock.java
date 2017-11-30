@@ -113,6 +113,7 @@ public class Gridlock extends ApplicationAdapter {
 
 
         // 3.1.1.1 Game will render a user character
+        // 3.5.1 player must spawn at correct starting spots in level 1 and 2
         player = new Player(500, 90);
 
         enemies = new ArrayList<Enemy>();
@@ -346,6 +347,7 @@ public class Gridlock extends ApplicationAdapter {
             player.setSpeed(player.getRegularSpeed());
             player.render(sb);
         } else { // move through gate quicker in level 1
+            // 3.1.9 The character is able to pass through gates
             if(level == 1) {
                 player.setSpeed(player.getRegularSpeed() * 3f);
             }else{
@@ -384,6 +386,7 @@ public class Gridlock extends ApplicationAdapter {
             // 3.2.8.3 Game should display lose text
             sb.draw(gameOverLoss,300,700);
 
+            // 3.4.1.1 High score will be updated in storage
             highScore = prefs.getInteger("score");
             if(score.getScore() > highScore) {
                 prefs.putInteger("score", score.getScore());
@@ -395,7 +398,8 @@ public class Gridlock extends ApplicationAdapter {
 
         }
 
-        //	3.3.4 Upon death of boss, player wins game
+        // 3.3.4 Upon death of boss, player wins game
+        // 4.2.2 When final boss is killed, player wins game
         if(enemies.isEmpty() && level == 2){
             backgroundMusic.stop();
             enemyMusic.stop();
@@ -422,7 +426,7 @@ public class Gridlock extends ApplicationAdapter {
             // 	3.3.4.3 Game should display win text
             sb.draw(gameOverWin,300,700);
 
-            // change level
+            // 3.4.2 When all enemies are killed, level 2 will load
         }else if(enemies.isEmpty() && level == 1 || testing){
             testing = false;
             level = 2;
@@ -467,6 +471,8 @@ public class Gridlock extends ApplicationAdapter {
             enemies.add(new Enemy(tileList[13][13].getX(), tileList[1][1].getY(), "enemy4"));
             enemies.add(new Enemy(tileList[30][30].getX(), tileList[30][30].getY(), "enemy3"));
             enemies.add(new Enemy(tileList[5][5].getX(), tileList[29][29].getY(), "professorEnemy"));
+
+            // 3.5.1 player must spawn at correct starting spots in level 1 and 2
             player.setX(800);
             player.setY(10);
 
@@ -483,7 +489,7 @@ public class Gridlock extends ApplicationAdapter {
 
             sb.draw(menuButton, 200, 200);
 
-            // display high score
+            // 3.4.1 Upon completion of the game, the game will indicate what the high score is.
             if(player.isDead || enemies.isEmpty()) {
                 // draw text
                 // 3.1.2 Score must be visible to user during gameplay
@@ -613,6 +619,8 @@ public class Gridlock extends ApplicationAdapter {
             }
         }
 
+        // 3.1.9 The character is able to pass through gates
+        // 3.4.2.1 Level 2 will contain a gate that must be opened with a switch, revealing final boss
         if(collisionWithSwitch){
             gateIsClosed = false;
             gate = new Texture("GateOpen.png");
@@ -682,7 +690,7 @@ public class Gridlock extends ApplicationAdapter {
         }
 
         time = 0;
-	    score.setScore(200);
+        score.setScore(200);
         player.resetPlayer();
         if(level == 2) {
             player.setX(800);
