@@ -226,18 +226,20 @@ public class Gridlock extends ApplicationAdapter {
 		  * click location is checked to see if the play button was clicked*/
 
         // 	3.1.1 Pressing start button initiates gameplay
-        if (Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
-            mouseClickX = Gdx.input.getX();
-            mouseClickY = Gdx.input.getY();
+        if (playFlag == false) {
+            if (Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
+                mouseClickX = Gdx.input.getX();
+                mouseClickY = Gdx.input.getY();
 
-            if ((mouseClickX <= 610 && mouseClickX >= 410) && (mouseClickY <= 450 && mouseClickY >= 400)) {
-                restartGame();
-            } 	// 3.1.4 There must be an exit button, triggered by the escape key
-            else if ((mouseClickX <= 610 && mouseClickX >= 410) && (mouseClickY <= 590 && mouseClickY >= 550)) {
-                // 3.1.4.1 Game must exit
-                Gdx.app.exit();
-            } else if ((mouseClickX <= 610 && mouseClickX >= 410) && (mouseClickY <= 525 && mouseClickY >= 475)) {
-                playFlag = true;
+                if ((mouseClickX <= 610 && mouseClickX >= 410) && (mouseClickY <= 450 && mouseClickY >= 400)) {
+                    restartGame();
+                }    // 3.1.4 There must be an exit button, triggered by the escape key
+                else if ((mouseClickX <= 610 && mouseClickX >= 410) && (mouseClickY <= 590 && mouseClickY >= 550)) {
+                    // 3.1.4.1 Game must exit
+                    Gdx.app.exit();
+                } else if ((mouseClickX <= 610 && mouseClickX >= 410) && (mouseClickY <= 525 && mouseClickY >= 475)) {
+                    playFlag = true;
+                }
             }
         }
         if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
