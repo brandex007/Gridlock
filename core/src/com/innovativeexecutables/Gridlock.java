@@ -400,7 +400,7 @@ public class Gridlock extends ApplicationAdapter {
             }
 
             timer.stop();
-            score.removeTimer();
+            //score.removeTimer();
 
         }
 
@@ -417,7 +417,7 @@ public class Gridlock extends ApplicationAdapter {
                 winSound.play();
 
                 timer.stop();
-                score.removeTimer();
+               // score.removeTimer();
 
                 highScore = prefs.getInteger("score");
                 if(score.getScore() > highScore) {

@@ -7,8 +7,8 @@ public class Score {
     
     // 3.1.2.2. Score must start at 200
     private int score = 200;
-    private Timer timer;
-    private int time;
+    //private Timer timer;
+
     
     public void updateScore(int time){
 
@@ -46,9 +46,7 @@ public class Score {
         return score;
     }
 
-    public void removeTimer(){
-        timer.stop();
-    }
+    //public void removeTimer(){timer.stop(); }
     
 }
 
