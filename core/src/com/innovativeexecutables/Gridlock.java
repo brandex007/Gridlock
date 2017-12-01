@@ -695,6 +695,14 @@ public class Gridlock extends ApplicationAdapter {
             chest.remove();
         }
 
+	level = 1;
+        tileMapRenderer = new OrthogonalTiledMapRenderer(tileMap);
+        sb = tileMapRenderer.getBatch();
+        sb.setProjectionMatrix(cam.combined);
+
+        obstaclesCollisionLayer = (TiledMapTileLayer) tileMap.getLayers().get("Obstacles");
+        hazardsCollisionLayer = (TiledMapTileLayer) tileMap.getLayers().get("Hazards");
+	    
         time = 0;
         score.setScore(200);
         player.resetPlayer();
