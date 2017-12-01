@@ -65,7 +65,7 @@ public class Gridlock extends ApplicationAdapter {
     BitmapFont scoreFont, healthFont, timeFont, highScoreFont, gateFont;
     String scoreString, healthString, timeString, highScoreString;
 
-    int time = 0;
+    static int time = 0;
 
     // Score class
     Score score;
@@ -176,7 +176,10 @@ public class Gridlock extends ApplicationAdapter {
 
     public void updateTime() {
         if (playFlag) {
+
             time = time + 1;
+            score.updateScore(time);
+
         }
 
 
